@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ScrollManifesto from './components/ScrollManifesto';
 import Services from './components/Services';
 import BeforeAfter from './components/BeforeAfter';
 import Differentials from './components/Differentials';
@@ -76,9 +75,6 @@ function MainContent() {
           <main>
             {/* Hero Section com botões de navegação para as sub-telas */}
             <Hero onNavigate={navigateTo} />
-
-            {/* Scroll Reveal Text Manifesto */}
-            <ScrollManifesto />
 
             {/* Services & Techniques */}
             <Services onOpenCatalog={() => navigateTo('catalog')} />

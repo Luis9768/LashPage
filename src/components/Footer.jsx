@@ -96,7 +96,6 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li><a href="#inicio" className="hover:text-rose-500 transition-colors">Início</a></li>
               <li><a href="#tecnicas" className="hover:text-rose-500 transition-colors">Técnicas e Procedimentos</a></li>
-              <li><a href="#manifesto" className="hover:text-rose-500 transition-colors">Manifesto</a></li>
               <li><a href="#antes-depois" className="hover:text-rose-500 transition-colors">Antes & Depois</a></li>
               <li><a href="#diferenciais" className="hover:text-rose-500 transition-colors">Diferenciais</a></li>
               <li><a href="#localizacao" className="hover:text-rose-500 transition-colors">Localização em Santo André</a></li>
