@@ -30,51 +30,52 @@ export default function CatalogView({ onBack }) {
       isDark ? 'bg-[#000000] text-white' : 'bg-[#fffafb] text-neutral-900'
     }`}>
       {/* Top Sticky Header */}
-      <header className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors px-4 py-3.5 ${
-        isDark ? 'bg-black/90 border-[#202028]' : 'bg-white/95 border-rose-100'
+      <header className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors px-4 py-3 ${
+        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-white/90 border-neutral-200/80'
       }`}>
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
+        <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
+          {/* Minimalist Back Button */}
           <button
             onClick={onBack}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all active:scale-95 ${
               isDark
-                ? 'bg-neutral-900 text-neutral-200 hover:bg-neutral-800 border border-neutral-800'
-                : 'bg-rose-50 text-rose-900 hover:bg-rose-100 border border-rose-200'
+                ? 'bg-neutral-900/90 hover:bg-neutral-800 text-neutral-200 border border-neutral-800'
+                : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-800 border border-neutral-200'
             }`}
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Voltar ao Perfil</span>
+            <ArrowLeft className="w-3.5 h-3.5 text-rose-400" />
+            <span>Voltar</span>
           </button>
 
-          <span className="font-heading text-sm sm:text-base font-bold tracking-tight">
-            Catálogo de Procedimentos
-          </span>
-
-          <span className="text-[11px] font-semibold text-rose-500">
-            Vittoria's Studio
-          </span>
+          {/* Clean Studio Identity */}
+          <div className="flex items-center gap-2 text-right">
+            <span className="text-[11px] uppercase tracking-widest font-semibold text-rose-400">
+              Catálogo
+            </span>
+            <span className="text-neutral-600 text-xs">•</span>
+            <span className={`text-[11px] font-medium ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
+              Vittoria's Studio
+            </span>
+          </div>
         </div>
       </header>
 
       {/* Hero Header of Catalog Page */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-6 text-center">
-        <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-3 ${
-          isDark
-            ? 'bg-rose-950/40 text-rose-300 border border-rose-800/40'
-            : 'bg-rose-100 text-rose-800 border border-rose-200'
-        }`}>
-          <Sparkles className="w-3.5 h-3.5 text-rose-500" />
-          <span>Tabela Oficial de Técnicas</span>
-        </div>
+        <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-rose-400 mb-2 inline-block">
+          Tabela Oficial de Procedimentos
+        </span>
 
-        <h1 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
-          Encontre o olhar dos seus sonhos
+        <h1 className={`font-heading text-2xl sm:text-4xl font-extrabold tracking-tight mb-2.5 ${
+          isDark ? 'text-white' : 'text-neutral-900'
+        }`}>
+          Catálogo de Técnicas & Cílios
         </h1>
 
-        <p className={`text-xs sm:text-sm max-w-lg mx-auto ${
+        <p className={`text-xs sm:text-sm max-w-md mx-auto leading-relaxed ${
           isDark ? 'text-neutral-400' : 'text-neutral-600'
         }`}>
-          Trabalhamos exclusivamente com fios premium de alta retenção e lash mapping visagista personalizado.
+          Fios premium de alta retenção, biossegurança e lash mapping visagista personalizado.
         </p>
 
         {/* Filter Pills */}
