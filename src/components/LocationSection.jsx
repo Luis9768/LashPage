@@ -1,0 +1,141 @@
+import React from 'react';
+import { useTheme } from '../context/ThemeContext';
+import { siteConfig } from '../config/siteConfig';
+import { MapPin, Navigation, Clock, Sparkles, ExternalLink, Compass } from 'lucide-react';
+
+export default function LocationSection() {
+  const { isDark } = useTheme();
+  const { location } = siteConfig;
+
+  return (
+    <section id="localizacao" className={`py-20 sm:py-28 relative transition-colors ${
+      isDark ? 'bg-[#000000]' : 'bg-[#faf5f6]'
+    }`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-3 ${
+            isDark
+              ? 'bg-rose-950/40 text-rose-300 border border-rose-800/40'
+              : 'bg-rose-100 text-rose-800 border border-rose-200'
+          }`}>
+            <Sparkles className="w-3.5 h-3.5 text-rose-500" />
+            <span>Fácil Acesso no ABC</span>
+          </div>
+
+          <h2 className={`font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight ${
+            isDark ? 'text-white' : 'text-neutral-900'
+          }`}>
+            Onde estamos localizadas
+          </h2>
+
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+            Espaço climatizado, confortável e com localização privilegiada no Centro de Santo André.
+          </p>
+        </div>
+
+        {/* Location Content Box */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* Information Card */}
+          <div className={`lg:col-span-6 p-8 rounded-3xl border flex flex-col justify-between ${
+            isDark
+              ? 'bg-[#0d0d11] border-[#22222a] shadow-xl shadow-black/60'
+              : 'bg-white border-rose-100 shadow-xl shadow-rose-950/5'
+          }`}>
+
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-rose-500/20 border border-rose-500/30 text-rose-500 flex items-center justify-center">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className={`font-heading text-2xl font-bold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                    {location.title}
+                  </h3>
+                  <p className="text-xs text-rose-500 font-semibold">{location.city}</p>
+                </div>
+              </div>
+
+              {/* Address details */}
+              <div className="space-y-4 mb-8">
+                <div className={`p-4 rounded-2xl border ${
+                  isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-rose-50/60 border-rose-100'
+                }`}>
+                  <p className={`text-base font-bold mb-1 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                    {location.address}
+                  </p>
+                  <p className={`text-sm ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
+                    {location.neighborhood} • {location.city} • CEP: {location.cep}
+                  </p>
+                  <p className="text-xs text-rose-500 mt-2 font-medium">
+                    📌 {location.reference}
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3 pt-2">
+                  <Clock className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                      Horários de Atendimento
+                    </h4>
+                    <p className={`text-xs sm:text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                      {location.hours}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Direct Map Action Buttons */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-rose-500/20">
+              <a
+                href={location.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-rose-500 to-pink-600 hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-md"
+              >
+                <Navigation className="w-4 h-4" />
+                <span>Google Maps</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+              </a>
+
+              <a
+                href={location.wazeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all flex items-center justify-center gap-2 ${
+                  isDark
+                    ? 'border-neutral-700 text-neutral-200 hover:bg-neutral-800'
+                    : 'border-rose-200 text-neutral-800 hover:bg-rose-50'
+                }`}
+              >
+                <Compass className="w-4 h-4 text-cyan-400" />
+                <span>Abrir no Waze</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+              </a>
+            </div>
+
+          </div>
+
+          {/* Interactive Map Visual */}
+          <div className={`lg:col-span-6 rounded-3xl overflow-hidden border relative min-h-[340px] flex flex-col items-center justify-center p-6 ${
+            isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-white border-rose-100'
+          }`}>
+            <iframe
+              title="Localização do Studio no Centro de Santo André"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.437142475734!2d-46.53123862378822!3d-23.660312665224376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce42e057f589db%3A0x6bfe82cfceee5dcf!2sR.%20Gen.%20Glic%C3%A9rio%2C%20926%20-%20Centro%2C%20Santo%20Andr%C3%A9%20-%20SP%2C%2009015-191!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+              className="w-full h-full min-h-[360px] rounded-2xl border-0"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
