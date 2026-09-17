@@ -81,27 +81,27 @@ export default function Services({ onOpenCatalog }) {
           >
             <div
               ref={carouselRef}
-              className="flex transition-transform duration-500 ease-out"
+              className="flex transition-transform duration-500 ease-out items-stretch"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {/* 4 Procedimentos em Destaque */}
+              {/* 4 Procedimentos em Destaque com Altura e Proporções Rigorosamente Iguais */}
               {featuredServices.map((service, index) => {
                 const isLastPhoto = index === featuredServices.length - 1;
 
                 return (
                   <div
                     key={service.id}
-                    className="w-full flex-shrink-0 px-2 sm:px-4 box-border"
+                    className="w-full flex-shrink-0 px-2 sm:px-4 box-border flex flex-col"
                   >
                     <div
-                      className={`rounded-3xl overflow-hidden border shadow-2xl transition-all duration-300 grid grid-cols-1 md:grid-cols-12 ${
+                      className={`rounded-3xl overflow-hidden border shadow-2xl transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                         isDark
                           ? 'bg-[#0d0d11] border-[#22222a] shadow-black'
                           : 'bg-white border-rose-100 shadow-xl shadow-rose-950/5'
                       }`}
                     >
                       {/* Image Side */}
-                      <div className="md:col-span-6 relative h-64 sm:h-80 md:h-full min-h-[260px] overflow-hidden">
+                      <div className="md:col-span-5 lg:col-span-5 relative h-48 sm:h-52 md:h-full overflow-hidden flex-shrink-0">
                         <img
                           src={service.image}
                           alt={service.title}
@@ -111,49 +111,49 @@ export default function Services({ onOpenCatalog }) {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
                         {/* Tag */}
-                        <div className="absolute top-4 left-4">
-                          <span className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wide bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-md">
+                        <div className="absolute top-3.5 left-3.5">
+                          <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wide bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-md">
                             {service.badge}
                           </span>
                         </div>
 
                         {/* Duration & Retention */}
-                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
-                          <span className="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15">
+                        <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-[11px]">
+                          <span className="flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/15">
                             <Clock className="w-3.5 h-3.5 text-rose-400" />
                             {service.duration}
                           </span>
-                          <span className="text-neutral-200 text-[11px] font-medium bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full">
+                          <span className="text-neutral-200 font-medium bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full">
                             {service.retention}
                           </span>
                         </div>
                       </div>
 
                       {/* Content Side */}
-                      <div className="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between">
+                      <div className="md:col-span-7 lg:col-span-7 p-5 sm:p-7 flex flex-col justify-between flex-1 overflow-hidden">
                         <div>
-                          <div className="flex items-center justify-between gap-2 mb-2">
-                            <span className="text-xs font-bold uppercase tracking-wider text-rose-500">
+                          <div className="flex items-center justify-between gap-2 mb-1.5">
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-rose-500">
                               Procedimento 0{index + 1} de 04
                             </span>
-                            <span className={`text-xs px-2.5 py-0.5 rounded-full font-medium ${
+                            <span className={`text-[11px] px-2.5 py-0.5 rounded-full font-medium ${
                               isDark ? 'bg-neutral-800 text-neutral-300' : 'bg-rose-50 text-rose-800'
                             }`}>
                               Studio Vittoria
                             </span>
                           </div>
 
-                          <h3 className={`font-heading text-2xl sm:text-3xl font-bold mb-2 ${
+                          <h3 className={`font-heading text-xl sm:text-2xl font-bold mb-1 tracking-tight ${
                             isDark ? 'text-white' : 'text-neutral-900'
                           }`}>
                             {service.title}
                           </h3>
 
-                          <p className="text-xs font-semibold text-rose-400 mb-4">
+                          <p className="text-xs font-semibold text-rose-400 mb-2">
                             {service.tagline}
                           </p>
 
-                          <p className={`text-xs sm:text-sm leading-relaxed mb-6 ${
+                          <p className={`text-xs sm:text-sm leading-relaxed line-clamp-3 md:line-clamp-none ${
                             isDark ? 'text-neutral-300' : 'text-neutral-600'
                           }`}>
                             {service.description}
@@ -161,32 +161,27 @@ export default function Services({ onOpenCatalog }) {
                         </div>
 
                         {/* Action Buttons */}
-                        <div className="space-y-2.5">
+                        <div className="pt-2.5">
                           <a
                             href={siteConfig.bookingUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full py-3.5 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-lg shadow-rose-600/25 transition-all flex items-center justify-center gap-2 active:scale-98"
+                            className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-md shadow-rose-600/25 transition-all flex items-center justify-center gap-2 active:scale-98"
                           >
                             <Calendar className="w-4 h-4" />
                             <span>Agendar {service.title}</span>
                             <ArrowUpRight className="w-4 h-4" />
                           </a>
 
-                          {/* Botão posicionado ao lado da última foto direcionando para a tela de serviços */}
+                          {/* Link de convite rápido ao lado da última foto */}
                           {isLastPhoto && (
                             <button
                               type="button"
                               onClick={onOpenCatalog}
-                              className={`w-full py-3.5 px-5 rounded-2xl text-xs sm:text-sm font-bold border transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
-                                isDark
-                                  ? 'bg-[#15151c] hover:bg-[#1f1f28] border-rose-500/50 text-rose-300 hover:text-white'
-                                  : 'bg-rose-50 hover:bg-rose-100 border-rose-300 text-rose-900'
-                              }`}
+                              className="w-full mt-2 py-1 text-center text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors flex items-center justify-center gap-1.5"
                             >
-                              <Eye className="w-4 h-4 text-rose-500" />
-                              <span>Ver Todos os Serviços & Manutenção</span>
-                              <ArrowRight className="w-4 h-4" />
+                              <span>Ver todas as opções no Catálogo Completo</span>
+                              <ArrowRight className="w-3.5 h-3.5" />
                             </button>
                           )}
                         </div>
@@ -196,70 +191,75 @@ export default function Services({ onOpenCatalog }) {
                 );
               })}
 
-              {/* Slide 5: Card de Catálogo posicionado no carrossel logo ao lado da última foto */}
-              <div className="w-full flex-shrink-0 px-2 sm:px-4 box-border">
+              {/* Slide 5: Card de Catálogo com exatamente o mesmo tamanho e proporção */}
+              <div className="w-full flex-shrink-0 px-2 sm:px-4 box-border flex flex-col">
                 <div
-                  className={`rounded-3xl overflow-hidden border shadow-2xl transition-all duration-300 grid grid-cols-1 md:grid-cols-12 ${
+                  className={`rounded-3xl overflow-hidden border shadow-2xl transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                     isDark
-                      ? 'bg-gradient-to-br from-[#121015] via-[#0d0d11] to-[#0a0a0c] border-rose-500/30 shadow-black'
-                      : 'bg-gradient-to-br from-rose-50 via-white to-rose-100/50 border-rose-200 shadow-xl shadow-rose-950/5'
+                      ? 'bg-gradient-to-br from-[#131118] via-[#0d0d11] to-[#0a0a0c] border-rose-500/30 shadow-black'
+                      : 'bg-gradient-to-br from-rose-50 via-white to-rose-100/40 border-rose-200 shadow-xl shadow-rose-950/5'
                   }`}
                 >
                   {/* Image Side */}
-                  <div className="md:col-span-6 relative h-60 sm:h-72 md:h-full min-h-[260px] overflow-hidden bg-neutral-950">
+                  <div className="md:col-span-5 lg:col-span-5 relative h-48 sm:h-52 md:h-full overflow-hidden flex-shrink-0 bg-neutral-950">
                     <img
                       src="/studio-banner.jpg"
                       alt="Catálogo de Procedimentos"
-                      className="w-full h-full object-cover object-center opacity-80 hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover object-center opacity-85 hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/30"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
 
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wide bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-md">
+                    <div className="absolute top-3.5 left-3.5">
+                      <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wide bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-md">
                         Tabela Completa
                       </span>
                     </div>
 
-                    <div className="absolute bottom-4 left-4 right-4 text-white text-xs">
-                      <p className="font-semibold text-rose-300 mb-0.5">Vittoria's Studio</p>
-                      <p className="text-[11px] text-neutral-300">Técnicas personalizadas sob medida para você</p>
+                    <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white text-[11px]">
+                      <p className="font-semibold text-rose-300">Vittoria's Studio</p>
+                      <p className="text-[10px] text-neutral-300">Técnicas sob medida</p>
                     </div>
                   </div>
 
                   {/* Content Side */}
-                  <div className="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between">
+                  <div className="md:col-span-7 lg:col-span-7 p-5 sm:p-7 flex flex-col justify-between flex-1 overflow-hidden">
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-bold uppercase tracking-wider text-rose-500">
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-rose-500">
                           Catálogo Completo
+                        </span>
+                        <span className={`text-[11px] px-2.5 py-0.5 rounded-full font-medium ${
+                          isDark ? 'bg-neutral-800 text-neutral-300' : 'bg-rose-50 text-rose-800'
+                        }`}>
+                          Studio Vittoria
                         </span>
                       </div>
 
-                      <h3 className={`font-heading text-2xl sm:text-3xl font-bold mb-2 ${
+                      <h3 className={`font-heading text-xl sm:text-2xl font-bold mb-1 tracking-tight ${
                         isDark ? 'text-white' : 'text-neutral-900'
                       }`}>
                         Explore Todos os Serviços & Técnicas
                       </h3>
 
-                      <p className="text-xs font-semibold text-rose-400 mb-4">
-                        Volume Brasileiro, Fio a Fio, Russo, Híbrido, Lifting e Manutenções
+                      <p className="text-xs font-semibold text-rose-400 mb-2">
+                        Volume Russo, Híbrido, Lifting, Cuidados e Manutenções
                       </p>
 
-                      <p className={`text-xs sm:text-sm leading-relaxed mb-6 ${
+                      <p className={`text-xs sm:text-sm leading-relaxed line-clamp-3 md:line-clamp-none mb-3 ${
                         isDark ? 'text-neutral-300' : 'text-neutral-600'
                       }`}>
                         Acesse nossa tela dedicada com a lista completa de procedimentos, tempos de atendimento, dicas de durabilidade e agendamento instantâneo.
                       </p>
 
-                      <div className="flex flex-wrap gap-2 mb-6 text-[11px]">
-                        <span className={`px-2.5 py-1 rounded-full border flex items-center gap-1 ${
+                      <div className="flex items-center gap-2">
+                        <span className={`px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium border flex items-center gap-1 ${
                           isDark ? 'bg-neutral-900/80 border-neutral-800 text-neutral-300' : 'bg-white border-rose-200 text-neutral-700'
                         }`}>
                           <CheckCircle2 className="w-3 h-3 text-rose-500" />
                           +6 Procedimentos
                         </span>
-                        <span className={`px-2.5 py-1 rounded-full border flex items-center gap-1 ${
+                        <span className={`px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium border flex items-center gap-1 ${
                           isDark ? 'bg-neutral-900/80 border-neutral-800 text-neutral-300' : 'bg-white border-rose-200 text-neutral-700'
                         }`}>
                           <CheckCircle2 className="w-3 h-3 text-rose-500" />
@@ -268,15 +268,17 @@ export default function Services({ onOpenCatalog }) {
                       </div>
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={onOpenCatalog}
-                      className="w-full py-4 px-6 rounded-2xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-lg shadow-rose-600/30 transition-all flex items-center justify-center gap-2 active:scale-98"
-                    >
-                      <Eye className="w-4 h-4" />
-                      <span>Ver Todos os Serviços & Manutenção</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
+                    <div className="pt-2.5">
+                      <button
+                        type="button"
+                        onClick={onOpenCatalog}
+                        className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-lg shadow-rose-600/30 transition-all flex items-center justify-center gap-2 active:scale-98"
+                      >
+                        <Eye className="w-4 h-4" />
+                        <span>Acessar Catálogo de Procedimentos</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
