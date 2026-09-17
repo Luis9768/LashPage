@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { siteConfig } from '../config/siteConfig';
-import { Sparkles } from 'lucide-react';
-
 export default function ScrollManifesto() {
   const { isDark } = useTheme();
   const containerRef = useRef(null);
@@ -51,16 +49,7 @@ export default function ScrollManifesto() {
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        
-        {/* Subtle Badge */}
-        <div className={`inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase transition-colors ${
-          isDark
-            ? 'bg-rose-950/40 text-rose-300 border border-rose-800/40'
-            : 'bg-rose-100/80 text-rose-900 border border-rose-200'
-        }`}>
-          <Sparkles className="w-3.5 h-3.5 text-rose-500 animate-pulse" />
-          <span>{siteConfig.manifesto.badge}</span>
-        </div>
+
 
         {/* Scroll Reveal Dynamic Text */}
         <p className="font-heading text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-relaxed sm:leading-relaxed select-none">

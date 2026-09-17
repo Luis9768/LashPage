@@ -12,7 +12,6 @@ import LocationSection from './components/LocationSection';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
 import FloatingCta from './components/FloatingCta';
-import ThemeSwitcher from './components/ThemeSwitcher';
 import IntroStream from './components/IntroStream';
 import CatalogView from './components/views/CatalogView';
 import LocationView from './components/views/LocationView';
@@ -107,9 +106,6 @@ function MainContent() {
           <Footer onNavigate={navigateTo} />
         </>
       )}
-
-      {/* Floating Theme Tester */}
-      <ThemeSwitcher />
 
       {/* Mobile Fixed Booking Bar & Floating WhatsApp */}
       <FloatingCta />
