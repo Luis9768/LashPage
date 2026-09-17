@@ -16,9 +16,35 @@ html {
   font-family: var(--font-heading);
 }
 
-/* Suavidade geral de transições para alternância de tema */
+/* Transições fluidas e feedback tátil para cliques e toques */
 * {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(244, 63, 94, 0.2);
+}
+
+/* Feedback tátil e físico universal para botões e links */
+button, a, [role="button"] {
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+
+button:active, a:active, [role="button"]:active {
+  transform: scale(0.96);
+}
+
+/* Animação suave e fluida de entrada de telas */
+@keyframes viewEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-enter {
+  animation: viewEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Scrollbar styling */
@@ -35,4 +61,3 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(244, 63, 94, 0.6);
 }
-

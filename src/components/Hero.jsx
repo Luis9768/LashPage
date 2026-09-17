@@ -188,12 +188,12 @@ export default function Hero({ onNavigate }) {
             <div className="space-y-3">
               {quickLinks.map((link, idx) => {
                 const Icon = link.icon;
-                const buttonClasses = `group w-full p-3.5 sm:p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between text-left cursor-pointer ${
+                const buttonClasses = `group w-full p-3.5 sm:p-4 rounded-2xl border transition-all duration-150 flex items-center justify-between text-left cursor-pointer active:scale-[0.97] active:ring-2 active:ring-rose-500/40 select-none ${
                   link.highlight
-                    ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-lg shadow-rose-600/25 hover:scale-[1.01] active:scale-98'
+                    ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-lg shadow-rose-600/25 hover:scale-[1.01] active:brightness-90'
                     : isDark
-                    ? 'bg-[#121216] border-[#22222b] hover:border-rose-500/50 hover:bg-[#18181f] text-white shadow-sm'
-                    : 'bg-[#faf7f7] border-rose-100 hover:border-rose-300 hover:bg-white text-neutral-800 shadow-sm'
+                    ? 'bg-[#121216] border-[#22222b] hover:border-rose-500/50 hover:bg-[#18181f] text-white shadow-sm active:bg-[#1f1f2a] active:border-rose-500'
+                    : 'bg-[#faf7f7] border-rose-100 hover:border-rose-300 hover:bg-white text-neutral-800 shadow-sm active:bg-rose-50 active:border-rose-400'
                 }`;
 
                 const innerContent = (

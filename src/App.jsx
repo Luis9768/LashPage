@@ -34,15 +34,18 @@ function MainContent() {
   }, []);
 
   const navigateTo = (view) => {
-    if (view === 'catalog') {
-      window.location.hash = 'catalogo';
-    } else if (view === 'location') {
-      window.location.hash = 'localizacao-completa';
-    } else {
-      window.history.pushState(null, '', window.location.pathname);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    setCurrentView(view);
+    // Micro-delay de 100ms para permitir o feedback visual/tátil do clique antes de trocar a tela
+    setTimeout(() => {
+      if (view === 'catalog') {
+        window.location.hash = 'catalogo';
+      } else if (view === 'location') {
+        window.location.hash = 'localizacao-completa';
+      } else {
+        window.history.pushState(null, '', window.location.pathname);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      setCurrentView(view);
+    }, 100);
   };
 
   return (
@@ -58,17 +61,21 @@ function MainContent() {
 
       {/* Sub-tela: Catálogo de Procedimentos Completo */}
       {currentView === 'catalog' && (
-        <CatalogView onBack={() => navigateTo('home')} />
+        <div key="catalog" className="view-enter">
+          <CatalogView onBack={() => navigateTo('home')} />
+        </div>
       )}
 
       {/* Sub-tela: Localização e Rotas Dedicada */}
       {currentView === 'location' && (
-        <LocationView onBack={() => navigateTo('home')} />
+        <div key="location" className="view-enter">
+          <LocationView onBack={() => navigateTo('home')} />
+        </div>
       )}
 
       {/* Tela Principal (Landing Page) */}
       {currentView === 'home' && (
-        <>
+        <div key="home" className="view-enter">
           {/* Navigation */}
           <Navbar onNavigate={navigateTo} />
 
@@ -100,7 +107,7 @@ function MainContent() {
 
           {/* Footer */}
           <Footer onNavigate={navigateTo} />
-        </>
+        </div>
       )}
 
       {/* Mobile Fixed Booking Bar & Floating WhatsApp */}

@@ -166,7 +166,7 @@ export default function Services({ onOpenCatalog }) {
                             href={siteConfig.bookingUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-md shadow-rose-600/25 transition-all flex items-center justify-center gap-2 active:scale-98"
+                            className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-md shadow-rose-600/25 transition-all flex items-center justify-center gap-2 active:scale-95 active:brightness-90 select-none"
                           >
                             <Calendar className="w-4 h-4" />
                             <span>Agendar {service.title}</span>
@@ -178,7 +178,7 @@ export default function Services({ onOpenCatalog }) {
                             <button
                               type="button"
                               onClick={onOpenCatalog}
-                              className="w-full mt-2 py-1 text-center text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors flex items-center justify-center gap-1.5"
+                              className="w-full mt-2 py-1 text-center text-xs font-semibold text-rose-400 hover:text-rose-300 transition-all flex items-center justify-center gap-1.5 active:scale-95 active:text-white"
                             >
                               <span>Ver todas as opções no Catálogo Completo</span>
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -272,7 +272,7 @@ export default function Services({ onOpenCatalog }) {
                       <button
                         type="button"
                         onClick={onOpenCatalog}
-                        className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-lg shadow-rose-600/30 transition-all flex items-center justify-center gap-2 active:scale-98"
+                        className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-lg shadow-rose-600/30 transition-all flex items-center justify-center gap-2 active:scale-95 active:brightness-90 select-none"
                       >
                         <Eye className="w-4 h-4" />
                         <span>Acessar Catálogo de Procedimentos</span>

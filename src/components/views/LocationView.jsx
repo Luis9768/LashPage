@@ -32,7 +32,7 @@ export default function LocationView({ onBack }) {
           {/* Minimalist Back Button */}
           <button
             onClick={onBack}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all active:scale-95 ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all active:scale-90 active:bg-rose-500/20 active:border-rose-500/50 ${
               isDark
                 ? 'bg-neutral-900/90 hover:bg-neutral-800 text-neutral-200 border border-neutral-800'
                 : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-800 border border-neutral-200'
