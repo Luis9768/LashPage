@@ -47,15 +47,15 @@ export default function About() {
             
             {/* Editorial Luxury Eyebrow */}
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-8 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_10px_rgba(244,63,94,0.4)]" />
-              <span className={`text-xs font-bold tracking-[0.25em] uppercase ${
+              <span className="w-8 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_10px_rgba(244,63,94,0.4)] flex-shrink-0" />
+              <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase ${
                 isDark ? 'text-rose-400' : 'text-rose-600'
               }`}>
                 Conheça sua Lash
               </span>
             </div>
 
-            <h2 className={`font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight ${
+            <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 tracking-tight ${
               isDark ? 'text-white' : 'text-neutral-900'
             }`}>
               Dedicação, técnica refinada e amor por valorizar você
