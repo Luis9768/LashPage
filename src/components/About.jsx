@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { siteConfig } from '../config/siteConfig';
-import { Sparkles, Award, Heart, CheckCircle2, Calendar } from 'lucide-react';
+import { Award, CheckCircle2, Calendar } from 'lucide-react';
 
 export default function About() {
   const { isDark } = useTheme();
@@ -45,13 +45,12 @@ export default function About() {
           {/* Bio & Content Column */}
           <div className="lg:col-span-7 flex flex-col items-start">
             
-            <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 ${
+            <div className={`inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 ${
               isDark
                 ? 'bg-rose-950/60 text-rose-300 border border-rose-800/40'
                 : 'bg-rose-100 text-rose-800 border border-rose-200'
             }`}>
-              <Sparkles className="w-3.5 h-3.5 text-rose-500" />
-              <span>Conheça a Profissional</span>
+              <span>Conheça sua Lash</span>
             </div>
 
             <h2 className={`font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight ${
