@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { siteConfig } from '../config/siteConfig';
-import { MapPin, Navigation, Clock, Sparkles, ExternalLink, Compass } from 'lucide-react';
+import { MapPin, Navigation, Clock, Sparkles, ExternalLink, Compass, Train } from 'lucide-react';
 
 export default function LocationSection() {
   const { isDark } = useTheme();
@@ -36,10 +36,10 @@ export default function LocationSection() {
         </div>
 
         {/* Location Content Box */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="max-w-2xl mx-auto">
           
           {/* Information Card */}
-          <div className={`lg:col-span-6 p-8 rounded-3xl border flex flex-col justify-between ${
+          <div className={`p-8 sm:p-10 rounded-3xl border flex flex-col justify-between ${
             isDark
               ? 'bg-[#0d0d11] border-[#22222a] shadow-xl shadow-black/60'
               : 'bg-white border-rose-100 shadow-xl shadow-rose-950/5'
@@ -60,7 +60,7 @@ export default function LocationSection() {
 
               {/* Address details */}
               <div className="space-y-4 mb-8">
-                <div className={`p-4 rounded-2xl border ${
+                <div className={`p-4 sm:p-5 rounded-2xl border ${
                   isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-rose-50/60 border-rose-100'
                 }`}>
                   <p className={`text-base font-bold mb-1 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
@@ -74,22 +74,36 @@ export default function LocationSection() {
                   </p>
                 </div>
 
-                <div className="flex items-start gap-3 pt-2">
-                  <Clock className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
-                      Horários de Atendimento
-                    </h4>
-                    <p className={`text-xs sm:text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
-                      {location.hours}
-                    </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                        Horários de Atendimento
+                      </h4>
+                      <p className={`text-xs sm:text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                        {location.hours}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Train className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                        Transporte Público
+                      </h4>
+                      <p className={`text-xs sm:text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                        7 min da Estação Santo André (CPTM)
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Direct Map Action Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-rose-500/20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 border-t border-rose-500/20">
               <a
                 href={location.googleMapsUrl}
                 target="_blank"
@@ -118,21 +132,6 @@ export default function LocationSection() {
             </div>
 
           </div>
-
-          {/* Interactive Map Visual */}
-          <div className={`lg:col-span-6 rounded-3xl overflow-hidden border relative min-h-[340px] flex flex-col items-center justify-center p-6 ${
-            isDark ? 'bg-neutral-900 border-neutral-800' : 'bg-white border-rose-100'
-          }`}>
-            <iframe
-              title="Localização do Studio no Centro de Santo André"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.437142475734!2d-46.53123862378822!3d-23.660312665224376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce42e057f589db%3A0x6bfe82cfceee5dcf!2sR.%20Gen.%20Glic%C3%A9rio%2C%20926%20-%20Centro%2C%20Santo%20Andr%C3%A9%20-%20SP%2C%2009015-191!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
-              className="w-full h-full min-h-[360px] rounded-2xl border-0"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-
         </div>
 
       </div>
