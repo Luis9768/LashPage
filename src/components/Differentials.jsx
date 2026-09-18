@@ -43,32 +43,34 @@ export default function Differentials() {
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Cards Grid: 2 columns on mobile, 3 columns on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {siteConfig.differentials.map((item, index) => {
             const IconComponent = iconMap[item.icon] || Sparkles;
             return (
               <div
                 key={index}
-                className={`p-7 rounded-3xl border transition-all duration-300 relative group ${
+                className={`p-4 sm:p-6 lg:p-7 rounded-2xl sm:rounded-3xl border transition-all duration-300 relative group flex flex-col justify-start active:scale-[0.98] ${
                   isDark
-                    ? 'bg-[#0d0d11] border-[#22222a] hover:border-rose-500/50 hover:bg-[#131318]'
-                    : 'bg-white border-[#E2DAD0] hover:border-rose-300 shadow-sm hover:shadow-md'
+                    ? 'bg-[#0d0d11]/90 border-[#22222a] hover:border-rose-500/40 hover:bg-[#131319] shadow-md shadow-black/40'
+                    : 'bg-white/95 border-[#E2DAD0] hover:border-rose-300 shadow-sm hover:shadow-md'
                 }`}
-
               >
+                {/* Subtle luxury glow indicator on hover */}
+                <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-rose-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                 {/* Icon Circle */}
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-500 text-white flex items-center justify-center mb-5 shadow-md shadow-rose-500/20 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-6 h-6" />
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-500 text-white flex items-center justify-center mb-3 sm:mb-4 shadow-sm shadow-rose-500/20 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+                  <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
 
-                <h3 className={`font-heading text-xl font-bold mb-2.5 ${
+                <h3 className={`font-heading text-xs sm:text-base lg:text-lg font-bold mb-1.5 sm:mb-2.5 leading-snug ${
                   isDark ? 'text-white' : 'text-neutral-900'
                 }`}>
                   {item.title}
                 </h3>
 
-                <p className={`text-sm leading-relaxed ${
+                <p className={`text-[11px] sm:text-xs md:text-sm leading-snug sm:leading-relaxed ${
                   isDark ? 'text-neutral-300' : 'text-neutral-600'
                 }`}>
                   {item.description}
