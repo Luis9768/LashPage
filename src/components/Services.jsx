@@ -86,8 +86,6 @@ export default function Services({ onOpenCatalog }) {
             >
               {/* 4 Procedimentos em Destaque com Altura e Proporções Rigorosamente Iguais */}
               {featuredServices.map((service, index) => {
-                const isLastPhoto = index === featuredServices.length - 1;
-
                 return (
                   <div
                     key={service.id}
@@ -162,17 +160,7 @@ export default function Services({ onOpenCatalog }) {
                             <ArrowUpRight className="w-4 h-4" />
                           </a>
 
-                          {/* Link de convite rápido ao lado da última foto */}
-                          {isLastPhoto && (
-                            <button
-                              type="button"
-                              onClick={onOpenCatalog}
-                              className="w-full mt-2 py-1 text-center text-xs font-semibold text-rose-400 hover:text-rose-300 transition-all flex items-center justify-center gap-1.5 active:scale-95 active:text-white"
-                            >
-                              <span>Ver todas as opções no Catálogo Completo</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </button>
-                          )}
+
                         </div>
                       </div>
                     </div>
