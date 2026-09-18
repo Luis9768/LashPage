@@ -301,16 +301,8 @@ export default function Navbar({ onNavigate }) {
           className="flex-1 overflow-y-auto px-5 sm:px-6 py-5 space-y-6"
           style={{ backgroundColor: isDark ? '#0d0d11' : '#F6F4F0' }}
         >
-          {/* Section: Atalhos & Caminhos */}
-          <div>
-            <div className="flex items-center gap-1.5 mb-3 px-1">
-              <Sparkles className="w-3.5 h-3.5 text-rose-500" />
-              <p className="text-[11px] font-bold uppercase tracking-wider text-rose-500">
-                Atalhos & Caminhos
-              </p>
-            </div>
-
-            <div className="space-y-2.5">
+          {/* Caminhos Principais */}
+          <div className="space-y-2.5">
               {quickLinks.map((link, idx) => {
                 const Icon = link.icon;
                 const buttonClasses = `group w-full p-3 sm:p-3.5 rounded-2xl border transition-all duration-150 flex items-center justify-between text-left cursor-pointer active:scale-[0.98] select-none ${
@@ -378,7 +370,6 @@ export default function Navbar({ onNavigate }) {
                 );
               })}
             </div>
-          </div>
 
           {/* Section: Navegação da Página */}
           <div className="pt-4 border-t border-neutral-200/70 dark:border-neutral-800/70">
