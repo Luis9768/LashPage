@@ -40,22 +40,22 @@ export default function BeforeAfter() {
     {
       title: "Volume Brasileiro Marcante",
       subtitle: "Fios tecnológicos em Y • Retenção de 25 dias",
-      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
+      image: "/service-volume-brasileiro.jpg"
     },
     {
       title: "Fio a Fio Delicado",
       subtitle: "Efeito rímel super natural e leve",
-      image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=800&q=80"
+      image: "/service-fio-a-fio.jpg"
     },
     {
       title: "Volume Russo Glam",
       subtitle: "Densidade e olhar preenchido",
-      image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80"
+      image: "/service-volume-russo.jpg"
     },
     {
       title: "Lash Lifting & Tint",
       subtitle: "Curvatura natural sem extensão",
-      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+      image: "/service-lash-lifting.jpg"
     }
   ];
 
@@ -101,7 +101,7 @@ export default function BeforeAfter() {
           >
             {/* After Image (Background) */}
             <img
-              src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=1200&q=80"
+              src="/after-lash-comparison.jpg"
               alt="Depois: Extensão de Cílios com Volume"
               className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
             />
@@ -115,7 +115,7 @@ export default function BeforeAfter() {
               style={{ width: `${sliderPosition}%` }}
             >
               <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80"
+                src="/before-lash-comparison.jpg"
                 alt="Antes: Olhar natural sem extensão"
                 className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
                 style={{ width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%' }}
