@@ -50,7 +50,7 @@ export const siteConfig = {
       retention: "Manutenção em 18 a 25 dias",
       badge: "Mais Pedido",
       popular: true,
-      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
+      image: "/service-volume-brasileiro.jpg"
     },
     {
       id: "fio-a-fio",
@@ -61,7 +61,7 @@ export const siteConfig = {
       retention: "Manutenção em 15 a 21 dias",
       badge: "Mais Natural",
       popular: false,
-      image: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=800&q=80"
+      image: "/service-fio-a-fio.jpg"
     },
     {
       id: "volume-russo",
@@ -72,7 +72,7 @@ export const siteConfig = {
       retention: "Manutenção em 20 a 25 dias",
       badge: "Glamour Total",
       popular: false,
-      image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80"
+      image: "/service-volume-russo.jpg"
     },
     {
       id: "lash-lifting",
@@ -83,7 +83,7 @@ export const siteConfig = {
       retention: "Duração de 6 a 8 semanas",
       badge: "Zero Manutenção",
       popular: false,
-      image: "https://images.unsplash.com/photo-1562887189-e5d078343de4?auto=format&fit=crop&w=800&q=80"
+      image: "/service-lash-lifting.jpg"
     },
     {
       id: "volume-hibrido",
@@ -94,7 +94,7 @@ export const siteConfig = {
       retention: "Manutenção em 18 a 21 dias",
       badge: "Texturizado",
       popular: false,
-      image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80"
+      image: "/service-volume-hibrido.jpg"
     },
     {
       id: "manutencao-remocao",
@@ -105,7 +105,7 @@ export const siteConfig = {
       retention: "Essencial para a saúde dos fios",
       badge: "Saúde dos Cílios",
       popular: false,
-      image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80"
+      image: "/service-manutencao.jpg"
     }
   ],
 
