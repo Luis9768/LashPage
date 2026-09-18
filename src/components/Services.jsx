@@ -132,17 +132,6 @@ export default function Services({ onOpenCatalog }) {
                       {/* Content Side */}
                       <div className="md:col-span-7 lg:col-span-7 p-5 sm:p-7 flex flex-col justify-between flex-1 overflow-hidden">
                         <div>
-                          <div className="flex items-center justify-between gap-2 mb-1.5">
-                            <span className="text-[11px] font-bold uppercase tracking-wider text-rose-500">
-                              Procedimento 0{index + 1} de 04
-                            </span>
-                            <span className={`text-[11px] px-2.5 py-0.5 rounded-full font-medium ${
-                              isDark ? 'bg-neutral-800 text-neutral-300' : 'bg-rose-50 text-rose-800'
-                            }`}>
-                              Studio Vittoria
-                            </span>
-                          </div>
-
                           <h3 className={`font-heading text-xl sm:text-2xl font-bold mb-1 tracking-tight ${
                             isDark ? 'text-white' : 'text-neutral-900'
                           }`}>
