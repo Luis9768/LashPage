@@ -75,39 +75,41 @@ function MainContent() {
 
       {/* Tela Principal (Landing Page) */}
       {currentView === 'home' && (
-        <div key="home" className="view-enter">
-          {/* Navigation */}
+        <React.Fragment key="home">
+          {/* Fixed Navigation Bar */}
           <Navbar onNavigate={navigateTo} />
 
-          <main>
-            {/* Hero Section com botões de navegação para as sub-telas */}
-            <Hero onNavigate={navigateTo} />
+          <div className="view-enter">
+            <main>
+              {/* Hero Section com botões de navegação para as sub-telas */}
+              <Hero onNavigate={navigateTo} />
 
-            {/* Services & Techniques */}
-            <Services onOpenCatalog={() => navigateTo('catalog')} />
+              {/* Services & Techniques */}
+              <Services onOpenCatalog={() => navigateTo('catalog')} />
 
-            {/* Before & After Interactive Slider & Portfolio */}
-            <BeforeAfter />
+              {/* Before & After Interactive Slider & Portfolio */}
+              <BeforeAfter />
 
-            {/* Differentials & Safety */}
-            <Differentials />
+              {/* Differentials & Safety */}
+              <Differentials />
 
-            {/* About the Artist */}
-            <About />
+              {/* About the Artist */}
+              <About />
 
-            {/* Testimonials */}
-            <Testimonials />
+              {/* Testimonials */}
+              <Testimonials />
 
-            {/* Location in Santo André & Route Maps */}
-            <LocationSection onOpenLocationView={() => navigateTo('location')} />
+              {/* Location in Santo André & Route Maps */}
+              <LocationSection onOpenLocationView={() => navigateTo('location')} />
 
-            {/* FAQ */}
-            <Faq />
-          </main>
+              {/* FAQ */}
+              <Faq />
+            </main>
 
-          {/* Footer */}
-          <Footer onNavigate={navigateTo} />
-        </div>
+            {/* Footer */}
+            <Footer onNavigate={navigateTo} />
+          </div>
+        </React.Fragment>
       )}
 
       {/* Mobile Fixed Booking Bar & Floating WhatsApp */}

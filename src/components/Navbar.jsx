@@ -3,16 +3,17 @@ import { useTheme } from '../context/ThemeContext';
 import { siteConfig } from '../config/siteConfig';
 import { Menu, X, Calendar, Sparkles, Moon, Sun } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ onNavigate }) {
   const { isDark, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -22,6 +23,7 @@ export default function Navbar() {
     { name: 'Antes & Depois', href: '#antes-depois' },
     { name: 'Diferenciais', href: '#diferenciais' },
     { name: 'Sobre', href: '#sobre' },
+    { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Localização', href: '#localizacao' },
     { name: 'Dúvidas', href: '#faq' },
   ];
@@ -35,9 +37,11 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? isDark
-            ? 'bg-black/90 backdrop-blur-md border-b border-[#202028] shadow-lg shadow-black/60 py-3'
-            : 'bg-white/90 backdrop-blur-md border-b border-rose-100 shadow-md shadow-rose-950/5 py-3'
-          : 'bg-transparent py-4 md:py-6'
+            ? 'bg-[#000000]/95 backdrop-blur-xl border-b border-[#202028] shadow-lg shadow-black/80 py-2.5 sm:py-3'
+            : 'bg-white/95 backdrop-blur-xl border-b border-rose-100 shadow-md shadow-rose-950/5 py-2.5 sm:py-3'
+          : isDark
+            ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/5 py-3 sm:py-4 md:py-5'
+            : 'bg-[#fffafb]/80 backdrop-blur-md border-b border-rose-100/50 py-3 sm:py-4 md:py-5'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -129,10 +133,10 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed inset-x-0 top-[60px] p-4 transition-all duration-300 ease-in-out lg:hidden ${
+        className={`absolute inset-x-0 top-full p-4 transition-all duration-300 ease-in-out lg:hidden ${
           isOpen
             ? 'opacity-100 pointer-events-auto translate-y-0'
-            : 'opacity-0 pointer-events-none -translate-y-4'
+            : 'opacity-0 pointer-events-none -translate-y-2'
         }`}
       >
         <div

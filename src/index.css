@@ -35,16 +35,14 @@ button:active, a:active, [role="button"]:active {
 @keyframes viewEnter {
   0% {
     opacity: 0;
-    transform: translateY(8px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .view-enter {
-  animation: viewEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: viewEnter 0.2s ease-out;
 }
 
 /* Scrollbar styling */
