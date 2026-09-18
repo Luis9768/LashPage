@@ -165,6 +165,13 @@ export const siteConfig = {
       tag: "Cliente mensal",
       stars: 5,
       technique: "Volume Russo"
+    },
+    {
+      name: "Juliana M.",
+      text: "O Lash Lifting superou todas as minhas expectativas! Meus cílios ficaram curvados e definidos com um efeito muito natural. A durabilidade e o cuidado da Vitória são impecáveis.",
+      tag: "Cliente assídua",
+      stars: 5,
+      technique: "Lash Lifting"
     }
   ],
 
