@@ -91,14 +91,6 @@ export default function IntroStream({ onComplete }) {
           </button>
         </div>
       </div>
-
-      {/* Skip Button in Bottom Right */}
-      <button
-        onClick={handleEnterSite}
-        className="absolute bottom-6 sm:bottom-8 text-xs text-neutral-400 hover:text-white transition-colors tracking-wider uppercase font-medium px-4 py-2"
-      >
-        Pular introdução →
-      </button>
     </div>
   );
 }
