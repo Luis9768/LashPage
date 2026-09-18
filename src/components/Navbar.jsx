@@ -34,6 +34,26 @@ export default function Navbar({ onNavigate }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  // Bloquear scroll de fundo quando o menu lateral estiver aberto
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  // Fechar no Escape
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const quickLinks = [
     {
@@ -218,131 +238,151 @@ export default function Navbar({ onNavigate }) {
         </div>
       </div>
 
-      {/* Backdrop overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* Drawer Menu / Dropdown com os 5 Caminhos e Navegação */}
+      {/* Backdrop overlay para fechamento ao clicar fora */}
       <div
-        className={`absolute top-full right-0 left-0 lg:left-auto lg:right-6 lg:w-[420px] p-3 sm:p-4 z-50 transition-all duration-300 ease-out ${
-          isOpen
-            ? 'opacity-100 pointer-events-auto translate-y-0'
-            : 'opacity-0 pointer-events-none -translate-y-2'
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
+        onClick={() => setIsOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Menu Lateral (Abertura Lateral à Direita / Offcanvas Drawer) */}
+      <aside
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[86vw] max-w-[380px] h-full h-[100dvh] transition-transform duration-300 ease-out flex flex-col border-l shadow-2xl ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        } ${
+          isDark
+            ? 'bg-[#0d0d11] border-[#22222a] text-white'
+            : 'bg-[#F6F4F0] border-[#E2DAD0] text-neutral-900'
+        }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu Lateral de Atalhos"
       >
-        <div
-          className={`rounded-3xl p-5 sm:p-6 shadow-2xl border backdrop-blur-2xl flex flex-col max-h-[85vh] overflow-y-auto ${
-            isDark
-              ? 'bg-[#0d0d11]/98 border-[#22222a] shadow-black text-white'
-              : 'bg-[#F6F4F0]/98 border-[#E2DAD0] shadow-2xl shadow-stone-900/15 text-neutral-900'
-          }`}
-        >
-          {/* Header do Drawer */}
-          <div className="flex items-center justify-between pb-3 mb-3 border-b border-neutral-200/70 dark:border-neutral-800/70">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-rose-500" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-rose-500">
-                Atalhos & Caminhos
-              </span>
-            </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="p-1 rounded-lg text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"
-              aria-label="Fechar menu"
-            >
-              <X className="w-5 h-5" />
-            </button>
+        {/* Header do Menu Lateral */}
+        <div className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0">
+          <div className="flex flex-col">
+            <span className="font-heading text-lg font-bold tracking-tight">
+              <span className={isDark ? 'text-white' : 'text-neutral-900'}>Vittoria's</span>
+              <span className="text-rose-500 font-serif italic ml-1">Studio</span>
+            </span>
+            <span className={`text-[9px] tracking-[0.2em] uppercase font-medium ${
+              isDark ? 'text-rose-300/70' : 'text-rose-900/70'
+            }`}>
+              Atalhos & Navegação
+            </span>
           </div>
 
-          {/* Os 5 Caminhos Principais */}
-          <div className="space-y-2.5 mb-5">
-            {quickLinks.map((link, idx) => {
-              const Icon = link.icon;
-              const buttonClasses = `group w-full p-3 sm:p-3.5 rounded-2xl border transition-all duration-150 flex items-center justify-between text-left cursor-pointer active:scale-[0.98] select-none ${
-                link.highlight
-                  ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-md shadow-rose-600/20 hover:brightness-105'
-                  : isDark
-                  ? 'bg-[#121216] border-[#22222b] hover:border-rose-500/50 hover:bg-[#18181f] text-white'
-                  : 'bg-white border-[#E2DAD0] hover:border-rose-300 hover:bg-[#FAF8F5] text-neutral-800 shadow-sm'
-              }`;
+          <button
+            onClick={() => setIsOpen(false)}
+            className={`p-2 rounded-xl border transition-colors ${
+              isDark
+                ? 'border-neutral-800 text-neutral-300 hover:bg-neutral-800 hover:text-white'
+                : 'border-[#E2DAD0] text-neutral-700 hover:bg-white hover:text-neutral-900'
+            }`}
+            aria-label="Fechar menu lateral"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
-              const innerContent = (
-                <>
-                  <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                      link.highlight ? 'bg-white/20 text-white' : link.iconBg
-                    }`}>
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className={`text-xs sm:text-sm font-bold ${
-                        link.highlight ? 'text-white' : isDark ? 'text-white' : 'text-neutral-900'
-                      }`}>
-                        {link.title}
-                      </p>
-                      <p className={`text-[11px] ${
-                        link.highlight ? 'text-rose-100' : isDark ? 'text-neutral-400' : 'text-neutral-500'
-                      }`}>
-                        {link.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                  <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-0.5 ${
-                    link.highlight ? 'text-white/80' : isDark ? 'text-neutral-500' : 'text-neutral-400'
-                  }`} />
-                </>
-              );
+        {/* Conteúdo Rolável do Drawer */}
+        <div className="flex-1 overflow-y-auto px-5 sm:px-6 py-5 space-y-6">
+          {/* Section: Atalhos & Caminhos */}
+          <div>
+            <div className="flex items-center gap-1.5 mb-3 px-1">
+              <Sparkles className="w-3.5 h-3.5 text-rose-500" />
+              <p className="text-[11px] font-bold uppercase tracking-wider text-rose-500">
+                Atalhos & Caminhos
+              </p>
+            </div>
 
-              if (link.view) {
+            <div className="space-y-2.5">
+              {quickLinks.map((link, idx) => {
+                const Icon = link.icon;
+                const buttonClasses = `group w-full p-3 sm:p-3.5 rounded-2xl border transition-all duration-150 flex items-center justify-between text-left cursor-pointer active:scale-[0.98] select-none ${
+                  link.highlight
+                    ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-md shadow-rose-600/20 hover:brightness-105'
+                    : isDark
+                    ? 'bg-[#121216] border-[#22222b] hover:border-rose-500/50 hover:bg-[#18181f] text-white'
+                    : 'bg-white border-[#E2DAD0] hover:border-rose-300 hover:bg-[#FAF8F5] text-neutral-800 shadow-sm'
+                }`;
+
+                const innerContent = (
+                  <>
+                    <div className="flex items-center gap-3">
+                      <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                        link.highlight ? 'bg-white/20 text-white' : link.iconBg
+                      }`}>
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </div>
+                      <div>
+                        <p className={`text-xs sm:text-sm font-bold ${
+                          link.highlight ? 'text-white' : isDark ? 'text-white' : 'text-neutral-900'
+                        }`}>
+                          {link.title}
+                        </p>
+                        <p className={`text-[11px] ${
+                          link.highlight ? 'text-rose-100' : isDark ? 'text-neutral-400' : 'text-neutral-500'
+                        }`}>
+                          {link.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-0.5 ${
+                      link.highlight ? 'text-white/80' : isDark ? 'text-neutral-500' : 'text-neutral-400'
+                    }`} />
+                  </>
+                );
+
+                if (link.view) {
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => {
+                        setIsOpen(false);
+                        onNavigate && onNavigate(link.view);
+                      }}
+                      className={buttonClasses}
+                    >
+                      {innerContent}
+                    </button>
+                  );
+                }
+
                 return (
-                  <button
+                  <a
                     key={idx}
-                    type="button"
-                    onClick={() => {
-                      setIsOpen(false);
-                      onNavigate && onNavigate(link.view);
-                    }}
+                    href={link.href}
+                    target={link.isExternal ? "_blank" : undefined}
+                    rel={link.isExternal ? "noopener noreferrer" : undefined}
+                    onClick={() => setIsOpen(false)}
                     className={buttonClasses}
                   >
                     {innerContent}
-                  </button>
+                  </a>
                 );
-              }
-
-              return (
-                <a
-                  key={idx}
-                  href={link.href}
-                  target={link.isExternal ? "_blank" : undefined}
-                  rel={link.isExternal ? "noopener noreferrer" : undefined}
-                  onClick={() => setIsOpen(false)}
-                  className={buttonClasses}
-                >
-                  {innerContent}
-                </a>
-              );
-            })}
+              })}
+            </div>
           </div>
 
-          {/* Navegação da Página */}
-          <div className="pt-3 border-t border-neutral-200/70 dark:border-neutral-800/70">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-neutral-400 mb-2 px-1">
+          {/* Section: Navegação da Página */}
+          <div className="pt-4 border-t border-neutral-200/70 dark:border-neutral-800/70">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 mb-3 px-1">
               Navegação da Página
             </p>
-            <div className="grid grid-cols-2 gap-1.5">
+            <div className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={handleLinkClick}
-                  className={`px-3 py-2 rounded-xl text-xs sm:text-sm font-medium transition-colors ${
+                  className={`px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-colors border ${
                     isDark
-                      ? 'text-neutral-300 hover:text-rose-400 hover:bg-neutral-800/50'
-                      : 'text-neutral-700 hover:text-rose-600 hover:bg-rose-50/60'
+                      ? 'text-neutral-300 border-neutral-800/60 hover:border-rose-500/40 hover:text-rose-400 hover:bg-neutral-800/40'
+                      : 'text-neutral-700 border-[#E2DAD0]/60 hover:border-rose-300 hover:text-rose-600 hover:bg-white'
                   }`}
                 >
                   {link.name}
@@ -351,7 +391,25 @@ export default function Navbar({ onNavigate }) {
             </div>
           </div>
         </div>
-      </div>
+
+        {/* Footer do Menu Lateral */}
+        <div className="p-4 sm:p-5 border-t border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0 flex items-center justify-between text-xs">
+          <span className={isDark ? 'text-neutral-400' : 'text-neutral-600'}>
+            Santo André • SP
+          </span>
+          <button
+            onClick={toggleTheme}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium transition-colors ${
+              isDark
+                ? 'border-neutral-800 text-rose-300 hover:bg-neutral-800'
+                : 'border-[#E2DAD0] text-rose-700 hover:bg-white'
+            }`}
+          >
+            {isDark ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
+            <span>{isDark ? 'Tema Claro' : 'Tema Escuro'}</span>
+          </button>
+        </div>
+      </aside>
     </header>
   );
 }
