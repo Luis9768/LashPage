@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { siteConfig } from '../config/siteConfig';
-import { Calendar, MessageCircle, MapPin, Sparkles, ChevronDown, CheckCircle2, Star, Eye } from 'lucide-react';
+import { Calendar, MapPin, Sparkles, CheckCircle2, Star, Eye } from 'lucide-react';
 
 function WhatsAppIcon({ className = "w-5 h-5" }) {
   return (
@@ -24,51 +24,51 @@ function InstagramIcon({ className = "w-5 h-5" }) {
 export default function Hero({ onNavigate }) {
   const { isDark } = useTheme();
 
-  const quickLinks = [
+  const quickActions = [
     {
       title: "Agendar Horário Online",
-      subtitle: "Escolha dia e técnica direto na agenda",
+      shortLabel: "Agendar",
       href: siteConfig.bookingUrl,
       icon: Calendar,
       isExternal: true,
       highlight: true,
-      iconBg: "bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-md",
+      iconColor: "text-white",
     },
     {
       title: "Falar no WhatsApp",
-      subtitle: "Dúvidas sobre técnicas e avaliações",
+      shortLabel: "WhatsApp",
       href: siteConfig.whatsappUrl,
       icon: WhatsAppIcon,
       isExternal: true,
       highlight: false,
-      iconBg: "bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/40",
+      iconColor: "text-[#25D366]",
     },
     {
       title: "Catálogo de Cílios & Técnicas",
-      subtitle: "Volume Brasileiro, Fio a Fio, Russo...",
+      shortLabel: "Catálogo",
       view: "catalog",
       icon: Eye,
       isExternal: false,
       highlight: false,
-      iconBg: "bg-rose-500/20 text-rose-400 border border-rose-500/30",
+      iconColor: "text-rose-500",
     },
     {
       title: "Localização do Studio",
-      subtitle: "Rua General Glicério, 926 - Centro Santo André",
+      shortLabel: "Local",
       view: "location",
       icon: MapPin,
       isExternal: false,
       highlight: false,
-      iconBg: "bg-amber-500/20 text-amber-400 border border-amber-500/30",
+      iconColor: "text-amber-500",
     },
     {
       title: "Instagram @vittorias.studio",
-      subtitle: "Acompanhe resultados diários e novidades",
+      shortLabel: "Instagram",
       href: siteConfig.instagramUrl,
       icon: InstagramIcon,
       isExternal: true,
       highlight: false,
-      iconBg: "bg-pink-500/20 text-pink-400 border border-pink-500/30",
+      iconColor: "text-pink-500",
     },
   ];
 
@@ -202,73 +202,67 @@ export default function Hero({ onNavigate }) {
 
 
 
-            {/* Action Buttons List (Estilo Linktree Elegante / Bio) */}
-            <div className="space-y-3">
-              {quickLinks.map((link, idx) => {
-                const Icon = link.icon;
-                const buttonClasses = `group w-full p-3.5 sm:p-4 rounded-2xl border transition-all duration-150 flex items-center justify-between text-left cursor-pointer active:scale-[0.97] active:ring-2 active:ring-rose-500/40 select-none ${
-                  link.highlight
-                    ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-lg shadow-rose-600/25 hover:scale-[1.01] active:brightness-90'
-                    : isDark
-                    ? 'bg-[#121216] border-[#22222b] hover:border-rose-500/50 hover:bg-[#18181f] text-white shadow-sm active:bg-[#1f1f2a] active:border-rose-500'
-                    : 'bg-white border-[#E2DAD0] hover:border-rose-300 hover:bg-[#FDFBF7] text-neutral-800 shadow-sm active:bg-rose-50 active:border-rose-400'
-                }`;
-
-                const innerContent = (
-                  <>
-                    <div className="flex items-center gap-3.5">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                        link.highlight ? 'bg-white/20 text-white' : link.iconBg
-                      }`}>
-                        <Icon className="w-5 h-5" />
+            {/* Ícones de Ações Rápidas Alinhados Horizontalmente (Abaixo de Alta Durabilidade) */}
+            <div className="pt-5 mt-5 border-t border-neutral-200/70 dark:border-neutral-800/70">
+              <div className="flex items-center justify-between sm:justify-center sm:gap-6 px-1 sm:px-2">
+                {quickActions.map((action, idx) => {
+                  const Icon = action.icon;
+                  const buttonContent = (
+                    <div className="group flex flex-col items-center gap-1.5 cursor-pointer select-none">
+                      <div
+                        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center border transition-all duration-200 active:scale-90 shadow-sm ${
+                          action.highlight
+                            ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white border-rose-400 hover:brightness-105 hover:shadow-md hover:shadow-rose-500/20'
+                            : isDark
+                            ? 'bg-[#121216] border-[#22222b] text-neutral-200 hover:border-rose-500/50 hover:bg-[#181820] hover:text-white'
+                            : 'bg-[#FAF8F5] border-[#E2DAD0] text-neutral-700 hover:border-rose-400 hover:bg-white hover:text-rose-600'
+                        }`}
+                        title={action.title}
+                      >
+                        <Icon className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-200 group-hover:scale-110 ${action.iconColor || ''}`} />
                       </div>
-                      <div>
-                        <p className={`text-xs sm:text-sm font-bold ${
-                          link.highlight ? 'text-white' : isDark ? 'text-white' : 'text-neutral-900'
-                        }`}>
-                          {link.title}
-                        </p>
-                        <p className={`text-[11px] ${
-                          link.highlight ? 'text-rose-100' : isDark ? 'text-neutral-400' : 'text-neutral-500'
-                        }`}>
-                          {link.subtitle}
-                        </p>
-                      </div>
+                      <span
+                        className={`text-[10px] sm:text-[11px] font-medium tracking-tight transition-colors text-center ${
+                          action.highlight
+                            ? 'text-rose-500 font-semibold'
+                            : isDark
+                            ? 'text-neutral-400 group-hover:text-neutral-200'
+                            : 'text-neutral-600 group-hover:text-neutral-900'
+                        }`}
+                      >
+                        {action.shortLabel}
+                      </span>
                     </div>
-
-                    <div className={`p-1 rounded-full transition-transform group-hover:translate-x-0.5 ${
-                      link.highlight ? 'text-white/80' : isDark ? 'text-neutral-500' : 'text-neutral-400'
-                    }`}>
-                      <ChevronDown className="w-4 h-4 -rotate-90" />
-                    </div>
-                  </>
-                );
-
-                if (link.view) {
-                  return (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => onNavigate && onNavigate(link.view)}
-                      className={buttonClasses}
-                    >
-                      {innerContent}
-                    </button>
                   );
-                }
 
-                return (
-                  <a
-                    key={idx}
-                    href={link.href}
-                    target={link.isExternal ? "_blank" : undefined}
-                    rel={link.isExternal ? "noopener noreferrer" : undefined}
-                    className={buttonClasses}
-                  >
-                    {innerContent}
-                  </a>
-                );
-              })}
+                  if (action.view) {
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => onNavigate && onNavigate(action.view)}
+                        aria-label={action.title}
+                        className="focus:outline-none"
+                      >
+                        {buttonContent}
+                      </button>
+                    );
+                  }
+
+                  return (
+                    <a
+                      key={idx}
+                      href={action.href}
+                      target={action.isExternal ? "_blank" : undefined}
+                      rel={action.isExternal ? "noopener noreferrer" : undefined}
+                      aria-label={action.title}
+                      className="focus:outline-none"
+                    >
+                      {buttonContent}
+                    </a>
+                  );
+                })}
+              </div>
             </div>
 
 
