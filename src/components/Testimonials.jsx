@@ -115,7 +115,7 @@ export default function Testimonials() {
                     className={`p-7 sm:p-10 rounded-3xl border flex flex-col justify-between relative transition-all duration-300 min-h-[310px] sm:min-h-[280px] ${
                       isDark
                         ? 'bg-[#0d0d11] border-[#22222a] shadow-xl shadow-black/40'
-                        : 'bg-white border-rose-100 shadow-xl shadow-rose-950/5'
+                        : 'bg-white border-[#E2DAD0] shadow-lg shadow-stone-900/5'
                     }`}
                   >
                     {/* Watermark Quote Icon */}
@@ -175,7 +175,7 @@ export default function Testimonials() {
               className={`w-11 h-11 rounded-full border flex items-center justify-center transition-all active:scale-90 ${
                 isDark
                   ? 'border-neutral-800 text-neutral-300 hover:bg-neutral-800 hover:text-white hover:border-neutral-700'
-                  : 'border-rose-200 text-neutral-700 hover:bg-rose-50 hover:text-rose-600'
+                  : 'border-[#E2DAD0] text-neutral-700 hover:bg-white hover:text-rose-600 shadow-sm'
               }`}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -194,14 +194,14 @@ export default function Testimonials() {
                         ? 'w-7 sm:w-8 bg-gradient-to-r from-rose-500 to-pink-500 shadow-sm shadow-rose-500/50'
                         : isDark
                           ? 'w-2.5 bg-neutral-700 hover:bg-neutral-600'
-                          : 'w-2.5 bg-rose-200 hover:bg-rose-300'
+                          : 'w-2.5 bg-[#D5CCC0] hover:bg-[#BDB2A4]'
                     }`}
                   />
                 ))}
               </div>
 
               <span className={`text-[11px] font-mono tracking-widest ${
-                isDark ? 'text-neutral-500' : 'text-neutral-400'
+                isDark ? 'text-neutral-500' : 'text-neutral-500 font-semibold'
               }`}>
                 0{currentIndex + 1} / 0{totalSlides}
               </span>
@@ -214,7 +214,7 @@ export default function Testimonials() {
               className={`w-11 h-11 rounded-full border flex items-center justify-center transition-all active:scale-90 ${
                 isDark
                   ? 'border-neutral-800 text-neutral-300 hover:bg-neutral-800 hover:text-white hover:border-neutral-700'
-                  : 'border-rose-200 text-neutral-700 hover:bg-rose-50 hover:text-rose-600'
+                  : 'border-[#E2DAD0] text-neutral-700 hover:bg-white hover:text-rose-600 shadow-sm'
               }`}
             >
               <ChevronRight className="w-5 h-5" />

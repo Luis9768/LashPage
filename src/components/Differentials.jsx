@@ -51,7 +51,7 @@ export default function Differentials() {
                 className={`p-7 rounded-3xl border transition-all duration-300 relative group ${
                   isDark
                     ? 'bg-[#0d0d11] border-[#22222a] hover:border-rose-500/50 hover:bg-[#131318]'
-                    : 'bg-white border-rose-100 hover:border-rose-200 shadow-sm hover:shadow-md'
+                    : 'bg-white border-[#E2DAD0] hover:border-rose-300 shadow-sm hover:shadow-md'
                 }`}
 
               >

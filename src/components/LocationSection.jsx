@@ -9,7 +9,7 @@ export default function LocationSection() {
 
   return (
     <section id="localizacao" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#faf5f6]'
+      isDark ? 'bg-[#000000]' : 'bg-[#EFEAE2]'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
@@ -42,7 +42,7 @@ export default function LocationSection() {
           <div className={`p-8 sm:p-10 rounded-3xl border flex flex-col justify-between ${
             isDark
               ? 'bg-[#0d0d11] border-[#22222a] shadow-xl shadow-black/60'
-              : 'bg-white border-rose-100 shadow-xl shadow-rose-950/5'
+              : 'bg-white border-[#E2DAD0] shadow-lg shadow-stone-900/5'
           }`}>
 
             <div>
@@ -61,7 +61,7 @@ export default function LocationSection() {
               {/* Address details */}
               <div className="space-y-4 mb-8">
                 <div className={`p-4 sm:p-5 rounded-2xl border ${
-                  isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-rose-50/60 border-rose-100'
+                  isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-[#F9F7F4] border-[#E2DAD0]'
                 }`}>
                   <p className={`text-base font-bold mb-1 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                     {location.address}

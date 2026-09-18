@@ -33,7 +33,7 @@ export default function Footer() {
     <footer className={`pt-16 pb-28 md:pb-16 border-t transition-colors duration-300 ${
       isDark
         ? 'bg-[#000000] border-[#1a1a22] text-neutral-400'
-        : 'bg-[#faf4f5] border-rose-100 text-neutral-600'
+        : 'bg-[#EAE4DC] border-[#DDD5CA] text-neutral-700'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-rose-500/10">
@@ -64,7 +64,7 @@ export default function Footer() {
                 className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${
                   isDark
                     ? 'border-neutral-800 text-rose-300 hover:bg-neutral-800 hover:text-white'
-                    : 'border-rose-200 text-rose-600 hover:bg-rose-100'
+                    : 'border-[#DDD5CA] text-rose-700 hover:bg-white'
                 }`}
               >
                 <InstagramIcon className="w-5 h-5" />
@@ -78,7 +78,7 @@ export default function Footer() {
                 className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${
                   isDark
                     ? 'border-neutral-800 text-emerald-400 hover:bg-neutral-800 hover:text-white'
-                    : 'border-rose-200 text-emerald-600 hover:bg-emerald-50'
+                    : 'border-[#DDD5CA] text-emerald-700 hover:bg-white'
                 }`}
               >
                 <WhatsAppIcon className="w-5 h-5" />

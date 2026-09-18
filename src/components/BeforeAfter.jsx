@@ -61,7 +61,7 @@ export default function BeforeAfter() {
 
   return (
     <section id="antes-depois" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#fdf9f9]'
+      isDark ? 'bg-[#000000]' : 'bg-[#EFEAE2]'
     }`}>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -150,7 +150,7 @@ export default function BeforeAfter() {
               className={`rounded-2xl overflow-hidden border group transition-all duration-300 ${
                 isDark
                   ? 'bg-neutral-900 border-neutral-800'
-                  : 'bg-white border-rose-100 shadow-sm'
+                  : 'bg-white border-[#E2DAD0] shadow-sm'
               }`}
             >
               <div className="h-60 overflow-hidden relative">

@@ -51,7 +51,7 @@ export default function Faq() {
                       : 'bg-white border-rose-300 shadow-md'
                     : isDark
                     ? 'bg-[#0a0a0c] border-[#1e1e24] hover:border-[#2a2a35]'
-                    : 'bg-white border-rose-100 hover:border-rose-200 shadow-sm'
+                    : 'bg-white border-[#E2DAD0] hover:border-rose-300 shadow-sm'
                 }`}
 
               >

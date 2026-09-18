@@ -83,7 +83,7 @@ export default function Hero({ onNavigate }) {
           className={`rounded-3xl overflow-hidden border shadow-2xl transition-all duration-300 ${
             isDark
               ? 'bg-[#0a0a0c] border-[#1e1e24] shadow-black'
-              : 'bg-white border-rose-100 shadow-xl shadow-rose-950/10'
+              : 'bg-white border-[#E2DAD0] shadow-xl shadow-stone-900/5'
           }`}
         >
           {/* Top Studio Banner */}
@@ -211,7 +211,7 @@ export default function Hero({ onNavigate }) {
                     ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-lg shadow-rose-600/25 hover:scale-[1.01] active:brightness-90'
                     : isDark
                     ? 'bg-[#121216] border-[#22222b] hover:border-rose-500/50 hover:bg-[#18181f] text-white shadow-sm active:bg-[#1f1f2a] active:border-rose-500'
-                    : 'bg-[#faf7f7] border-rose-100 hover:border-rose-300 hover:bg-white text-neutral-800 shadow-sm active:bg-rose-50 active:border-rose-400'
+                    : 'bg-white border-[#E2DAD0] hover:border-rose-300 hover:bg-[#FDFBF7] text-neutral-800 shadow-sm active:bg-rose-50 active:border-rose-400'
                 }`;
 
                 const innerContent = (

@@ -38,10 +38,10 @@ export default function Navbar({ onNavigate }) {
         isScrolled
           ? isDark
             ? 'bg-[#000000]/95 backdrop-blur-xl border-b border-[#202028] shadow-lg shadow-black/80 py-2.5 sm:py-3'
-            : 'bg-white/95 backdrop-blur-xl border-b border-rose-100 shadow-md shadow-rose-950/5 py-2.5 sm:py-3'
+            : 'bg-[#F6F4F0]/95 backdrop-blur-xl border-b border-[#E2DAD0] shadow-sm shadow-stone-900/5 py-2.5 sm:py-3'
           : isDark
             ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/5 py-3 sm:py-4 md:py-5'
-            : 'bg-[#fffafb]/80 backdrop-blur-md border-b border-rose-100/50 py-3 sm:py-4 md:py-5'
+            : 'bg-[#F6F4F0]/85 backdrop-blur-md border-b border-[#E2DAD0]/60 py-3 sm:py-4 md:py-5'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -111,7 +111,7 @@ export default function Navbar({ onNavigate }) {
             className={`p-2 rounded-full border transition-all duration-200 ${
               isDark
                 ? 'border-neutral-800 text-rose-300'
-                : 'border-rose-200 text-rose-700'
+                : 'border-[#E2DAD0] text-rose-700 hover:bg-white'
             }`}
           >
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -123,7 +123,7 @@ export default function Navbar({ onNavigate }) {
             className={`p-2 rounded-xl border transition-colors ${
               isDark
                 ? 'border-neutral-800 text-neutral-200 hover:bg-neutral-800'
-                : 'border-rose-200 text-neutral-800 hover:bg-rose-50'
+                : 'border-[#E2DAD0] text-neutral-800 hover:bg-white'
             }`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -143,7 +143,7 @@ export default function Navbar({ onNavigate }) {
           className={`rounded-2xl p-6 shadow-2xl border backdrop-blur-xl flex flex-col gap-4 ${
             isDark
               ? 'bg-[#0d0d11]/98 border-[#22222a] shadow-black'
-              : 'bg-white/95 border-rose-200 shadow-rose-950/10'
+              : 'bg-white/98 border-[#E2DAD0] shadow-stone-900/10'
           }`}
 
         >
@@ -156,7 +156,7 @@ export default function Navbar({ onNavigate }) {
                 className={`py-2 text-base font-medium transition-colors border-b last:border-b-0 ${
                   isDark
                     ? 'text-neutral-200 border-neutral-800/80 hover:text-rose-400'
-                    : 'text-neutral-700 border-rose-100 hover:text-rose-600'
+                    : 'text-neutral-700 border-[#E2DAD0] hover:text-rose-600'
                 }`}
               >
                 {link.name}

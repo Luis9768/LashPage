@@ -92,10 +92,10 @@ export default function Services({ onOpenCatalog }) {
                     className="w-full flex-shrink-0 px-2 sm:px-4 box-border flex flex-col"
                   >
                     <div
-                      className={`rounded-3xl overflow-hidden border shadow-2xl transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
+                      className={`rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                         isDark
-                          ? 'bg-[#0d0d11] border-[#22222a] shadow-black'
-                          : 'bg-white border-rose-100 shadow-xl shadow-rose-950/5'
+                          ? 'bg-[#0d0d11] border-[#22222a] shadow-2xl shadow-black'
+                          : 'bg-white border-[#E2DAD0] shadow-lg shadow-stone-900/5'
                       }`}
                     >
                       {/* Image Side */}
@@ -171,47 +171,50 @@ export default function Services({ onOpenCatalog }) {
               {/* Slide 5: Card de Catálogo com exatamente o mesmo tamanho e proporção */}
               <div className="w-full flex-shrink-0 px-2 sm:px-4 box-border flex flex-col">
                 <div
-                  className={`rounded-3xl overflow-hidden border shadow-2xl transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
+                  className={`rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                     isDark
-                      ? 'bg-gradient-to-br from-[#131118] via-[#0d0d11] to-[#0a0a0c] border-rose-500/30 shadow-black'
-                      : 'bg-gradient-to-br from-rose-50 via-white to-rose-100/40 border-rose-200 shadow-xl shadow-rose-950/5'
+                      ? 'bg-[#0d0d11] border-[#22222a] shadow-2xl shadow-black'
+                      : 'bg-white border-[#E2DAD0] shadow-lg shadow-stone-900/5'
                   }`}
                 >
                   {/* Image Side */}
-                  <div className="md:col-span-5 lg:col-span-5 relative h-48 sm:h-52 md:h-full overflow-hidden flex-shrink-0 bg-neutral-950">
+                  <div className={`md:col-span-5 lg:col-span-5 relative h-48 sm:h-52 md:h-full overflow-hidden flex-shrink-0 transition-colors ${
+                    isDark ? 'bg-neutral-950' : 'bg-stone-100'
+                  }`}>
                     <img
-                      src="/studio-banner.jpg"
+                      src="/studio-banner-harmony.jpg"
                       alt="Catálogo de Procedimentos"
-                      className="w-full h-full object-cover object-center opacity-85 hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    <div className={`absolute inset-0 transition-colors ${
+                      isDark
+                        ? 'bg-gradient-to-t from-black/80 via-black/30 to-transparent'
+                        : 'bg-gradient-to-t from-white/80 via-white/20 to-transparent'
+                    }`}></div>
 
                     <div className="absolute top-3.5 left-3.5">
-                      <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wide bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-md">
+                      <span className={`px-3 py-1 rounded-full text-[11px] font-bold tracking-wide shadow-md transition-colors ${
+                        isDark 
+                          ? 'bg-gradient-to-r from-rose-500 to-pink-500 text-white' 
+                          : 'bg-white/95 text-rose-900 border border-rose-200'
+                      }`}>
                         Tabela Completa
                       </span>
                     </div>
 
-                    <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white text-[11px]">
-                      <p className="font-semibold text-rose-300">Vittoria's Studio</p>
-                      <p className="text-[10px] text-neutral-300">Técnicas sob medida</p>
+                    <div className="absolute bottom-3.5 left-3.5 right-3.5 text-[11px]">
+                      <p className={`font-semibold ${isDark ? 'text-rose-300' : 'text-rose-900'}`}>Vittoria's Studio</p>
+                      <p className={`text-[10px] ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>Técnicas sob medida</p>
                     </div>
                   </div>
 
                   {/* Content Side */}
                   <div className="md:col-span-7 lg:col-span-7 p-5 sm:p-7 flex flex-col justify-between flex-1 overflow-hidden">
                     <div>
-                      <div className="flex items-center justify-between gap-2 mb-1.5">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-rose-500">
-                          Catálogo Completo
-                        </span>
-                        <span className={`text-[11px] px-2.5 py-0.5 rounded-full font-medium ${
-                          isDark ? 'bg-neutral-800 text-neutral-300' : 'bg-rose-50 text-rose-800'
-                        }`}>
-                          Studio Vittoria
-                        </span>
-                      </div>
+                      <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-rose-500 mb-2">
+                        Catálogo Completo
+                      </span>
 
                       <h3 className={`font-heading text-xl sm:text-2xl font-bold mb-1 tracking-tight ${
                         isDark ? 'text-white' : 'text-neutral-900'
