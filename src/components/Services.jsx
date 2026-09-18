@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { siteConfig } from '../config/siteConfig';
 import { Clock, Calendar, Sparkles, ChevronLeft, ChevronRight, ArrowUpRight, ArrowRight, Eye, CheckCircle2 } from 'lucide-react';
@@ -6,6 +6,7 @@ import { Clock, Calendar, Sparkles, ChevronLeft, ChevronRight, ArrowUpRight, Arr
 export default function Services({ onOpenCatalog }) {
   const { isDark } = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const carouselRef = useRef(null);
 
   // Exibir os 4 serviços no carrossel de destaque
@@ -25,6 +26,7 @@ export default function Services({ onOpenCatalog }) {
   const [touchEndX, setTouchEndX] = useState(null);
 
   const handleTouchStart = (e) => {
+    setIsPaused(true);
     setTouchEndX(null);
     setTouchStartX(e.targetTouches[0].clientX);
   };
@@ -34,6 +36,7 @@ export default function Services({ onOpenCatalog }) {
   };
 
   const handleTouchEnd = () => {
+    setIsPaused(false);
     if (!touchStartX || !touchEndX) return;
     const diff = touchStartX - touchEndX;
     if (diff > 45) {
@@ -42,6 +45,16 @@ export default function Services({ onOpenCatalog }) {
       prevSlide();
     }
   };
+
+  // Autoplay a cada 3 segundos com pausa ao interagir
+  useEffect(() => {
+    if (isPaused || totalSlides <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, totalSlides]);
 
   return (
     <section id="tecnicas" className="py-20 sm:py-28 relative">
@@ -70,7 +83,11 @@ export default function Services({ onOpenCatalog }) {
         </div>
 
         {/* Carousel Container (Mobile & Desktop) */}
-        <div className="relative max-w-4xl mx-auto">
+        <div 
+          className="relative max-w-4xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           
           {/* Main Carousel Card Slider */}
           <div

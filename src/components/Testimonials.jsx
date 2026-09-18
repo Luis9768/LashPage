@@ -47,12 +47,12 @@ export default function Testimonials() {
     }
   };
 
-  // Autoplay com pausa ao interagir
+  // Autoplay com pausa ao interagir (a cada 3 segundos)
   useEffect(() => {
     if (isPaused || totalSlides <= 1) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-    }, 6500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isPaused, totalSlides]);
