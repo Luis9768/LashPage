@@ -127,141 +127,150 @@ export default function Navbar({ onNavigate }) {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? isDark
-            ? 'bg-[#000000]/95 backdrop-blur-xl border-b border-[#202028] shadow-lg shadow-black/80 py-2.5 sm:py-3'
-            : 'bg-[#F6F4F0]/95 backdrop-blur-xl border-b border-[#E2DAD0] shadow-sm shadow-stone-900/5 py-2.5 sm:py-3'
-          : isDark
-            ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/5 py-3 sm:py-4 md:py-5'
-            : 'bg-[#F6F4F0]/85 backdrop-blur-md border-b border-[#E2DAD0]/60 py-3 sm:py-4 md:py-5'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        {/* Brand / Logo */}
-        <a href="#inicio" className="group flex flex-col items-start text-left">
-          <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300">
-            <span className={isDark ? 'text-white' : 'text-neutral-900'}>Vittoria's</span>
-            <span className="text-rose-500 font-serif italic text-lg sm:text-xl ml-1">Studio</span>
-          </span>
-          <span className={`text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-medium transition-colors ${
-            isDark ? 'text-rose-300/70 group-hover:text-rose-300' : 'text-rose-900/70 group-hover:text-rose-900'
-          }`}>
-            Santo André • SP
-          </span>
-        </a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-rose-500 ${
-                isDark ? 'text-neutral-300' : 'text-neutral-700'
-              }`}
-            >
-              {link.name}
-            </a>
-          ))}
-        </nav>
-
-        {/* Actions (Desktop) */}
-        <div className="hidden lg:flex items-center gap-3">
-          {/* Quick theme toggle */}
-          <button
-            onClick={toggleTheme}
-            aria-label="Alternar Tema"
-            title={isDark ? "Mudar para Rosa & Branco" : "Mudar para Rosa & Preto"}
-            className={`p-2 rounded-full border transition-all duration-200 ${
-              isDark
-                ? 'border-neutral-800 text-rose-300 hover:bg-neutral-800/80 hover:text-rose-400'
-                : 'border-rose-200 text-rose-700 hover:bg-rose-50 hover:text-rose-800'
-            }`}
-          >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
-
-          {/* Primary CTA */}
-          <a
-            href={siteConfig.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative group overflow-hidden px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 shadow-md hover:shadow-rose-500/25 hover:shadow-lg transition-all duration-300 transform active:scale-95 flex items-center gap-2"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>Agendar Horário</span>
-            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent"></span>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled
+            ? isDark
+              ? 'bg-[#000000]/95 backdrop-blur-xl border-b border-[#202028] shadow-lg shadow-black/80 py-2.5 sm:py-3'
+              : 'bg-[#F6F4F0]/95 backdrop-blur-xl border-b border-[#E2DAD0] shadow-sm shadow-stone-900/5 py-2.5 sm:py-3'
+            : isDark
+              ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/5 py-3 sm:py-4 md:py-5'
+              : 'bg-[#F6F4F0]/85 backdrop-blur-md border-b border-[#E2DAD0]/60 py-3 sm:py-4 md:py-5'
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+          {/* Brand / Logo */}
+          <a href="#inicio" className="group flex flex-col items-start text-left">
+            <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300">
+              <span className={isDark ? 'text-white' : 'text-neutral-900'}>Vittoria's</span>
+              <span className="text-rose-500 font-serif italic text-lg sm:text-xl ml-1">Studio</span>
+            </span>
+            <span className={`text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-medium transition-colors ${
+              isDark ? 'text-rose-300/70 group-hover:text-rose-300' : 'text-rose-900/70 group-hover:text-rose-900'
+            }`}>
+              Santo André • SP
+            </span>
           </a>
 
-          {/* Hamburger Menu & Quick Paths Toggle (Desktop) */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Abrir Menu de Atalhos"
-            title="Atalhos & Menu"
-            className={`p-2 rounded-xl border transition-colors ${
-              isDark
-                ? 'border-neutral-800 text-neutral-200 hover:bg-neutral-800'
-                : 'border-[#E2DAD0] text-neutral-800 hover:bg-white'
-            }`}
-          >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-7">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`text-sm font-medium transition-colors duration-200 hover:text-rose-500 ${
+                  isDark ? 'text-neutral-300' : 'text-neutral-700'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
 
-        {/* Mobile Controls (Theme Toggle & 3 Bars Hamburger) */}
-        <div className="flex items-center gap-2 lg:hidden">
-          <button
-            onClick={toggleTheme}
-            aria-label="Alternar Tema"
-            className={`p-2 rounded-full border transition-all duration-200 ${
-              isDark
-                ? 'border-neutral-800 text-rose-300'
-                : 'border-[#E2DAD0] text-rose-700 hover:bg-white'
-            }`}
-          >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
+          {/* Actions (Desktop) */}
+          <div className="hidden lg:flex items-center gap-3">
+            {/* Quick theme toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label="Alternar Tema"
+              title={isDark ? "Mudar para Rosa & Branco" : "Mudar para Rosa & Preto"}
+              className={`p-2 rounded-full border transition-all duration-200 ${
+                isDark
+                  ? 'border-neutral-800 text-rose-300 hover:bg-neutral-800/80 hover:text-rose-400'
+                  : 'border-rose-200 text-rose-700 hover:bg-rose-50 hover:text-rose-800'
+              }`}
+            >
+              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Abrir Menu de Atalhos"
-            className={`p-2 rounded-xl border transition-colors ${
-              isDark
-                ? 'border-neutral-800 text-neutral-200 hover:bg-neutral-800'
-                : 'border-[#E2DAD0] text-neutral-800 hover:bg-white'
-            }`}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Primary CTA */}
+            <a
+              href={siteConfig.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group overflow-hidden px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 shadow-md hover:shadow-rose-500/25 hover:shadow-lg transition-all duration-300 transform active:scale-95 flex items-center gap-2"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Agendar Horário</span>
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent"></span>
+            </a>
+
+            {/* Hamburger Menu & Quick Paths Toggle (Desktop) */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Abrir Menu de Atalhos"
+              title="Atalhos & Menu"
+              className={`p-2 rounded-xl border transition-colors ${
+                isDark
+                  ? 'border-neutral-800 text-neutral-200 hover:bg-neutral-800'
+                  : 'border-[#E2DAD0] text-neutral-800 hover:bg-white'
+              }`}
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+
+          {/* Mobile Controls (Theme Toggle & 3 Bars Hamburger) */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={toggleTheme}
+              aria-label="Alternar Tema"
+              className={`p-2 rounded-full border transition-all duration-200 ${
+                isDark
+                  ? 'border-neutral-800 text-rose-300'
+                  : 'border-[#E2DAD0] text-rose-700 hover:bg-white'
+              }`}
+            >
+              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Abrir Menu de Atalhos"
+              className={`p-2 rounded-xl border transition-colors ${
+                isDark
+                  ? 'border-neutral-800 text-neutral-200 hover:bg-neutral-800'
+                  : 'border-[#E2DAD0] text-neutral-800 hover:bg-white'
+              }`}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* Backdrop overlay para fechamento ao clicar fora */}
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/75 z-50 transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
+        style={{ backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}
         onClick={() => setIsOpen(false)}
         aria-hidden="true"
       />
 
       {/* Menu Lateral (Abertura Lateral à Direita / Offcanvas Drawer) */}
       <aside
-        className={`fixed top-0 right-0 bottom-0 z-50 w-[86vw] max-w-[380px] h-full h-[100dvh] transition-transform duration-300 ease-out flex flex-col border-l shadow-2xl ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[86vw] max-w-[380px] h-screen h-[100dvh] transition-transform duration-300 ease-out flex flex-col border-l shadow-2xl ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } ${
           isDark
-            ? 'bg-[#0d0d11] border-[#22222a] text-white'
-            : 'bg-[#F6F4F0] border-[#E2DAD0] text-neutral-900'
+            ? 'border-[#22222a] text-white'
+            : 'border-[#E2DAD0] text-neutral-900'
         }`}
+        style={{
+          backgroundColor: isDark ? '#0d0d11' : '#F6F4F0',
+        }}
         role="dialog"
         aria-modal="true"
         aria-label="Menu Lateral de Atalhos"
       >
         {/* Header do Menu Lateral */}
-        <div className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0">
+        <div
+          className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0"
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#F6F4F0' }}
+        >
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold tracking-tight">
               <span className={isDark ? 'text-white' : 'text-neutral-900'}>Vittoria's</span>
@@ -288,7 +297,10 @@ export default function Navbar({ onNavigate }) {
         </div>
 
         {/* Conteúdo Rolável do Drawer */}
-        <div className="flex-1 overflow-y-auto px-5 sm:px-6 py-5 space-y-6">
+        <div
+          className="flex-1 overflow-y-auto px-5 sm:px-6 py-5 space-y-6"
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#F6F4F0' }}
+        >
           {/* Section: Atalhos & Caminhos */}
           <div>
             <div className="flex items-center gap-1.5 mb-3 px-1">
@@ -305,7 +317,7 @@ export default function Navbar({ onNavigate }) {
                   link.highlight
                     ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-md shadow-rose-600/20 hover:brightness-105'
                     : isDark
-                    ? 'bg-[#121216] border-[#22222b] hover:border-rose-500/50 hover:bg-[#18181f] text-white'
+                    ? 'bg-[#181820] border-[#22222b] hover:border-rose-500/50 hover:bg-[#1e1e28] text-white'
                     : 'bg-white border-[#E2DAD0] hover:border-rose-300 hover:bg-[#FAF8F5] text-neutral-800 shadow-sm'
                 }`;
 
@@ -393,7 +405,10 @@ export default function Navbar({ onNavigate }) {
         </div>
 
         {/* Footer do Menu Lateral */}
-        <div className="p-4 sm:p-5 border-t border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0 flex items-center justify-between text-xs">
+        <div
+          className="p-4 sm:p-5 border-t border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0 flex items-center justify-between text-xs"
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#F6F4F0' }}
+        >
           <span className={isDark ? 'text-neutral-400' : 'text-neutral-600'}>
             Santo André • SP
           </span>
@@ -410,6 +425,6 @@ export default function Navbar({ onNavigate }) {
           </button>
         </div>
       </aside>
-    </header>
+    </>
   );
 }
