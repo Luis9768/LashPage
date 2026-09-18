@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-rose-500/10">
           
           {/* Brand Col */}
-          <div className="md:col-span-5 flex flex-col items-start">
+          <div className="md:col-span-7 flex flex-col items-start">
             <a href="#inicio" className="group flex flex-col items-start mb-4">
               <span className="font-heading text-2xl font-bold tracking-tight">
                 <span className={isDark ? 'text-white' : 'text-neutral-900'}>Vittoria's</span>
@@ -51,7 +51,7 @@ export default function Footer() {
             </a>
 
 
-            <p className="text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
+            <p className="text-xs sm:text-sm leading-relaxed max-w-md mb-6">
               Studio especializado em extensão de cílios, biossegurança e realce do olhar. Cuidado milimétrico e respeito à saúde dos seus fios naturais.
             </p>
 
@@ -86,25 +86,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-3">
-            <h4 className={`text-xs font-bold tracking-wider uppercase mb-4 ${
-              isDark ? 'text-white' : 'text-neutral-900'
-            }`}>
-              Navegação
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li><a href="#inicio" className="hover:text-rose-500 transition-colors">Início</a></li>
-              <li><a href="#tecnicas" className="hover:text-rose-500 transition-colors">Técnicas e Procedimentos</a></li>
-              <li><a href="#antes-depois" className="hover:text-rose-500 transition-colors">Antes & Depois</a></li>
-              <li><a href="#diferenciais" className="hover:text-rose-500 transition-colors">Diferenciais</a></li>
-              <li><a href="#localizacao" className="hover:text-rose-500 transition-colors">Localização em Santo André</a></li>
-              <li><a href="#faq" className="hover:text-rose-500 transition-colors">Dúvidas Frequentes</a></li>
-            </ul>
-          </div>
-
           {/* Location & Booking */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-5 md:pl-4">
             <h4 className={`text-xs font-bold tracking-wider uppercase mb-4 ${
               isDark ? 'text-white' : 'text-neutral-900'
             }`}>
