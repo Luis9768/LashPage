@@ -45,12 +45,14 @@ export default function About() {
           {/* Bio & Content Column */}
           <div className="lg:col-span-7 flex flex-col items-start">
             
-            <div className={`inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 ${
-              isDark
-                ? 'bg-rose-950/60 text-rose-300 border border-rose-800/40'
-                : 'bg-rose-100 text-rose-800 border border-rose-200'
-            }`}>
-              <span>Conheça sua Lash</span>
+            {/* Editorial Luxury Eyebrow */}
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-8 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_10px_rgba(244,63,94,0.4)]" />
+              <span className={`text-xs font-bold tracking-[0.25em] uppercase ${
+                isDark ? 'text-rose-400' : 'text-rose-600'
+              }`}>
+                Conheça sua Lash
+              </span>
             </div>
 
             <h2 className={`font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight ${
