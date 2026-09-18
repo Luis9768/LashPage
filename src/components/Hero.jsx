@@ -105,25 +105,27 @@ export default function Hero({ onNavigate }) {
                 : 'bg-gradient-to-t from-white via-white/20 to-black/15'
             }`}></div>
             
-            {/* Banner Text - High legibility on both themes */}
-            <div className="absolute top-4 sm:top-5 inset-x-0 flex flex-col items-center justify-start text-center px-4 z-10 pointer-events-none">
-              <span className={`px-3.5 py-1 rounded-full text-[10px] tracking-[0.25em] uppercase font-bold backdrop-blur-md border mb-1.5 shadow-sm transition-colors duration-300 ${
-                isDark
-                  ? 'text-rose-300 bg-black/60 border-rose-500/30'
-                  : 'text-rose-950 bg-white/85 border-rose-200 shadow-rose-950/5'
-              }`}>
-                STUDIO DE BELEZA & CÍLIOS
-              </span>
-              <h1 className={`font-heading text-2xl sm:text-3xl font-extrabold tracking-wide transition-colors duration-300 ${
-                isDark ? 'text-white drop-shadow-md' : 'text-neutral-900 drop-shadow-sm'
-              }`}>
-                Vittoria's Studio
+            {/* Banner Text - Pure Editorial Luxury Brand Name Only */}
+            <div className="absolute top-6 sm:top-7 inset-x-0 flex flex-col items-center justify-start text-center px-4 z-10 pointer-events-none">
+              <h1 className="font-heading tracking-tight select-none">
+                <span className={`text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${
+                  isDark 
+                    ? 'text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]' 
+                    : 'text-neutral-900 drop-shadow-[0_2px_12px_rgba(255,255,255,0.95)]'
+                }`}>
+                  Vittoria's
+                </span>
+                <span className="font-serif italic text-2xl sm:text-3xl lg:text-4xl ml-2 font-medium text-rose-500 drop-shadow-sm">
+                  Studio
+                </span>
               </h1>
-              <p className={`text-[11px] sm:text-xs tracking-wider font-medium mt-0.5 transition-colors duration-300 ${
-                isDark ? 'text-neutral-300 drop-shadow-sm' : 'text-neutral-700'
-              }`}>
-                Santo André • SP
-              </p>
+
+              {/* Delicate Atelier Micro-Flourish */}
+              <div className="flex items-center justify-center gap-2 mt-1.5 opacity-70">
+                <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-500"></div>
+                <div className="w-1 h-1 rounded-full bg-rose-500"></div>
+                <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-500"></div>
+              </div>
             </div>
           </div>
 
