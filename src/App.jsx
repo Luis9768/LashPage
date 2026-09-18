@@ -84,6 +84,9 @@ function MainContent() {
               {/* Hero Section com botões de navegação para as sub-telas */}
               <Hero onNavigate={navigateTo} />
 
+              {/* About the Artist (Foco prioritário na Profissional) */}
+              <About />
+
               {/* Services & Techniques */}
               <Services onOpenCatalog={() => navigateTo('catalog')} />
 
@@ -92,9 +95,6 @@ function MainContent() {
 
               {/* Differentials & Safety */}
               <Differentials />
-
-              {/* About the Artist */}
-              <About />
 
               {/* Testimonials */}
               <Testimonials />

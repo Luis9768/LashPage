@@ -7,8 +7,8 @@ export default function About() {
   const { isDark } = useTheme();
 
   return (
-    <section id="sobre" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#faf6f7]'
+    <section id="sobre" className={`py-20 sm:py-28 relative transition-colors border-y ${
+      isDark ? 'bg-[#08080c] border-[#1c1c24]' : 'bg-[#FAF8F5] border-[#E2DAD0]'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

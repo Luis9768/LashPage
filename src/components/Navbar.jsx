@@ -113,10 +113,10 @@ export default function Navbar({ onNavigate }) {
 
   const navLinks = [
     { name: 'Início', href: '#inicio' },
+    { name: 'Sobre', href: '#sobre' },
     { name: 'Técnicas', href: '#tecnicas' },
     { name: 'Antes & Depois', href: '#antes-depois' },
     { name: 'Diferenciais', href: '#diferenciais' },
-    { name: 'Sobre', href: '#sobre' },
     { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Localização', href: '#localizacao' },
     { name: 'Dúvidas', href: '#faq' },
