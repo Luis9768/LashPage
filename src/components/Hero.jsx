@@ -87,25 +87,41 @@ export default function Hero({ onNavigate }) {
           }`}
         >
           {/* Top Studio Banner */}
-          <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-neutral-950">
-            {/* Studio Interior with Chandeliers & Golden Ambient Light */}
+          <div className={`relative h-56 sm:h-64 w-full overflow-hidden transition-colors duration-300 ${
+            isDark ? 'bg-[#0a0a0c]' : 'bg-rose-50/60'
+          }`}>
+            {/* Studio Interior with Warm Champagne, Blush and Neutral Luxury Lighting */}
             <img
-              src="/studio-banner.jpg"
+              src="/studio-banner-harmony.jpg"
               alt="Vittoria's Studio"
-              className="w-full h-full object-cover object-center opacity-85"
+              className={`w-full h-full object-cover object-center transition-all duration-500 ${
+                isDark ? 'opacity-85 brightness-95' : 'opacity-95 brightness-100'
+              }`}
             />
-            {/* Subtle Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/50"></div>
+            {/* Adaptive Gradient Overlays for Light & Dark Mode Harmony */}
+            <div className={`absolute inset-0 transition-colors duration-500 ${
+              isDark
+                ? 'bg-gradient-to-t from-[#0a0a0c] via-black/40 to-black/35'
+                : 'bg-gradient-to-t from-white via-white/20 to-black/15'
+            }`}></div>
             
-            {/* Banner Text - MOVED UP AS REQUESTED (Plenty of clearance above avatar) */}
+            {/* Banner Text - High legibility on both themes */}
             <div className="absolute top-4 sm:top-5 inset-x-0 flex flex-col items-center justify-start text-center px-4 z-10 pointer-events-none">
-              <span className="px-3.5 py-1 rounded-full text-[10px] tracking-[0.25em] uppercase font-bold text-rose-300 bg-black/70 backdrop-blur-md border border-rose-500/30 mb-1.5 shadow-md">
+              <span className={`px-3.5 py-1 rounded-full text-[10px] tracking-[0.25em] uppercase font-bold backdrop-blur-md border mb-1.5 shadow-sm transition-colors duration-300 ${
+                isDark
+                  ? 'text-rose-300 bg-black/60 border-rose-500/30'
+                  : 'text-rose-950 bg-white/85 border-rose-200 shadow-rose-950/5'
+              }`}>
                 STUDIO DE BELEZA & CÍLIOS
               </span>
-              <h1 className="font-heading text-2xl sm:text-3xl font-extrabold text-white tracking-wide drop-shadow-md">
+              <h1 className={`font-heading text-2xl sm:text-3xl font-extrabold tracking-wide transition-colors duration-300 ${
+                isDark ? 'text-white drop-shadow-md' : 'text-neutral-900 drop-shadow-sm'
+              }`}>
                 Vittoria's Studio
               </h1>
-              <p className="text-[11px] sm:text-xs text-neutral-300 tracking-wider font-light mt-0.5">
+              <p className={`text-[11px] sm:text-xs tracking-wider font-medium mt-0.5 transition-colors duration-300 ${
+                isDark ? 'text-neutral-300 drop-shadow-sm' : 'text-neutral-700'
+              }`}>
                 Santo André • SP
               </p>
             </div>
