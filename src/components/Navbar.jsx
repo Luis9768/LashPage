@@ -117,7 +117,6 @@ export default function Navbar({ onNavigate }) {
     { name: 'Técnicas', href: '#tecnicas' },
     { name: 'Antes & Depois', href: '#antes-depois' },
     { name: 'Diferenciais', href: '#diferenciais' },
-    { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Localização', href: '#localizacao' },
     { name: 'Dúvidas', href: '#faq' },
   ];

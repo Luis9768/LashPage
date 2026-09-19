@@ -9,6 +9,7 @@ export const siteConfig = {
   // Imagens principais de exibição
   bannerImage: "/studio-banner.jpg",
   avatarImage: "/vittoria-profile.jpg",
+  heroImage: "/vittoria-hero.jpg",
 
   // Links de Ação (limpos de tokens de rastreamento e configuráveis por ambiente)
   bookingUrl: import.meta.env.VITE_BOOKING_URL || "https://online.maapp.com.br/ilopesstudio",

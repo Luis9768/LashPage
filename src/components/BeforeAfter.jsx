@@ -1,13 +1,26 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { siteConfig } from '../config/siteConfig';
-import { MoveHorizontal, Star, Eye } from 'lucide-react';
+import { MoveHorizontal } from 'lucide-react';
 
 export default function BeforeAfter() {
   const { isDark } = useTheme();
   const [sliderPosition, setSliderPosition] = useState(50);
+  const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef(null);
   const isDragging = useRef(false);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth);
+      }
+    };
+    updateWidth();
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const handleMove = useCallback((clientX) => {
     if (!containerRef.current) return;
@@ -35,29 +48,6 @@ export default function BeforeAfter() {
   const stopDragging = () => {
     isDragging.current = false;
   };
-
-  const galleryItems = [
-    {
-      title: "Volume Brasileiro Marcante",
-      subtitle: "Fios tecnológicos em Y • Retenção de 25 dias",
-      image: "/service-volume-brasileiro.jpg"
-    },
-    {
-      title: "Fio a Fio Delicado",
-      subtitle: "Efeito rímel super natural e leve",
-      image: "/service-fio-a-fio.jpg"
-    },
-    {
-      title: "Volume Russo Glam",
-      subtitle: "Densidade e olhar preenchido",
-      image: "/service-volume-russo.jpg"
-    },
-    {
-      title: "Lash Lifting & Tint",
-      subtitle: "Curvatura natural sem extensão",
-      image: "/service-lash-lifting.jpg"
-    }
-  ];
 
   return (
     <section id="antes-depois" className={`py-20 sm:py-28 relative transition-colors ${
@@ -120,7 +110,7 @@ export default function BeforeAfter() {
                 src="/before-lash-comparison.jpg"
                 alt="Antes: Olhar natural sem extensão"
                 className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
-                style={{ width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%' }}
+                style={{ width: containerWidth ? `${containerWidth}px` : '100%' }}
               />
               <div className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider border border-white/20">
                 Antes (Sem Extensão)
@@ -142,34 +132,6 @@ export default function BeforeAfter() {
             <MoveHorizontal className="w-4 h-4 animate-pulse" />
             <span>Deslize para a esquerda ou direita para comparar</span>
           </div>
-        </div>
-
-        {/* Gallery Showcase Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {galleryItems.map((item, idx) => (
-            <div
-              key={idx}
-              className={`rounded-2xl overflow-hidden border group transition-all duration-300 ${
-                isDark
-                  ? 'bg-neutral-900 border-neutral-800'
-                  : 'bg-white border-[#E2DAD0] shadow-sm'
-              }`}
-            >
-              <div className="h-60 overflow-hidden relative">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <p className="text-sm font-bold">{item.title}</p>
-                  <p className="text-xs text-rose-300">{item.subtitle}</p>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
 
       </div>

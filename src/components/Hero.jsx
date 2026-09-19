@@ -78,78 +78,35 @@ export default function Hero({ onNavigate }) {
     <section id="inicio" className="relative pt-16 sm:pt-20 pb-12 sm:pb-16 overflow-hidden">
       <div className="max-w-xl mx-auto px-4 sm:px-6">
         
-        {/* Main Bio Container (Inspirado no design de perfil de alta conversão) */}
+        {/* Main Bio Container (Editorial Minimalist Profile) */}
         <div
-          className={`rounded-3xl overflow-hidden border shadow-2xl transition-all duration-300 ${
+          className={`rounded-3xl overflow-hidden border shadow-xl transition-all duration-300 ${
             isDark
-              ? 'bg-[#0a0a0c] border-[#1e1e24] shadow-black'
-              : 'bg-white border-[#E2DAD0] shadow-xl shadow-stone-900/5'
+              ? 'bg-[#0a0a0c] border-[#1e1e24] shadow-black/60'
+              : 'bg-white border-[#E2DAD0] shadow-stone-900/5'
           }`}
         >
-          {/* Top Studio Banner */}
-          <div className={`relative h-56 sm:h-64 w-full overflow-hidden transition-colors duration-300 ${
-            isDark ? 'bg-[#0a0a0c]' : 'bg-rose-50/60'
-          }`}>
-            {/* Studio Interior with Warm Champagne, Blush and Neutral Luxury Lighting */}
+          {/* Top Client Photo Banner (Substituindo o antigo banner) */}
+          <div className="relative w-full h-80 sm:h-96 overflow-hidden bg-neutral-950">
             <img
-              src="/studio-banner-harmony.jpg"
-              alt="Vittoria's Studio"
-              className={`w-full h-full object-cover object-center transition-all duration-500 ${
-                isDark ? 'opacity-85 brightness-95' : 'opacity-95 brightness-100'
+              src={siteConfig.heroImage || "/vittoria-hero.jpg"}
+              alt={siteConfig.artistName}
+              className="w-full h-full object-cover object-top"
+              loading="eager"
+            />
+
+            {/* Suave vinheta/degradê inferior */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-t pointer-events-none ${
+                isDark
+                  ? 'from-[#0a0a0c] via-[#0a0a0c]/30 to-transparent'
+                  : 'from-black/45 via-transparent to-transparent'
               }`}
             />
-            {/* Adaptive Gradient Overlays for Light & Dark Mode Harmony */}
-            <div className={`absolute inset-0 transition-colors duration-500 ${
-              isDark
-                ? 'bg-gradient-to-t from-[#0a0a0c] via-black/40 to-black/35'
-                : 'bg-gradient-to-t from-white via-white/20 to-black/15'
-            }`}></div>
-            
-            {/* Banner Text - Pure Editorial Luxury Brand Name Only */}
-            <div className="absolute top-6 sm:top-7 inset-x-0 flex flex-col items-center justify-start text-center px-4 z-10 pointer-events-none">
-              <h1 className="font-heading tracking-tight select-none">
-                <span className={`text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${
-                  isDark 
-                    ? 'text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]' 
-                    : 'text-neutral-900 drop-shadow-[0_2px_12px_rgba(255,255,255,0.95)]'
-                }`}>
-                  Vittoria's
-                </span>
-                <span className="font-serif italic text-2xl sm:text-3xl lg:text-4xl ml-2 font-medium text-rose-500 drop-shadow-sm">
-                  Studio
-                </span>
-              </h1>
-
-              {/* Delicate Atelier Micro-Flourish */}
-              <div className="flex items-center justify-center gap-2 mt-1.5 opacity-70">
-                <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-rose-500"></div>
-                <div className="w-1 h-1 rounded-full bg-rose-500"></div>
-                <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-rose-500"></div>
-              </div>
-            </div>
           </div>
 
-          {/* Profile Avatar & Info Card */}
-          <div className="relative px-5 sm:px-8 pb-8 pt-0">
-            
-            {/* Circular Profile Avatar - NO ONLINE BADGE */}
-            <div className="flex justify-center -mt-14 sm:-mt-16 mb-4 relative z-20">
-              <div className="relative group">
-                {/* Glowing border ring */}
-                <div className="absolute -inset-1 bg-gradient-to-tr from-rose-500 via-pink-400 to-rose-600 rounded-full blur-sm opacity-80 group-hover:opacity-100 transition-opacity"></div>
-                
-                {/* Avatar Image */}
-                <div className={`relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 shadow-2xl ${
-                  isDark ? 'border-[#0a0a0c] bg-neutral-900' : 'border-white bg-rose-50'
-                }`}>
-                  <img
-                    src={siteConfig.avatarImage}
-                    alt={siteConfig.artistName}
-                    className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-            </div>
+          {/* Profile Info Card */}
+          <div className="relative px-5 sm:px-8 pb-8 pt-6">
 
             {/* Title & Bio - Restored exact preferred format */}
             <div className="text-center mb-6">

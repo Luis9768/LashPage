@@ -6,7 +6,6 @@ import Services from './components/Services';
 import BeforeAfter from './components/BeforeAfter';
 import Differentials from './components/Differentials';
 import About from './components/About';
-import Testimonials from './components/Testimonials';
 import LocationSection from './components/LocationSection';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
@@ -95,9 +94,6 @@ function MainContent() {
 
               {/* Differentials & Safety */}
               <Differentials />
-
-              {/* Testimonials */}
-              <Testimonials />
 
               {/* Location in Santo André & Route Maps */}
               <LocationSection onOpenLocationView={() => navigateTo('location')} />
