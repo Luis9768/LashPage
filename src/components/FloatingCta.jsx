@@ -43,7 +43,7 @@ export default function FloatingCta() {
 
       {/* Mobile Fixed Bottom Bar (Sticky Bar for Mobile Phones) */}
       <aside aria-label="Barra de agendamento mobile" className={`md:hidden fixed bottom-0 left-0 right-0 z-40 p-3 backdrop-blur-xl border-t transition-colors shadow-2xl safe-area-bottom ${
-        isDark ? 'bg-black/90 border-[#1c1c22]' : 'bg-[#A38B59]/95 border-white/20'
+        isDark ? 'bg-black/90 border-[#1c1c22]' : 'bg-[#BA9E76]/95 border-white/20'
       }`}>
         <div
           className={`flex items-center gap-2.5 p-1 rounded-2xl ${

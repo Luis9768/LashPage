@@ -32,13 +32,11 @@ export default function Faq() {
             }`} />
           </div>
 
-          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
-            isDark ? 'text-white' : 'text-neutral-900'
-          }`}>
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-white drop-shadow-sm">
             Perguntas Frequentes
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-950/85 font-medium'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
             Tudo o que você precisa saber antes de fazer sua extensão de cílios com total segurança.
           </p>
         </div>

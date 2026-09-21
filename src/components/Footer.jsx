@@ -33,7 +33,7 @@ export default function Footer() {
     <footer className={`pt-16 pb-28 md:pb-16 border-t transition-colors duration-300 ${
       isDark
         ? 'bg-[#000000] border-[#1a1a22] text-neutral-400'
-        : 'bg-[#8F774A] border-white/20 text-neutral-100'
+        : 'bg-[#A6885E] border-white/20 text-neutral-100'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/15 dark:border-rose-500/10">

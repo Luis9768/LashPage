@@ -51,7 +51,7 @@ export default function BeforeAfter() {
 
   return (
     <section id="antes-depois" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#A38B59]'
+      isDark ? 'bg-[#000000]' : 'bg-[#BA9E76]'
     }`}>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -73,13 +73,11 @@ export default function BeforeAfter() {
             }`} />
           </div>
 
-          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
-            isDark ? 'text-white' : 'text-neutral-900'
-          }`}>
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-white drop-shadow-sm">
             O poder da transformação no seu olhar
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-950/85 font-medium'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
             Arraste o botão central para comparar o olhar natural com a extensão finalizada.
           </p>
         </div>

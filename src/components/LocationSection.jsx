@@ -30,13 +30,11 @@ export default function LocationSection() {
             }`} />
           </div>
 
-          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
-            isDark ? 'text-white' : 'text-neutral-900'
-          }`}>
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-white drop-shadow-sm">
             Onde estamos localizadas
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-950/80 font-medium'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
             Espaço climatizado, confortável e com localização privilegiada no Centro de Santo André.
           </p>
         </div>

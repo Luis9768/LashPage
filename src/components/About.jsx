@@ -59,14 +59,12 @@ export default function About() {
               </span>
             </div>
 
-            <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 tracking-tight ${
-              isDark ? 'text-white' : 'text-neutral-900'
-            }`}>
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 tracking-tight text-white drop-shadow-sm">
               Dedicação, técnica refinada e amor por valorizar você
             </h2>
 
             <div className={`space-y-4 text-sm sm:text-base leading-relaxed mb-8 ${
-              isDark ? 'text-neutral-300' : 'text-neutral-950/85 font-medium'
+              isDark ? 'text-neutral-300' : 'text-white/95 font-medium drop-shadow-sm'
             }`}>
               <p>
                 Olá! Meu compromisso é entregar não apenas um procedimento estético, mas uma transformação que eleve sua autoestima e torne a sua rotina muito mais prática e leve.
@@ -85,8 +83,8 @@ export default function About() {
                 "Avaliação e mapping sem custo extra"
               ].map((text, idx) => (
                 <div key={idx} className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-rose-500 flex-shrink-0" />
-                  <span className={`text-xs sm:text-sm font-medium ${isDark ? 'text-neutral-200' : 'text-neutral-950'}`}>
+                  <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
+                  <span className={`text-xs sm:text-sm font-medium ${isDark ? 'text-neutral-200' : 'text-white drop-shadow-sm'}`}>
                     {text}
                   </span>
                 </div>

@@ -132,10 +132,10 @@ export default function Navbar({ onNavigate }) {
           isScrolled
             ? isDark
               ? 'bg-[#000000]/95 backdrop-blur-xl border-b border-[#202028] shadow-lg shadow-black/80 py-2.5 sm:py-3'
-              : 'bg-[#A38B59]/95 backdrop-blur-xl border-b border-white/20 shadow-md shadow-black/10 py-2.5 sm:py-3'
+              : 'bg-[#BA9E76]/95 backdrop-blur-xl border-b border-white/20 shadow-sm py-2.5 sm:py-3'
             : isDark
               ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/5 py-3 sm:py-4 md:py-5'
-              : 'bg-[#A38B59]/90 backdrop-blur-md border-b border-white/15 py-3 sm:py-4 md:py-5'
+              : 'bg-[#BA9E76]/90 backdrop-blur-md border-b border-white/15 py-3 sm:py-4 md:py-5'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -259,7 +259,7 @@ export default function Navbar({ onNavigate }) {
             : 'border-white/20 text-white'
         }`}
         style={{
-          backgroundColor: isDark ? '#0d0d11' : '#A38B59',
+          backgroundColor: isDark ? '#0d0d11' : '#BA9E76',
         }}
         role="dialog"
         aria-modal="true"
@@ -268,7 +268,7 @@ export default function Navbar({ onNavigate }) {
         {/* Header do Menu Lateral */}
         <div
           className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-white/15 dark:border-neutral-800/70 flex-shrink-0"
-          style={{ backgroundColor: isDark ? '#0d0d11' : '#A38B59' }}
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#BA9E76' }}
         >
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold tracking-tight">
@@ -298,7 +298,7 @@ export default function Navbar({ onNavigate }) {
         {/* Conteúdo Rolável do Drawer */}
         <div
           className="flex-1 overflow-y-auto px-5 sm:px-6 py-5 space-y-6"
-          style={{ backgroundColor: isDark ? '#0d0d11' : '#A38B59' }}
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#BA9E76' }}
         >
           {/* Caminhos Principais */}
           <div className="space-y-2.5">
@@ -399,7 +399,7 @@ export default function Navbar({ onNavigate }) {
         {/* Footer do Menu Lateral */}
         <div
           className="p-4 sm:p-5 border-t border-white/20 dark:border-neutral-800/70 flex-shrink-0 flex items-center justify-between text-xs"
-          style={{ backgroundColor: isDark ? '#0d0d11' : '#8F774A' }}
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#A6885E' }}
         >
           <span className={isDark ? 'text-neutral-400' : 'text-white/80'}>
             Santo André • SP

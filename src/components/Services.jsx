@@ -81,13 +81,11 @@ export default function Services({ onOpenCatalog }) {
             }`} />
           </div>
 
-          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
-            isDark ? 'text-white' : 'text-neutral-900'
-          }`}>
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-white drop-shadow-sm">
             Escolha o estilo ideal para o seu olhar
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-950/85 font-medium'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
             Navegue pelos procedimentos mais procurados no estúdio com isolamento perfeito e durabilidade garantida.
           </p>
         </div>
