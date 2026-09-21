@@ -86,40 +86,16 @@ export default function Hero({ onNavigate }) {
               : 'bg-white border border-black/[0.04] shadow-sm'
           }`}
         >
-          {/* Top Client Photo Banner (Substituindo o antigo banner) */}
-          <div className="relative w-full h-[390px] sm:h-[460px] overflow-hidden bg-neutral-950">
-            <img
-              src={siteConfig.heroImage || "/vittoria-hero.jpg"}
-              alt={siteConfig.artistName}
-              className="w-full h-full object-cover object-top"
-              loading="eager"
-            />
-
-            {/* Gradiente de transição natural e aveludado (Curva Scrim Eased - Sem faixas ou cortes duros) */}
-            <div
-              className="absolute bottom-0 left-0 right-0 h-28 sm:h-36 pointer-events-none"
-              style={{
-                background: isDark
-                  ? `linear-gradient(to top, 
-                      #0a0a0c 0%, 
-                      rgba(10, 10, 12, 0.98) 12%, 
-                      rgba(10, 10, 12, 0.9) 25%, 
-                      rgba(10, 10, 12, 0.74) 40%, 
-                      rgba(10, 10, 12, 0.48) 55%, 
-                      rgba(10, 10, 12, 0.24) 70%, 
-                      rgba(10, 10, 12, 0.08) 85%, 
-                      rgba(10, 10, 12, 0) 100%)`
-                  : `linear-gradient(to top, 
-                      #FFFFFF 0%, 
-                      rgba(255, 255, 255, 0.98) 12%, 
-                      rgba(255, 255, 255, 0.88) 25%, 
-                      rgba(255, 255, 255, 0.65) 40%, 
-                      rgba(255, 255, 255, 0.38) 55%, 
-                      rgba(255, 255, 255, 0.16) 70%, 
-                      rgba(255, 255, 255, 0.04) 85%, 
-                      rgba(255, 255, 255, 0) 100%)`
-              }}
-            />
+          {/* Top Client Photo Banner (Editorial Minimalist Frame - 100% natural, sem neblina ou degradê forçado) */}
+          <div className="p-3 sm:p-4 pb-0">
+            <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-950 border border-black/[0.04] dark:border-white/[0.06]">
+              <img
+                src={siteConfig.heroImage || "/vittoria-hero.jpg"}
+                alt={siteConfig.artistName}
+                className="w-full h-full object-cover object-top"
+                loading="eager"
+              />
+            </div>
           </div>
 
           {/* Profile Info Card */}
