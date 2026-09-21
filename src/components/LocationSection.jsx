@@ -45,10 +45,10 @@ export default function LocationSection() {
         <div className="max-w-2xl mx-auto">
           
           {/* Information Card */}
-          <div className={`p-8 sm:p-10 rounded-3xl border flex flex-col justify-between ${
+          <div className={`p-8 sm:p-10 rounded-3xl flex flex-col justify-between ${
             isDark
-              ? 'bg-[#0d0d11] border-[#22222a] shadow-xl shadow-black/60'
-              : 'bg-white border-white/60 shadow-xl shadow-black/15'
+              ? 'bg-[#0d0d11] border border-[#22222a] shadow-xl shadow-black/60'
+              : 'bg-white border border-black/[0.04] shadow-sm'
           }`}>
 
             <div>
@@ -67,7 +67,7 @@ export default function LocationSection() {
               {/* Address details */}
               <div className="space-y-4 mb-8">
                 <div className={`p-4 sm:p-5 rounded-2xl border ${
-                  isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-[#F9F7F4] border-[#E2DAD0]'
+                  isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-neutral-50/90 border-neutral-200/80'
                 }`}>
                   <p className={`text-base font-bold mb-1 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                     {location.address}

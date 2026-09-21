@@ -57,7 +57,7 @@ export default function Differentials() {
                 className={`p-4 sm:p-6 lg:p-7 rounded-2xl sm:rounded-3xl border transition-all duration-300 relative group flex flex-col justify-start active:scale-[0.98] ${
                   isDark
                     ? 'bg-[#0d0d11]/90 border-[#22222a] hover:border-rose-500/40 hover:bg-[#131319] shadow-md shadow-black/40'
-                    : 'bg-white border-white/60 hover:border-white shadow-lg shadow-black/10 hover:shadow-xl'
+                    : 'bg-white border border-black/[0.04] shadow-sm hover:shadow'
                 }`}
               >
                 {/* Subtle luxury glow indicator on hover */}

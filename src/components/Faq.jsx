@@ -54,10 +54,10 @@ export default function Faq() {
                   isOpen
                     ? isDark
                       ? 'bg-[#0e0e12] border-rose-500/40 shadow-lg shadow-black/50'
-                      : 'bg-white border-white/80 shadow-xl shadow-black/10'
+                      : 'bg-white border border-black/[0.04] shadow-sm'
                     : isDark
                     ? 'bg-[#0a0a0c] border-[#1e1e24] hover:border-[#2a2a35]'
-                    : 'bg-white border-white/50 hover:border-white/90 shadow-md shadow-black/5'
+                    : 'bg-white border border-black/[0.04] hover:border-black/[0.08]'
                 }`}
 
               >

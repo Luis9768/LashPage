@@ -84,8 +84,8 @@ export default function LocationView({ onBack }) {
 
       {/* Address Card with Copy Button */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8">
-        <div className={`p-6 sm:p-8 rounded-3xl border shadow-xl ${
-          isDark ? 'bg-[#0d0d11] border-[#22222a] shadow-black' : 'bg-white border-white/60 shadow-xl shadow-black/10'
+        <div className={`p-6 sm:p-8 rounded-3xl ${
+          isDark ? 'bg-[#0d0d11] border border-[#22222a] shadow-black shadow-xl' : 'bg-white border border-black/[0.04] shadow-sm'
         }`}>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-rose-500/20">
             <div>

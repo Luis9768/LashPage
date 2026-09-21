@@ -114,7 +114,7 @@ export default function CatalogView({ onBack }) {
             className={`rounded-3xl border overflow-hidden transition-all duration-300 flex flex-col md:flex-row ${
                 isDark
                   ? 'bg-[#0d0d11] border-[#22222a] hover:border-rose-900/50 shadow-xl shadow-black/50'
-                  : 'bg-white border-white/60 hover:border-white shadow-xl shadow-black/10'
+                  : 'bg-white border border-black/[0.04] shadow-sm'
               }`}
           >
             {/* Image banner on side */}

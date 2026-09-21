@@ -115,10 +115,10 @@ export default function Services({ onOpenCatalog }) {
                     className="w-full flex-shrink-0 px-2 sm:px-4 box-border flex flex-col"
                   >
                     <div
-                      className={`rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
+                      className={`rounded-3xl overflow-hidden transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                         isDark
-                          ? 'bg-[#0d0d11] border-[#22222a] shadow-2xl shadow-black'
-                          : 'bg-white border-white/60 shadow-xl shadow-black/10'
+                          ? 'bg-[#0d0d11] border border-[#22222a] shadow-2xl shadow-black'
+                          : 'bg-white border border-black/[0.04] shadow-sm'
                       }`}
                     >
                       {/* Image Side */}
@@ -194,10 +194,10 @@ export default function Services({ onOpenCatalog }) {
               {/* Slide 5: Card de Catálogo com exatamente o mesmo tamanho e proporção */}
               <div className="w-full flex-shrink-0 px-2 sm:px-4 box-border flex flex-col">
                 <div
-                  className={`rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
+                  className={`rounded-3xl overflow-hidden transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                     isDark
-                      ? 'bg-[#0d0d11] border-[#22222a] shadow-2xl shadow-black'
-                      : 'bg-white border-white/60 shadow-xl shadow-black/10'
+                      ? 'bg-[#0d0d11] border border-[#22222a] shadow-2xl shadow-black'
+                      : 'bg-white border border-black/[0.04] shadow-sm'
                   }`}
                 >
                   {/* Image Side */}
@@ -210,10 +210,10 @@ export default function Services({ onOpenCatalog }) {
                       className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
-                    <div className={`absolute inset-0 transition-colors ${
+                    <div className={`absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t pointer-events-none transition-colors ${
                       isDark
-                        ? 'bg-gradient-to-t from-black/80 via-black/30 to-transparent'
-                        : 'bg-gradient-to-t from-white/80 via-white/20 to-transparent'
+                        ? 'from-black/80 to-transparent'
+                        : 'from-white/60 to-transparent'
                     }`}></div>
 
                     <div className="absolute top-3.5 left-3.5">
@@ -293,10 +293,10 @@ export default function Services({ onOpenCatalog }) {
           <button
             onClick={prevSlide}
             aria-label="Serviço anterior"
-            className={`absolute top-1/2 -left-3 sm:-left-6 -translate-y-1/2 w-11 h-11 rounded-full border shadow-xl flex items-center justify-center transition-all z-10 ${
+            className={`absolute top-1/2 -left-3 sm:-left-6 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center transition-all z-10 ${
               isDark
-                ? 'bg-[#121216]/90 border-[#2b2b36] text-white hover:bg-neutral-800'
-                : 'bg-white border-white/60 text-neutral-900 hover:bg-neutral-50 shadow-lg'
+                ? 'bg-[#121216]/90 border border-[#2b2b36] text-white hover:bg-neutral-800'
+                : 'bg-white border border-black/[0.06] text-neutral-900 hover:bg-neutral-50 shadow-sm'
             }`}
           >
             <ChevronLeft className="w-5 h-5" />
@@ -305,10 +305,10 @@ export default function Services({ onOpenCatalog }) {
           <button
             onClick={nextSlide}
             aria-label="Próximo serviço"
-            className={`absolute top-1/2 -right-3 sm:-right-6 -translate-y-1/2 w-11 h-11 rounded-full border shadow-xl flex items-center justify-center transition-all z-10 ${
+            className={`absolute top-1/2 -right-3 sm:-right-6 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center transition-all z-10 ${
               isDark
-                ? 'bg-[#121216]/90 border-[#2b2b36] text-white hover:bg-neutral-800'
-                : 'bg-white border-white/60 text-neutral-900 hover:bg-neutral-50 shadow-lg'
+                ? 'bg-[#121216]/90 border border-[#2b2b36] text-white hover:bg-neutral-800'
+                : 'bg-white border border-black/[0.06] text-neutral-900 hover:bg-neutral-50 shadow-sm'
             }`}
           >
             <ChevronRight className="w-5 h-5" />

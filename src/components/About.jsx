@@ -14,10 +14,12 @@ export default function About() {
           {/* Photo Column */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-sm">
-              <div className="absolute -inset-2 bg-gradient-to-tr from-rose-500 to-pink-600 rounded-3xl opacity-30 blur-lg"></div>
+              <div className={`absolute -inset-2 bg-gradient-to-tr from-rose-500 to-pink-600 rounded-3xl ${
+                isDark ? 'opacity-20 blur-lg' : 'hidden'
+              }`}></div>
               
-              <div className={`relative rounded-3xl overflow-hidden border shadow-2xl ${
-                isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-white/60 shadow-xl shadow-black/10'
+              <div className={`relative rounded-3xl overflow-hidden transition-all ${
+                isDark ? 'bg-[#0d0d11] border border-[#22222a] shadow-2xl' : 'bg-white border border-black/[0.04] shadow-sm'
               }`}>
 
                 <img

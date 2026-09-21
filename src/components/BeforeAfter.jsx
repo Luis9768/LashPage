@@ -93,7 +93,9 @@ export default function BeforeAfter() {
             onMouseLeave={stopDragging}
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
-            className="relative h-[320px] sm:h-[440px] rounded-3xl overflow-hidden shadow-2xl select-none cursor-ew-resize border border-rose-500/20"
+            className={`relative h-[320px] sm:h-[440px] rounded-3xl overflow-hidden select-none cursor-ew-resize ${
+              isDark ? 'shadow-2xl border border-rose-500/20' : 'shadow-sm border border-black/[0.04]'
+            }`}
           >
             {/* After Image (Background) */}
             <img

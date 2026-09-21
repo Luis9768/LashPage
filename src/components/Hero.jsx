@@ -80,10 +80,10 @@ export default function Hero({ onNavigate }) {
         
         {/* Main Bio Container (Editorial Minimalist Profile) */}
         <div
-          className={`rounded-3xl overflow-hidden border shadow-xl transition-all duration-300 ${
+          className={`rounded-3xl overflow-hidden transition-all duration-300 ${
             isDark
-              ? 'bg-[#0a0a0c] border-[#1e1e24] shadow-black/60'
-              : 'bg-white border-white/60 shadow-2xl shadow-black/15'
+              ? 'bg-[#0a0a0c] border border-[#1e1e24] shadow-black/60'
+              : 'bg-white border border-black/[0.04] shadow-sm'
           }`}
         >
           {/* Top Client Photo Banner (Substituindo o antigo banner) */}
@@ -95,12 +95,12 @@ export default function Hero({ onNavigate }) {
               loading="eager"
             />
 
-            {/* Suave vinheta/degradê inferior */}
+            {/* Suave vinheta sutil apenas na linha de transição inferior */}
             <div
-              className={`absolute inset-0 bg-gradient-to-t pointer-events-none ${
+              className={`absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t pointer-events-none ${
                 isDark
-                  ? 'from-[#0a0a0c] via-[#0a0a0c]/30 to-transparent'
-                  : 'from-white via-white/20 to-transparent'
+                  ? 'from-[#0a0a0c] to-transparent'
+                  : 'from-white to-transparent'
               }`}
             />
           </div>
