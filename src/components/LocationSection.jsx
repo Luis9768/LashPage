@@ -9,7 +9,7 @@ export default function LocationSection() {
 
   return (
     <section id="localizacao" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#A38B59]'
+      isDark ? 'bg-[#000000]' : 'bg-[#B5B0A5]'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
@@ -126,7 +126,7 @@ export default function LocationSection() {
                 className={`px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all flex items-center justify-center gap-2 ${
                   isDark
                     ? 'border-neutral-700 text-neutral-200 hover:bg-neutral-800'
-                    : 'border-[#A98D51]/35 text-neutral-800 hover:bg-[#F4EFE6]'
+                    : 'border-neutral-200 text-neutral-800 hover:bg-neutral-50'
                 }`}
               >
                 <Compass className="w-4 h-4 text-cyan-400" />

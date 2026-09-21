@@ -22,11 +22,11 @@ export default function LocationView({ onBack }) {
 
   return (
     <div className={`min-h-screen pb-24 transition-colors duration-300 ${
-      isDark ? 'bg-[#000000] text-white' : 'bg-[#BA9E76] text-white'
+      isDark ? 'bg-[#000000] text-white' : 'bg-[#B5B0A5] text-white'
     }`}>
       {/* Top Sticky Header */}
       <header className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors px-4 py-3 ${
-        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#BA9E76]/95 border-white/20'
+        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#B5B0A5]/95 border-white/20'
       }`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           {/* Minimalist Back Button */}

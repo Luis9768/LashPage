@@ -51,7 +51,7 @@ export default function BeforeAfter() {
 
   return (
     <section id="antes-depois" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#BA9E76]'
+      isDark ? 'bg-[#000000]' : 'bg-[#B5B0A5]'
     }`}>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">

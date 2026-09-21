@@ -50,7 +50,7 @@ function MainContent() {
   return (
     <div
       className={`min-h-screen w-full transition-colors duration-500 selection:bg-rose-500 selection:text-white ${
-        isDark ? 'bg-[#000000] text-neutral-100' : 'bg-[#BA9E76] text-white'
+        isDark ? 'bg-[#000000] text-neutral-100' : 'bg-[#B5B0A5] text-white'
       }`}
     >
       {/* Intro Typewriter Stream (Vercel Style) */}

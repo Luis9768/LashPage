@@ -189,7 +189,7 @@ export default function Hero({ onNavigate }) {
                             ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white border-rose-400 hover:brightness-105 hover:shadow-md hover:shadow-rose-500/20'
                             : isDark
                             ? 'bg-[#121216] border-[#22222b] text-neutral-200 hover:border-rose-500/50 hover:bg-[#181820] hover:text-white'
-                            : 'bg-neutral-50 border-neutral-200/80 text-neutral-700 hover:border-[#A38B59] hover:bg-white hover:text-rose-600'
+                            : 'bg-neutral-50 border-neutral-200/80 text-neutral-700 hover:border-[#B5B0A5] hover:bg-white hover:text-rose-600'
                         }`}
                         title={action.title}
                       >

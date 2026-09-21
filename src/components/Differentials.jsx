@@ -60,7 +60,7 @@ export default function Differentials() {
               >
                 {/* Subtle luxury glow indicator on hover */}
                 <div className={`absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent ${
-                  isDark ? 'via-rose-500/30' : 'via-[#A38B59]/45'
+                  isDark ? 'via-rose-500/30' : 'via-[#B5B0A5]/45'
                 } to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
                 {/* Icon Circle */}
