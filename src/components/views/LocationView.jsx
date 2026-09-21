@@ -57,22 +57,8 @@ export default function LocationView({ onBack }) {
 
       {/* Hero Header */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-6 text-center">
-        <div className="inline-flex items-center justify-center gap-3 mb-2.5">
-          <span className={`w-5 sm:w-7 h-[2px] rounded-full flex-shrink-0 ${
-            isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
-          }`} />
-          <span className={`text-sm sm:text-base font-bold uppercase tracking-[0.22em] drop-shadow-sm ${
-            isDark ? 'text-rose-400' : 'text-white'
-          }`}>
-            Centro de Santo André
-          </span>
-          <span className={`w-5 sm:w-7 h-[2px] rounded-full flex-shrink-0 ${
-            isDark ? 'bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
-          }`} />
-        </div>
-
         <h1 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight mb-2.5 text-white">
-          Como Chegar ao Studio
+          Como Chegar ao Studio em Santo André
         </h1>
 
         <p className={`text-xs sm:text-sm max-w-lg mx-auto leading-relaxed ${

@@ -46,21 +46,8 @@ export default function About() {
 
           {/* Bio & Content Column */}
           <div className="lg:col-span-7 flex flex-col items-start">
-            
-            {/* Editorial Luxury Eyebrow */}
-            <div className="flex items-center gap-3 mb-5">
-              <span className={`w-8 h-[2px] rounded-full flex-shrink-0 ${
-                isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_10px_rgba(244,63,94,0.4)]' : 'bg-white'
-              }`} />
-              <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase drop-shadow-sm ${
-                isDark ? 'text-rose-400' : 'text-white'
-              }`}>
-                Conheça sua Lash
-              </span>
-            </div>
-
-            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 tracking-tight text-white drop-shadow-sm">
-              Dedicação, técnica refinada e amor por valorizar você
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-white drop-shadow-sm">
+              Sobre a Especialista Vittoria Amorim
             </h2>
 
             <div className={`space-y-4 text-sm sm:text-base leading-relaxed mb-8 ${

@@ -20,24 +20,9 @@ export default function Differentials() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
-          {/* Editorial Luxury Eyebrow */}
-          <div className="inline-flex items-center justify-center gap-3 mb-4">
-            <span className={`w-6 sm:w-8 h-[2px] rounded-full shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0 ${
-              isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500' : 'bg-white'
-            }`} />
-            <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase ${
-              isDark ? 'text-rose-400' : 'text-white drop-shadow-sm'
-            }`}>
-              Por que escolher nosso atendimento
-            </span>
-            <span className={`w-6 sm:w-8 h-[2px] rounded-full shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0 ${
-              isDark ? 'bg-gradient-to-l from-rose-500 to-pink-500' : 'bg-white'
-            }`} />
-          </div>
-
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-white drop-shadow-sm">
-            Cuidado milimétrico em cada detalhe
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 tracking-tight text-white drop-shadow-sm">
+            Diferenciais do Nosso Atendimento
           </h2>
 
           <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
