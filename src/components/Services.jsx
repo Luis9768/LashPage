@@ -136,11 +136,22 @@ export default function Services({ onOpenCatalog }) {
                       {/* Content Side */}
                       <div className="md:col-span-7 lg:col-span-7 p-5 sm:p-7 flex flex-col justify-between flex-1 overflow-hidden">
                         <div>
-                          <h3 className={`font-heading text-xl sm:text-2xl font-bold mb-1 tracking-tight ${
-                            isDark ? 'text-white' : 'text-neutral-900'
-                          }`}>
-                            {service.title}
-                          </h3>
+                          <div className="flex items-center justify-between gap-2 mb-1">
+                            <h3 className={`font-heading text-xl sm:text-2xl font-bold tracking-tight ${
+                              isDark ? 'text-white' : 'text-neutral-900'
+                            }`}>
+                              {service.title}
+                            </h3>
+                            {service.price && (
+                              <span className={`text-xs sm:text-sm font-bold px-2.5 py-1 rounded-xl shrink-0 ${
+                                isDark 
+                                  ? 'bg-rose-500/15 text-rose-300 border border-rose-500/30' 
+                                  : 'bg-rose-50 text-rose-700 border border-rose-200'
+                              }`}>
+                                {service.price}
+                              </span>
+                            )}
+                          </div>
 
                           <p className="text-xs font-semibold text-rose-400 mb-2">
                             {service.tagline}

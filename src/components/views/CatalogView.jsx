@@ -14,15 +14,14 @@ export default function CatalogView({ onBack }) {
 
   const categories = [
     { id: 'todos', label: 'Todos os Procedimentos' },
-    { id: 'destaque', label: 'Mais Pedidos' },
-    { id: 'manutencao', label: 'Cuidados & Manutenção' },
+    { id: 'cilios', label: 'Extensão de Cílios' },
+    { id: 'sobrancelhas', label: 'Sobrancelhas' },
+    { id: 'cuidados', label: 'Cuidados & Remoção' },
   ];
 
   const filteredServices = siteConfig.services.filter((service) => {
     if (selectedFilter === 'todos') return true;
-    if (selectedFilter === 'destaque') return service.popular || service.badge.includes('Pedido') || service.badge.includes('Glamour');
-    if (selectedFilter === 'manutencao') return service.id.includes('manutencao') || service.id.includes('lifting');
-    return true;
+    return service.category === selectedFilter;
   });
 
   return (
@@ -122,9 +121,20 @@ export default function CatalogView({ onBack }) {
             {/* Content Details */}
             <div className="md:w-7/12 p-6 sm:p-7 flex flex-col justify-between">
               <div>
-                <h3 className="font-heading text-2xl font-bold mb-1">
-                  {service.title}
-                </h3>
+                <div className="flex items-center justify-between gap-3 mb-1">
+                  <h3 className="font-heading text-2xl font-bold">
+                    {service.title}
+                  </h3>
+                  {service.price && (
+                    <span className={`text-sm sm:text-base font-bold px-3 py-1 rounded-xl shrink-0 ${
+                      isDark 
+                        ? 'bg-rose-500/15 text-rose-300 border border-rose-500/30' 
+                        : 'bg-rose-50 text-rose-700 border border-rose-200'
+                    }`}>
+                      {service.price}
+                    </span>
+                  )}
+                </div>
 
                 <p className="text-xs font-semibold text-rose-500 mb-3">
                   {service.tagline}
