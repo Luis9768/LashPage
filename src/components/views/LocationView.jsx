@@ -22,11 +22,11 @@ export default function LocationView({ onBack }) {
 
   return (
     <div className={`min-h-screen pb-24 transition-colors duration-300 ${
-      isDark ? 'bg-[#000000] text-white' : 'bg-[#F5F2EB] text-neutral-900'
+      isDark ? 'bg-[#000000] text-white' : 'bg-[#A38B59] text-neutral-900'
     }`}>
       {/* Top Sticky Header */}
       <header className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors px-4 py-3 ${
-        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#F5F2EB]/90 border-[#A98D51]/20'
+        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#A38B59]/95 border-white/20'
       }`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           {/* Minimalist Back Button */}
@@ -35,20 +35,20 @@ export default function LocationView({ onBack }) {
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all active:scale-90 active:bg-rose-500/20 active:border-rose-500/50 ${
               isDark
                 ? 'bg-neutral-900/90 hover:bg-neutral-800 text-neutral-200 border border-neutral-800'
-                : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-800 border border-neutral-200'
+                : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
             }`}
           >
-            <ArrowLeft className="w-3.5 h-3.5 text-rose-400" />
+            <ArrowLeft className="w-3.5 h-3.5 text-rose-300" />
             <span>Voltar</span>
           </button>
 
           {/* Clean Location Identity */}
           <div className="flex items-center gap-2 text-right">
-            <span className="text-[11px] uppercase tracking-widest font-semibold text-rose-400">
+            <span className="text-[11px] uppercase tracking-widest font-semibold text-rose-300">
               Localização
             </span>
-            <span className="text-neutral-600 text-xs">•</span>
-            <span className={`text-[11px] font-medium ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
+            <span className="text-white/40 text-xs">•</span>
+            <span className={`text-[11px] font-medium ${isDark ? 'text-neutral-400' : 'text-white/80'}`}>
               Santo André • SP
             </span>
           </div>
@@ -58,23 +58,25 @@ export default function LocationView({ onBack }) {
       {/* Hero Header */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-6 text-center">
         <div className="inline-flex items-center justify-center gap-3 mb-2.5">
-          <span className="w-5 sm:w-7 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
-          <span className={`text-sm sm:text-base font-bold uppercase tracking-[0.22em] ${
-            isDark ? 'text-rose-400' : 'text-rose-600'
+          <span className={`w-5 sm:w-7 h-[2px] rounded-full flex-shrink-0 ${
+            isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+          }`} />
+          <span className={`text-sm sm:text-base font-bold uppercase tracking-[0.22em] drop-shadow-sm ${
+            isDark ? 'text-rose-400' : 'text-white'
           }`}>
             Centro de Santo André
           </span>
-          <span className="w-5 sm:w-7 h-[2px] rounded-full bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
+          <span className={`w-5 sm:w-7 h-[2px] rounded-full flex-shrink-0 ${
+            isDark ? 'bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+          }`} />
         </div>
 
-        <h1 className={`font-heading text-2xl sm:text-3xl font-extrabold tracking-tight mb-2.5 ${
-          isDark ? 'text-white' : 'text-neutral-900'
-        }`}>
+        <h1 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight mb-2.5 text-white">
           Como Chegar ao Studio
         </h1>
 
         <p className={`text-xs sm:text-sm max-w-lg mx-auto leading-relaxed ${
-          isDark ? 'text-neutral-400' : 'text-neutral-600'
+          isDark ? 'text-neutral-400' : 'text-white/85 font-medium'
         }`}>
           Localização de fácil acesso no ABC Paulista, próximo a transporte público e principais vias da cidade.
         </p>
@@ -83,7 +85,7 @@ export default function LocationView({ onBack }) {
       {/* Address Card with Copy Button */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8">
         <div className={`p-6 sm:p-8 rounded-3xl border shadow-xl ${
-          isDark ? 'bg-[#0d0d11] border-[#22222a] shadow-black' : 'bg-[#FAF8F5] border-[#A98D51]/30 shadow-lg shadow-[#A98D51]/5'
+          isDark ? 'bg-[#0d0d11] border-[#22222a] shadow-black' : 'bg-white border-white/60 shadow-xl shadow-black/10'
         }`}>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-rose-500/20">
             <div>
@@ -153,7 +155,7 @@ export default function LocationView({ onBack }) {
       {/* Facilities & Transports */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className={`p-5 rounded-2xl border ${
-          isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-rose-100 shadow-sm'
+          isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-white/60 shadow-lg shadow-black/5'
         }`}>
           <div className="flex items-center gap-2 mb-2 text-rose-500 font-bold text-sm">
             <Train className="w-4 h-4" />
@@ -165,7 +167,7 @@ export default function LocationView({ onBack }) {
         </div>
 
         <div className={`p-5 rounded-2xl border ${
-          isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-rose-100 shadow-sm'
+          isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-white/60 shadow-lg shadow-black/5'
         }`}>
           <div className="flex items-center gap-2 mb-2 text-rose-500 font-bold text-sm">
             <Clock className="w-4 h-4" />

@@ -27,11 +27,11 @@ export default function CatalogView({ onBack }) {
 
   return (
     <div className={`min-h-screen pb-24 transition-colors duration-300 ${
-      isDark ? 'bg-[#000000] text-white' : 'bg-[#F5F2EB] text-neutral-900'
+      isDark ? 'bg-[#000000] text-white' : 'bg-[#A38B59] text-neutral-900'
     }`}>
       {/* Top Sticky Header */}
       <header className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors px-4 py-3 ${
-        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#F5F2EB]/90 border-[#A98D51]/20'
+        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#A38B59]/95 border-white/20'
       }`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           {/* Minimalist Back Button */}
@@ -40,20 +40,20 @@ export default function CatalogView({ onBack }) {
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all active:scale-90 active:bg-rose-500/20 active:border-rose-500/50 ${
               isDark
                 ? 'bg-neutral-900/90 hover:bg-neutral-800 text-neutral-200 border border-neutral-800'
-                : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-800 border border-neutral-200'
+                : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
             }`}
           >
-            <ArrowLeft className="w-3.5 h-3.5 text-rose-400" />
+            <ArrowLeft className="w-3.5 h-3.5 text-rose-300" />
             <span>Voltar</span>
           </button>
 
           {/* Clean Studio Identity */}
           <div className="flex items-center gap-2 text-right">
-            <span className="text-[11px] uppercase tracking-widest font-semibold text-rose-400">
+            <span className="text-[11px] uppercase tracking-widest font-semibold text-rose-300">
               Catálogo
             </span>
-            <span className="text-neutral-600 text-xs">•</span>
-            <span className={`text-[11px] font-medium ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>
+            <span className="text-white/40 text-xs">•</span>
+            <span className={`text-[11px] font-medium ${isDark ? 'text-neutral-400' : 'text-white/80'}`}>
               Vittoria's Studio
             </span>
           </div>
@@ -63,23 +63,25 @@ export default function CatalogView({ onBack }) {
       {/* Hero Header of Catalog Page */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-6 text-center">
         <div className="inline-flex items-center justify-center gap-3 mb-2.5">
-          <span className="w-5 sm:w-7 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
-          <span className={`text-sm sm:text-base font-bold uppercase tracking-[0.22em] ${
-            isDark ? 'text-rose-400' : 'text-rose-600'
+          <span className={`w-5 sm:w-7 h-[2px] rounded-full flex-shrink-0 ${
+            isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+          }`} />
+          <span className={`text-sm sm:text-base font-bold uppercase tracking-[0.22em] drop-shadow-sm ${
+            isDark ? 'text-rose-400' : 'text-white'
           }`}>
             Tabela Oficial de Procedimentos
           </span>
-          <span className="w-5 sm:w-7 h-[2px] rounded-full bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
+          <span className={`w-5 sm:w-7 h-[2px] rounded-full flex-shrink-0 ${
+            isDark ? 'bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+          }`} />
         </div>
 
-        <h1 className={`font-heading text-2xl sm:text-3xl font-extrabold tracking-tight mb-2.5 ${
-          isDark ? 'text-white' : 'text-neutral-900'
-        }`}>
+        <h1 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight mb-2.5 text-white">
           Catálogo de Técnicas & Cílios
         </h1>
 
         <p className={`text-xs sm:text-sm max-w-md mx-auto leading-relaxed ${
-          isDark ? 'text-neutral-400' : 'text-neutral-600'
+          isDark ? 'text-neutral-400' : 'text-white/85 font-medium'
         }`}>
           Fios premium de alta retenção, biossegurança e lash mapping visagista personalizado.
         </p>
@@ -95,7 +97,7 @@ export default function CatalogView({ onBack }) {
                   ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white shadow-md'
                   : isDark
                   ? 'bg-[#121216] text-neutral-400 hover:text-white border border-[#22222a]'
-                  : 'bg-white text-neutral-600 hover:text-neutral-900 border border-rose-200'
+                  : 'bg-white/20 text-white hover:bg-white/30 border border-white/30'
               }`}
             >
               {cat.label}
@@ -112,7 +114,7 @@ export default function CatalogView({ onBack }) {
             className={`rounded-3xl border overflow-hidden transition-all duration-300 flex flex-col md:flex-row ${
                 isDark
                   ? 'bg-[#0d0d11] border-[#22222a] hover:border-rose-900/50 shadow-xl shadow-black/50'
-                  : 'bg-[#FAF8F5] border-[#A98D51]/30 hover:border-[#A98D51]/60 shadow-lg shadow-[#A98D51]/5'
+                  : 'bg-white border-white/60 hover:border-white shadow-xl shadow-black/10'
               }`}
           >
             {/* Image banner on side */}

@@ -132,21 +132,21 @@ export default function Navbar({ onNavigate }) {
           isScrolled
             ? isDark
               ? 'bg-[#000000]/95 backdrop-blur-xl border-b border-[#202028] shadow-lg shadow-black/80 py-2.5 sm:py-3'
-              : 'bg-[#F5F2EB]/95 backdrop-blur-xl border-b border-[#A98D51]/20 shadow-sm shadow-stone-900/5 py-2.5 sm:py-3'
+              : 'bg-[#A38B59]/95 backdrop-blur-xl border-b border-white/20 shadow-md shadow-black/10 py-2.5 sm:py-3'
             : isDark
               ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/5 py-3 sm:py-4 md:py-5'
-              : 'bg-[#F5F2EB]/85 backdrop-blur-md border-b border-[#A98D51]/15 py-3 sm:py-4 md:py-5'
+              : 'bg-[#A38B59]/90 backdrop-blur-md border-b border-white/15 py-3 sm:py-4 md:py-5'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Brand / Logo */}
           <a href="#inicio" className="group flex flex-col items-start text-left">
             <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300">
-              <span className={isDark ? 'text-white' : 'text-neutral-900'}>Vittoria's</span>
-              <span className="text-rose-500 font-serif italic text-lg sm:text-xl ml-1">Studio</span>
+              <span className="text-white">Vittoria's</span>
+              <span className="text-rose-400 font-serif italic text-lg sm:text-xl ml-1">Studio</span>
             </span>
             <span className={`text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-medium transition-colors ${
-              isDark ? 'text-rose-300/70 group-hover:text-rose-300' : 'text-rose-900/70 group-hover:text-rose-900'
+              isDark ? 'text-rose-300/70 group-hover:text-rose-300' : 'text-white/80 group-hover:text-white'
             }`}>
               Santo André • SP
             </span>
@@ -158,8 +158,8 @@ export default function Navbar({ onNavigate }) {
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-rose-500 ${
-                  isDark ? 'text-neutral-300' : 'text-neutral-700'
+                className={`text-sm font-medium transition-colors duration-200 hover:text-white ${
+                  isDark ? 'text-neutral-300' : 'text-white/90'
                 }`}
               >
                 {link.name}
@@ -173,11 +173,11 @@ export default function Navbar({ onNavigate }) {
             <button
               onClick={toggleTheme}
               aria-label="Alternar Tema"
-              title={isDark ? "Mudar para Rosa & Branco" : "Mudar para Rosa & Preto"}
+              title={isDark ? "Mudar para Rosa & Bege" : "Mudar para Rosa & Preto"}
               className={`p-2 rounded-full border transition-all duration-200 ${
                 isDark
                   ? 'border-neutral-800 text-rose-300 hover:bg-neutral-800/80 hover:text-rose-400'
-                  : 'border-rose-200 text-rose-700 hover:bg-rose-50 hover:text-rose-800'
+                  : 'border-white/30 text-white hover:bg-white/20 hover:text-white'
               }`}
             >
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -203,7 +203,7 @@ export default function Navbar({ onNavigate }) {
               className={`p-2 rounded-xl border transition-colors ${
                 isDark
                   ? 'border-neutral-800 text-neutral-200 hover:bg-neutral-800'
-                  : 'border-[#E2DAD0] text-neutral-800 hover:bg-white'
+                  : 'border-white/30 text-white hover:bg-white/20'
               }`}
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -218,7 +218,7 @@ export default function Navbar({ onNavigate }) {
               className={`p-2 rounded-full border transition-all duration-200 ${
                 isDark
                   ? 'border-neutral-800 text-rose-300'
-                  : 'border-[#E2DAD0] text-rose-700 hover:bg-white'
+                  : 'border-white/30 text-white hover:bg-white/20'
               }`}
             >
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -230,7 +230,7 @@ export default function Navbar({ onNavigate }) {
               className={`p-2 rounded-xl border transition-colors ${
                 isDark
                   ? 'border-neutral-800 text-neutral-200 hover:bg-neutral-800'
-                  : 'border-[#E2DAD0] text-neutral-800 hover:bg-white'
+                  : 'border-white/30 text-white hover:bg-white/20'
               }`}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -256,10 +256,10 @@ export default function Navbar({ onNavigate }) {
         } ${
           isDark
             ? 'border-[#22222a] text-white'
-            : 'border-[#E2DAD0] text-neutral-900'
+            : 'border-white/20 text-white'
         }`}
         style={{
-          backgroundColor: isDark ? '#0d0d11' : '#F5F2EB',
+          backgroundColor: isDark ? '#0d0d11' : '#A38B59',
         }}
         role="dialog"
         aria-modal="true"
@@ -267,16 +267,16 @@ export default function Navbar({ onNavigate }) {
       >
         {/* Header do Menu Lateral */}
         <div
-          className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0"
-          style={{ backgroundColor: isDark ? '#0d0d11' : '#F5F2EB' }}
+          className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-white/15 dark:border-neutral-800/70 flex-shrink-0"
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#A38B59' }}
         >
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold tracking-tight">
-              <span className={isDark ? 'text-white' : 'text-neutral-900'}>Vittoria's</span>
-              <span className="text-rose-500 font-serif italic ml-1">Studio</span>
+              <span className="text-white">Vittoria's</span>
+              <span className="text-rose-400 font-serif italic ml-1">Studio</span>
             </span>
             <span className={`text-[9px] tracking-[0.2em] uppercase font-medium ${
-              isDark ? 'text-rose-300/70' : 'text-rose-900/70'
+              isDark ? 'text-rose-300/70' : 'text-white/80'
             }`}>
               Atalhos & Navegação
             </span>
@@ -287,7 +287,7 @@ export default function Navbar({ onNavigate }) {
             className={`p-2 rounded-xl border transition-colors ${
               isDark
                 ? 'border-neutral-800 text-neutral-300 hover:bg-neutral-800 hover:text-white'
-                : 'border-[#A98D51]/30 text-neutral-700 hover:bg-[#FAF8F5] hover:text-neutral-900'
+                : 'border-white/30 text-white hover:bg-white/20 hover:text-white'
             }`}
             aria-label="Fechar menu lateral"
           >
@@ -298,7 +298,7 @@ export default function Navbar({ onNavigate }) {
         {/* Conteúdo Rolável do Drawer */}
         <div
           className="flex-1 overflow-y-auto px-5 sm:px-6 py-5 space-y-6"
-          style={{ backgroundColor: isDark ? '#0d0d11' : '#F5F2EB' }}
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#A38B59' }}
         >
           {/* Caminhos Principais */}
           <div className="space-y-2.5">
@@ -309,7 +309,7 @@ export default function Navbar({ onNavigate }) {
                     ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-md shadow-rose-600/20 hover:brightness-105'
                     : isDark
                     ? 'bg-[#181820] border-[#22222b] hover:border-rose-500/50 hover:bg-[#1e1e28] text-white'
-                    : 'bg-[#FAF8F5] border-[#A98D51]/25 hover:border-[#A98D51]/55 hover:bg-[#F3EFE7] text-neutral-800 shadow-sm'
+                    : 'bg-white border-white/60 hover:border-white text-neutral-900 shadow-md'
                 }`;
 
                 const innerContent = (
@@ -371,8 +371,10 @@ export default function Navbar({ onNavigate }) {
             </div>
 
           {/* Section: Navegação da Página */}
-          <div className="pt-4 border-t border-neutral-200/70 dark:border-neutral-800/70">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 mb-3 px-1">
+          <div className="pt-4 border-t border-white/20 dark:border-neutral-800/70">
+            <p className={`text-[11px] font-bold uppercase tracking-wider mb-3 px-1 ${
+              isDark ? 'text-neutral-400' : 'text-white/80'
+            }`}>
               Navegação da Página
             </p>
             <div className="grid grid-cols-2 gap-2">
@@ -384,7 +386,7 @@ export default function Navbar({ onNavigate }) {
                   className={`px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-colors border ${
                     isDark
                       ? 'text-neutral-300 border-neutral-800/60 hover:border-rose-500/40 hover:text-rose-400 hover:bg-neutral-800/40'
-                      : 'text-neutral-700 border-[#E2DAD0]/60 hover:border-rose-300 hover:text-rose-600 hover:bg-white'
+                      : 'text-white border-white/30 hover:border-white hover:bg-white hover:text-neutral-900'
                   }`}
                 >
                   {link.name}
@@ -396,10 +398,10 @@ export default function Navbar({ onNavigate }) {
 
         {/* Footer do Menu Lateral */}
         <div
-          className="p-4 sm:p-5 border-t border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0 flex items-center justify-between text-xs"
-          style={{ backgroundColor: isDark ? '#0d0d11' : '#F6F4F0' }}
+          className="p-4 sm:p-5 border-t border-white/20 dark:border-neutral-800/70 flex-shrink-0 flex items-center justify-between text-xs"
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#8F774A' }}
         >
-          <span className={isDark ? 'text-neutral-400' : 'text-neutral-600'}>
+          <span className={isDark ? 'text-neutral-400' : 'text-white/80'}>
             Santo André • SP
           </span>
           <button
@@ -407,7 +409,7 @@ export default function Navbar({ onNavigate }) {
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium transition-colors ${
               isDark
                 ? 'border-neutral-800 text-rose-300 hover:bg-neutral-800'
-                : 'border-[#E2DAD0] text-rose-700 hover:bg-white'
+                : 'border-white/30 text-white hover:bg-white/20'
             }`}
           >
             {isDark ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}

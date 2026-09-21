@@ -83,7 +83,7 @@ export default function Hero({ onNavigate }) {
           className={`rounded-3xl overflow-hidden border shadow-xl transition-all duration-300 ${
             isDark
               ? 'bg-[#0a0a0c] border-[#1e1e24] shadow-black/60'
-              : 'bg-[#FAF8F5] border-[#A98D51]/30 shadow-lg shadow-[#A98D51]/5'
+              : 'bg-white border-white/60 shadow-2xl shadow-black/15'
           }`}
         >
           {/* Top Client Photo Banner (Substituindo o antigo banner) */}
@@ -100,7 +100,7 @@ export default function Hero({ onNavigate }) {
               className={`absolute inset-0 bg-gradient-to-t pointer-events-none ${
                 isDark
                   ? 'from-[#0a0a0c] via-[#0a0a0c]/30 to-transparent'
-                  : 'from-[#FAF8F5] via-[#FAF8F5]/25 to-transparent'
+                  : 'from-white via-white/20 to-transparent'
               }`}
             />
           </div>
@@ -172,7 +172,7 @@ export default function Hero({ onNavigate }) {
                             ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white border-rose-400 hover:brightness-105 hover:shadow-md hover:shadow-rose-500/20'
                             : isDark
                             ? 'bg-[#121216] border-[#22222b] text-neutral-200 hover:border-rose-500/50 hover:bg-[#181820] hover:text-white'
-                            : 'bg-[#F3EFE7] border-[#A98D51]/30 text-neutral-700 hover:border-[#A98D51] hover:bg-[#FAF8F5] hover:text-rose-600'
+                            : 'bg-neutral-50 border-neutral-200/80 text-neutral-700 hover:border-[#A38B59] hover:bg-white hover:text-rose-600'
                         }`}
                         title={action.title}
                       >

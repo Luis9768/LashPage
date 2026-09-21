@@ -51,7 +51,7 @@ export default function BeforeAfter() {
 
   return (
     <section id="antes-depois" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#EFEAE2]'
+      isDark ? 'bg-[#000000]' : 'bg-[#A38B59]'
     }`}>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -60,13 +60,17 @@ export default function BeforeAfter() {
         <div className="text-center max-w-2xl mx-auto mb-14">
           {/* Editorial Luxury Eyebrow */}
           <div className="inline-flex items-center justify-center gap-3 mb-4">
-            <span className="w-6 sm:w-8 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
-            <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase ${
-              isDark ? 'text-rose-400' : 'text-rose-600'
+            <span className={`w-6 sm:w-8 h-[2px] rounded-full flex-shrink-0 ${
+              isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+            }`} />
+            <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase drop-shadow-sm ${
+              isDark ? 'text-rose-400' : 'text-white'
             }`}>
               Transformações Reais
             </span>
-            <span className="w-6 sm:w-8 h-[2px] rounded-full bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
+            <span className={`w-6 sm:w-8 h-[2px] rounded-full flex-shrink-0 ${
+              isDark ? 'bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+            }`} />
           </div>
 
           <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
@@ -75,7 +79,7 @@ export default function BeforeAfter() {
             O poder da transformação no seu olhar
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-950/85 font-medium'}`}>
             Arraste o botão central para comparar o olhar natural com a extensão finalizada.
           </p>
         </div>
@@ -128,7 +132,9 @@ export default function BeforeAfter() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-2 mt-4 text-xs font-medium text-rose-500">
+          <div className={`flex items-center justify-center gap-2 mt-4 text-xs font-medium ${
+            isDark ? 'text-rose-500' : 'text-white drop-shadow-sm'
+          }`}>
             <MoveHorizontal className="w-4 h-4 animate-pulse" />
             <span>Deslize para a esquerda ou direita para comparar</span>
           </div>

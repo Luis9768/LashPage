@@ -68,13 +68,17 @@ export default function Services({ onOpenCatalog }) {
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           {/* Editorial Luxury Eyebrow */}
           <div className="inline-flex items-center justify-center gap-3 mb-4">
-            <span className="w-6 sm:w-8 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
-            <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase ${
-              isDark ? 'text-rose-400' : 'text-rose-600'
+            <span className={`w-6 sm:w-8 h-[2px] rounded-full flex-shrink-0 ${
+              isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+            }`} />
+            <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase drop-shadow-sm ${
+              isDark ? 'text-rose-400' : 'text-white'
             }`}>
               Técnicas em Destaque
             </span>
-            <span className="w-6 sm:w-8 h-[2px] rounded-full bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
+            <span className={`w-6 sm:w-8 h-[2px] rounded-full flex-shrink-0 ${
+              isDark ? 'bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+            }`} />
           </div>
 
           <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
@@ -83,7 +87,7 @@ export default function Services({ onOpenCatalog }) {
             Escolha o estilo ideal para o seu olhar
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-950/85 font-medium'}`}>
             Navegue pelos procedimentos mais procurados no estúdio com isolamento perfeito e durabilidade garantida.
           </p>
         </div>
@@ -114,7 +118,7 @@ export default function Services({ onOpenCatalog }) {
                       className={`rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                         isDark
                           ? 'bg-[#0d0d11] border-[#22222a] shadow-2xl shadow-black'
-                          : 'bg-[#FAF8F5] border-[#A98D51]/30 shadow-lg shadow-[#A98D51]/5'
+                          : 'bg-white border-white/60 shadow-xl shadow-black/10'
                       }`}
                     >
                       {/* Image Side */}
@@ -193,7 +197,7 @@ export default function Services({ onOpenCatalog }) {
                   className={`rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                     isDark
                       ? 'bg-[#0d0d11] border-[#22222a] shadow-2xl shadow-black'
-                      : 'bg-[#FAF8F5] border-[#A98D51]/30 shadow-lg shadow-[#A98D51]/5'
+                      : 'bg-white border-white/60 shadow-xl shadow-black/10'
                   }`}
                 >
                   {/* Image Side */}
@@ -292,7 +296,7 @@ export default function Services({ onOpenCatalog }) {
             className={`absolute top-1/2 -left-3 sm:-left-6 -translate-y-1/2 w-11 h-11 rounded-full border shadow-xl flex items-center justify-center transition-all z-10 ${
               isDark
                 ? 'bg-[#121216]/90 border-[#2b2b36] text-white hover:bg-neutral-800'
-                : 'bg-[#FAF8F5] border-[#A98D51]/30 text-neutral-800 hover:bg-[#F3EFE7]'
+                : 'bg-white border-white/60 text-neutral-900 hover:bg-neutral-50 shadow-lg'
             }`}
           >
             <ChevronLeft className="w-5 h-5" />
@@ -304,7 +308,7 @@ export default function Services({ onOpenCatalog }) {
             className={`absolute top-1/2 -right-3 sm:-right-6 -translate-y-1/2 w-11 h-11 rounded-full border shadow-xl flex items-center justify-center transition-all z-10 ${
               isDark
                 ? 'bg-[#121216]/90 border-[#2b2b36] text-white hover:bg-neutral-800'
-                : 'bg-[#FAF8F5] border-[#A98D51]/30 text-neutral-800 hover:bg-[#F3EFE7]'
+                : 'bg-white border-white/60 text-neutral-900 hover:bg-neutral-50 shadow-lg'
             }`}
           >
             <ChevronRight className="w-5 h-5" />
@@ -322,7 +326,7 @@ export default function Services({ onOpenCatalog }) {
                     ? 'w-8 bg-rose-500'
                     : isDark
                     ? 'w-2 bg-neutral-700 hover:bg-neutral-600'
-                    : 'w-2 bg-[#A98D51]/40 hover:bg-[#A98D51]'
+                    : 'w-2 bg-white/40 hover:bg-white'
                 }`}
               />
             ))}

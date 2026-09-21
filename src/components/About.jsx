@@ -17,7 +17,7 @@ export default function About() {
               <div className="absolute -inset-2 bg-gradient-to-tr from-rose-500 to-pink-600 rounded-3xl opacity-30 blur-lg"></div>
               
               <div className={`relative rounded-3xl overflow-hidden border shadow-2xl ${
-                isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-[#FAF8F5] border-[#A98D51]/30'
+                isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-white/60 shadow-xl shadow-black/10'
               }`}>
 
                 <img
@@ -47,9 +47,11 @@ export default function About() {
             
             {/* Editorial Luxury Eyebrow */}
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-8 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_10px_rgba(244,63,94,0.4)] flex-shrink-0" />
-              <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase ${
-                isDark ? 'text-rose-400' : 'text-rose-600'
+              <span className={`w-8 h-[2px] rounded-full flex-shrink-0 ${
+                isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_10px_rgba(244,63,94,0.4)]' : 'bg-white'
+              }`} />
+              <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase drop-shadow-sm ${
+                isDark ? 'text-rose-400' : 'text-white'
               }`}>
                 Conheça sua Lash
               </span>
@@ -62,7 +64,7 @@ export default function About() {
             </h2>
 
             <div className={`space-y-4 text-sm sm:text-base leading-relaxed mb-8 ${
-              isDark ? 'text-neutral-300' : 'text-neutral-600'
+              isDark ? 'text-neutral-300' : 'text-neutral-950/85 font-medium'
             }`}>
               <p>
                 Olá! Meu compromisso é entregar não apenas um procedimento estético, mas uma transformação que eleve sua autoestima e torne a sua rotina muito mais prática e leve.
@@ -82,7 +84,7 @@ export default function About() {
               ].map((text, idx) => (
                 <div key={idx} className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-rose-500 flex-shrink-0" />
-                  <span className={`text-xs sm:text-sm font-medium ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
+                  <span className={`text-xs sm:text-sm font-medium ${isDark ? 'text-neutral-200' : 'text-neutral-950'}`}>
                     {text}
                   </span>
                 </div>

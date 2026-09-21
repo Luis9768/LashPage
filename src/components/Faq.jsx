@@ -19,13 +19,17 @@ export default function Faq() {
         <div className="text-center max-w-2xl mx-auto mb-14">
           {/* Editorial Luxury Eyebrow */}
           <div className="inline-flex items-center justify-center gap-3 mb-4">
-            <span className="w-6 sm:w-8 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
-            <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase ${
-              isDark ? 'text-rose-400' : 'text-rose-600'
+            <span className={`w-6 sm:w-8 h-[2px] rounded-full flex-shrink-0 ${
+              isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+            }`} />
+            <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase drop-shadow-sm ${
+              isDark ? 'text-rose-400' : 'text-white'
             }`}>
               Tire Todas as Suas Dúvidas
             </span>
-            <span className="w-6 sm:w-8 h-[2px] rounded-full bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
+            <span className={`w-6 sm:w-8 h-[2px] rounded-full flex-shrink-0 ${
+              isDark ? 'bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' : 'bg-white'
+            }`} />
           </div>
 
           <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
@@ -34,7 +38,7 @@ export default function Faq() {
             Perguntas Frequentes
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-950/85 font-medium'}`}>
             Tudo o que você precisa saber antes de fazer sua extensão de cílios com total segurança.
           </p>
         </div>
@@ -50,10 +54,10 @@ export default function Faq() {
                   isOpen
                     ? isDark
                       ? 'bg-[#0e0e12] border-rose-500/40 shadow-lg shadow-black/50'
-                      : 'bg-[#FAF8F5] border-[#A98D51]/50 shadow-md shadow-[#A98D51]/10'
+                      : 'bg-white border-white/80 shadow-xl shadow-black/10'
                     : isDark
                     ? 'bg-[#0a0a0c] border-[#1e1e24] hover:border-[#2a2a35]'
-                    : 'bg-[#FAF8F5] border-[#A98D51]/25 hover:border-[#A98D51]/50 shadow-sm'
+                    : 'bg-white border-white/50 hover:border-white/90 shadow-md shadow-black/5'
                 }`}
 
               >
@@ -76,7 +80,7 @@ export default function Faq() {
                       ? 'rotate-180 bg-rose-500/20 text-rose-500'
                       : isDark
                       ? 'bg-neutral-800 text-neutral-400'
-                      : 'bg-rose-50 text-rose-400'
+                      : 'bg-neutral-100 text-neutral-600'
                   }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
@@ -84,7 +88,7 @@ export default function Faq() {
 
                 {isOpen && (
                   <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-sm sm:text-base leading-relaxed animate-fadeIn">
-                    <p className={isDark ? 'text-neutral-300' : 'text-neutral-600'}>
+                    <p className={isDark ? 'text-neutral-300' : 'text-neutral-700'}>
                       {item.answer}
                     </p>
                   </div>

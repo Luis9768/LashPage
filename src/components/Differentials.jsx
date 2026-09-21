@@ -23,13 +23,17 @@ export default function Differentials() {
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
           {/* Editorial Luxury Eyebrow */}
           <div className="inline-flex items-center justify-center gap-3 mb-4">
-            <span className="w-6 sm:w-8 h-[2px] rounded-full bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
+            <span className={`w-6 sm:w-8 h-[2px] rounded-full shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0 ${
+              isDark ? 'bg-gradient-to-r from-rose-500 to-pink-500' : 'bg-white'
+            }`} />
             <span className={`text-sm sm:text-base font-bold tracking-[0.22em] uppercase ${
-              isDark ? 'text-rose-400' : 'text-rose-600'
+              isDark ? 'text-rose-400' : 'text-white drop-shadow-sm'
             }`}>
               Por que escolher nosso atendimento
             </span>
-            <span className="w-6 sm:w-8 h-[2px] rounded-full bg-gradient-to-l from-rose-500 to-pink-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0" />
+            <span className={`w-6 sm:w-8 h-[2px] rounded-full shadow-[0_0_8px_rgba(244,63,94,0.4)] flex-shrink-0 ${
+              isDark ? 'bg-gradient-to-l from-rose-500 to-pink-500' : 'bg-white'
+            }`} />
           </div>
 
           <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
@@ -38,7 +42,7 @@ export default function Differentials() {
             Cuidado milimétrico em cada detalhe
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-950/80 font-medium'}`}>
             Mais do que colocar cílios: uma experiência focada na saúde dos seus olhos, conforto supremo e durabilidade real.
           </p>
         </div>
@@ -53,12 +57,12 @@ export default function Differentials() {
                 className={`p-4 sm:p-6 lg:p-7 rounded-2xl sm:rounded-3xl border transition-all duration-300 relative group flex flex-col justify-start active:scale-[0.98] ${
                   isDark
                     ? 'bg-[#0d0d11]/90 border-[#22222a] hover:border-rose-500/40 hover:bg-[#131319] shadow-md shadow-black/40'
-                    : 'bg-[#FAF8F5] border-[#A98D51]/25 hover:border-[#A98D51]/55 shadow-sm hover:shadow-md'
+                    : 'bg-white border-white/60 hover:border-white shadow-lg shadow-black/10 hover:shadow-xl'
                 }`}
               >
                 {/* Subtle luxury glow indicator on hover */}
                 <div className={`absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent ${
-                  isDark ? 'via-rose-500/30' : 'via-[#A98D51]/45'
+                  isDark ? 'via-rose-500/30' : 'via-[#A38B59]/45'
                 } to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
                 {/* Icon Circle */}
