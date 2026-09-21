@@ -27,11 +27,11 @@ export default function CatalogView({ onBack }) {
 
   return (
     <div className={`min-h-screen pb-24 transition-colors duration-300 ${
-      isDark ? 'bg-[#000000] text-white' : 'bg-[#fffafb] text-neutral-900'
+      isDark ? 'bg-[#000000] text-white' : 'bg-[#F5F2EB] text-neutral-900'
     }`}>
       {/* Top Sticky Header */}
       <header className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors px-4 py-3 ${
-        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-white/90 border-neutral-200/80'
+        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#F5F2EB]/90 border-[#A98D51]/20'
       }`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           {/* Minimalist Back Button */}
@@ -110,10 +110,10 @@ export default function CatalogView({ onBack }) {
           <div
             key={service.id}
             className={`rounded-3xl border overflow-hidden transition-all duration-300 flex flex-col md:flex-row ${
-              isDark
-                ? 'bg-[#0d0d11] border-[#22222a] hover:border-rose-900/50 shadow-xl shadow-black/50'
-                : 'bg-white border-rose-100 hover:border-rose-200 shadow-lg shadow-rose-950/5'
-            }`}
+                isDark
+                  ? 'bg-[#0d0d11] border-[#22222a] hover:border-rose-900/50 shadow-xl shadow-black/50'
+                  : 'bg-[#FAF8F5] border-[#A98D51]/30 hover:border-[#A98D51]/60 shadow-lg shadow-[#A98D51]/5'
+              }`}
           >
             {/* Image banner on side */}
             <div className="md:w-5/12 relative h-56 md:h-auto min-h-[220px] overflow-hidden">

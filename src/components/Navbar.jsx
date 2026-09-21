@@ -132,10 +132,10 @@ export default function Navbar({ onNavigate }) {
           isScrolled
             ? isDark
               ? 'bg-[#000000]/95 backdrop-blur-xl border-b border-[#202028] shadow-lg shadow-black/80 py-2.5 sm:py-3'
-              : 'bg-[#F6F4F0]/95 backdrop-blur-xl border-b border-[#E2DAD0] shadow-sm shadow-stone-900/5 py-2.5 sm:py-3'
+              : 'bg-[#F5F2EB]/95 backdrop-blur-xl border-b border-[#A98D51]/20 shadow-sm shadow-stone-900/5 py-2.5 sm:py-3'
             : isDark
               ? 'bg-[#000000]/80 backdrop-blur-md border-b border-white/5 py-3 sm:py-4 md:py-5'
-              : 'bg-[#F6F4F0]/85 backdrop-blur-md border-b border-[#E2DAD0]/60 py-3 sm:py-4 md:py-5'
+              : 'bg-[#F5F2EB]/85 backdrop-blur-md border-b border-[#A98D51]/15 py-3 sm:py-4 md:py-5'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -259,7 +259,7 @@ export default function Navbar({ onNavigate }) {
             : 'border-[#E2DAD0] text-neutral-900'
         }`}
         style={{
-          backgroundColor: isDark ? '#0d0d11' : '#F6F4F0',
+          backgroundColor: isDark ? '#0d0d11' : '#F5F2EB',
         }}
         role="dialog"
         aria-modal="true"
@@ -268,7 +268,7 @@ export default function Navbar({ onNavigate }) {
         {/* Header do Menu Lateral */}
         <div
           className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-neutral-200/70 dark:border-neutral-800/70 flex-shrink-0"
-          style={{ backgroundColor: isDark ? '#0d0d11' : '#F6F4F0' }}
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#F5F2EB' }}
         >
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold tracking-tight">
@@ -287,7 +287,7 @@ export default function Navbar({ onNavigate }) {
             className={`p-2 rounded-xl border transition-colors ${
               isDark
                 ? 'border-neutral-800 text-neutral-300 hover:bg-neutral-800 hover:text-white'
-                : 'border-[#E2DAD0] text-neutral-700 hover:bg-white hover:text-neutral-900'
+                : 'border-[#A98D51]/30 text-neutral-700 hover:bg-[#FAF8F5] hover:text-neutral-900'
             }`}
             aria-label="Fechar menu lateral"
           >
@@ -298,7 +298,7 @@ export default function Navbar({ onNavigate }) {
         {/* Conteúdo Rolável do Drawer */}
         <div
           className="flex-1 overflow-y-auto px-5 sm:px-6 py-5 space-y-6"
-          style={{ backgroundColor: isDark ? '#0d0d11' : '#F6F4F0' }}
+          style={{ backgroundColor: isDark ? '#0d0d11' : '#F5F2EB' }}
         >
           {/* Caminhos Principais */}
           <div className="space-y-2.5">
@@ -309,7 +309,7 @@ export default function Navbar({ onNavigate }) {
                     ? 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 text-white border-rose-400 shadow-md shadow-rose-600/20 hover:brightness-105'
                     : isDark
                     ? 'bg-[#181820] border-[#22222b] hover:border-rose-500/50 hover:bg-[#1e1e28] text-white'
-                    : 'bg-white border-[#E2DAD0] hover:border-rose-300 hover:bg-[#FAF8F5] text-neutral-800 shadow-sm'
+                    : 'bg-[#FAF8F5] border-[#A98D51]/25 hover:border-[#A98D51]/55 hover:bg-[#F3EFE7] text-neutral-800 shadow-sm'
                 }`;
 
                 const innerContent = (

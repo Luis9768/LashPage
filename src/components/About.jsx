@@ -17,7 +17,7 @@ export default function About() {
               <div className="absolute -inset-2 bg-gradient-to-tr from-rose-500 to-pink-600 rounded-3xl opacity-30 blur-lg"></div>
               
               <div className={`relative rounded-3xl overflow-hidden border shadow-2xl ${
-                isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-[#E2DAD0]'
+                isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-[#FAF8F5] border-[#A98D51]/30'
               }`}>
 
                 <img

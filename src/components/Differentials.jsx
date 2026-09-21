@@ -53,11 +53,13 @@ export default function Differentials() {
                 className={`p-4 sm:p-6 lg:p-7 rounded-2xl sm:rounded-3xl border transition-all duration-300 relative group flex flex-col justify-start active:scale-[0.98] ${
                   isDark
                     ? 'bg-[#0d0d11]/90 border-[#22222a] hover:border-rose-500/40 hover:bg-[#131319] shadow-md shadow-black/40'
-                    : 'bg-white/95 border-[#E2DAD0] hover:border-rose-300 shadow-sm hover:shadow-md'
+                    : 'bg-[#FAF8F5] border-[#A98D51]/25 hover:border-[#A98D51]/55 shadow-sm hover:shadow-md'
                 }`}
               >
                 {/* Subtle luxury glow indicator on hover */}
-                <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-rose-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className={`absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent ${
+                  isDark ? 'via-rose-500/30' : 'via-[#A98D51]/45'
+                } to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
                 {/* Icon Circle */}
                 <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-500 text-white flex items-center justify-center mb-3 sm:mb-4 shadow-sm shadow-rose-500/20 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">

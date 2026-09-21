@@ -22,11 +22,11 @@ export default function LocationView({ onBack }) {
 
   return (
     <div className={`min-h-screen pb-24 transition-colors duration-300 ${
-      isDark ? 'bg-[#000000] text-white' : 'bg-[#fffafb] text-neutral-900'
+      isDark ? 'bg-[#000000] text-white' : 'bg-[#F5F2EB] text-neutral-900'
     }`}>
       {/* Top Sticky Header */}
       <header className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors px-4 py-3 ${
-        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-white/90 border-neutral-200/80'
+        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#F5F2EB]/90 border-[#A98D51]/20'
       }`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           {/* Minimalist Back Button */}
@@ -83,7 +83,7 @@ export default function LocationView({ onBack }) {
       {/* Address Card with Copy Button */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-8">
         <div className={`p-6 sm:p-8 rounded-3xl border shadow-xl ${
-          isDark ? 'bg-[#0d0d11] border-[#22222a] shadow-black' : 'bg-white border-rose-100 shadow-rose-950/5'
+          isDark ? 'bg-[#0d0d11] border-[#22222a] shadow-black' : 'bg-[#FAF8F5] border-[#A98D51]/30 shadow-lg shadow-[#A98D51]/5'
         }`}>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-rose-500/20">
             <div>

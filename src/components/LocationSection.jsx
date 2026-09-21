@@ -44,7 +44,7 @@ export default function LocationSection() {
           <div className={`p-8 sm:p-10 rounded-3xl border flex flex-col justify-between ${
             isDark
               ? 'bg-[#0d0d11] border-[#22222a] shadow-xl shadow-black/60'
-              : 'bg-white border-[#E2DAD0] shadow-lg shadow-stone-900/5'
+              : 'bg-[#FAF8F5] border-[#A98D51]/30 shadow-lg shadow-[#A98D51]/5'
           }`}>
 
             <div>
@@ -124,7 +124,7 @@ export default function LocationSection() {
                 className={`px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold border transition-all flex items-center justify-center gap-2 ${
                   isDark
                     ? 'border-neutral-700 text-neutral-200 hover:bg-neutral-800'
-                    : 'border-rose-200 text-neutral-800 hover:bg-rose-50'
+                    : 'border-[#A98D51]/35 text-neutral-800 hover:bg-[#F4EFE6]'
                 }`}
               >
                 <Compass className="w-4 h-4 text-cyan-400" />

@@ -114,7 +114,7 @@ export default function Services({ onOpenCatalog }) {
                       className={`rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                         isDark
                           ? 'bg-[#0d0d11] border-[#22222a] shadow-2xl shadow-black'
-                          : 'bg-white border-[#E2DAD0] shadow-lg shadow-stone-900/5'
+                          : 'bg-[#FAF8F5] border-[#A98D51]/30 shadow-lg shadow-[#A98D51]/5'
                       }`}
                     >
                       {/* Image Side */}
@@ -193,7 +193,7 @@ export default function Services({ onOpenCatalog }) {
                   className={`rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                     isDark
                       ? 'bg-[#0d0d11] border-[#22222a] shadow-2xl shadow-black'
-                      : 'bg-white border-[#E2DAD0] shadow-lg shadow-stone-900/5'
+                      : 'bg-[#FAF8F5] border-[#A98D51]/30 shadow-lg shadow-[#A98D51]/5'
                   }`}
                 >
                   {/* Image Side */}
@@ -292,7 +292,7 @@ export default function Services({ onOpenCatalog }) {
             className={`absolute top-1/2 -left-3 sm:-left-6 -translate-y-1/2 w-11 h-11 rounded-full border shadow-xl flex items-center justify-center transition-all z-10 ${
               isDark
                 ? 'bg-[#121216]/90 border-[#2b2b36] text-white hover:bg-neutral-800'
-                : 'bg-white/95 border-rose-200 text-neutral-800 hover:bg-rose-50'
+                : 'bg-[#FAF8F5] border-[#A98D51]/30 text-neutral-800 hover:bg-[#F3EFE7]'
             }`}
           >
             <ChevronLeft className="w-5 h-5" />
@@ -304,7 +304,7 @@ export default function Services({ onOpenCatalog }) {
             className={`absolute top-1/2 -right-3 sm:-right-6 -translate-y-1/2 w-11 h-11 rounded-full border shadow-xl flex items-center justify-center transition-all z-10 ${
               isDark
                 ? 'bg-[#121216]/90 border-[#2b2b36] text-white hover:bg-neutral-800'
-                : 'bg-white/95 border-rose-200 text-neutral-800 hover:bg-rose-50'
+                : 'bg-[#FAF8F5] border-[#A98D51]/30 text-neutral-800 hover:bg-[#F3EFE7]'
             }`}
           >
             <ChevronRight className="w-5 h-5" />
@@ -322,7 +322,7 @@ export default function Services({ onOpenCatalog }) {
                     ? 'w-8 bg-rose-500'
                     : isDark
                     ? 'w-2 bg-neutral-700 hover:bg-neutral-600'
-                    : 'w-2 bg-rose-200 hover:bg-rose-300'
+                    : 'w-2 bg-[#A98D51]/40 hover:bg-[#A98D51]'
                 }`}
               />
             ))}
