@@ -61,12 +61,12 @@ export default function CatalogView({ onBack }) {
       </header>
 
       {/* Hero Header of Catalog Page */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-6 text-center">
-        <h1 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight mb-2.5 text-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-6 text-left">
+        <h1 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-white">
           Catálogo de Procedimentos & Técnicas
         </h1>
 
-        <p className={`text-xs sm:text-sm max-w-md mx-auto leading-relaxed ${
+        <p className={`text-xs sm:text-sm max-w-md leading-relaxed ${
           isDark ? 'text-neutral-400' : 'text-white/85 font-medium'
         }`}>
           Fios premium de alta retenção, biossegurança e lash mapping visagista personalizado.

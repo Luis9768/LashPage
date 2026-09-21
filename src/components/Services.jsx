@@ -65,8 +65,8 @@ export default function Services({ onOpenCatalog }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 tracking-tight text-white drop-shadow-sm">
+        <div className="text-left max-w-2xl mb-8 sm:mb-12">
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight text-white drop-shadow-sm">
             Técnicas de Extensão de Cílios
           </h2>
 
