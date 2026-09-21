@@ -112,14 +112,7 @@ export default function Services({ onOpenCatalog }) {
                           className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-
-                        {/* Tag */}
-                        <div className="absolute top-3.5 left-3.5">
-                          <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wide bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-md">
-                            {service.badge}
-                          </span>
-                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
                         {/* Duration & Retention */}
                         <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-[11px]">
@@ -136,12 +129,16 @@ export default function Services({ onOpenCatalog }) {
                       {/* Content Side */}
                       <div className="md:col-span-7 lg:col-span-7 p-5 sm:p-7 flex flex-col justify-between flex-1 overflow-hidden">
                         <div>
-                          <div className="flex items-center justify-between gap-2 mb-1">
-                            <h3 className={`font-heading text-xl sm:text-2xl font-bold tracking-tight ${
-                              isDark ? 'text-white' : 'text-neutral-900'
-                            }`}>
-                              {service.title}
-                            </h3>
+                          <div className="flex items-center justify-between gap-2 mb-2">
+                            {service.badge ? (
+                              <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wide ${
+                                isDark 
+                                  ? 'bg-rose-950/60 text-rose-300 border border-rose-800/50' 
+                                  : 'bg-rose-50 text-rose-700 border border-rose-200'
+                              }`}>
+                                {service.badge}
+                              </span>
+                            ) : <div />}
                             {service.price && (
                               <span className={`text-xs sm:text-sm font-bold px-2.5 py-1 rounded-xl shrink-0 ${
                                 isDark 
@@ -152,6 +149,12 @@ export default function Services({ onOpenCatalog }) {
                               </span>
                             )}
                           </div>
+
+                          <h3 className={`font-heading text-xl sm:text-2xl font-bold mb-1 tracking-tight ${
+                            isDark ? 'text-white' : 'text-neutral-900'
+                          }`}>
+                            {service.title}
+                          </h3>
 
                           <p className="text-xs font-semibold text-rose-400 mb-2">
                             {service.tagline}

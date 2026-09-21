@@ -109,22 +109,21 @@ export default function CatalogView({ onBack }) {
                 alt={service.title}
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/80 via-black/20 to-transparent"></div>
-
-              <div className="absolute top-3 left-3">
-                <span className="px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-gradient-to-r from-rose-500 to-pink-600 text-white shadow-md">
-                  {service.badge}
-                </span>
-              </div>
             </div>
 
             {/* Content Details */}
             <div className="md:w-7/12 p-6 sm:p-7 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between gap-3 mb-1">
-                  <h3 className="font-heading text-2xl font-bold">
-                    {service.title}
-                  </h3>
+                <div className="flex items-center justify-between gap-3 mb-2">
+                  {service.badge ? (
+                    <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wide ${
+                      isDark 
+                        ? 'bg-rose-950/60 text-rose-300 border border-rose-800/50' 
+                        : 'bg-rose-50 text-rose-700 border border-rose-200'
+                    }`}>
+                      {service.badge}
+                    </span>
+                  ) : <div />}
                   {service.price && (
                     <span className={`text-sm sm:text-base font-bold px-3 py-1 rounded-xl shrink-0 ${
                       isDark 
@@ -135,6 +134,12 @@ export default function CatalogView({ onBack }) {
                     </span>
                   )}
                 </div>
+
+                <h3 className={`font-heading text-xl sm:text-2xl font-bold mb-1 tracking-tight ${
+                  isDark ? 'text-white' : 'text-neutral-900'
+                }`}>
+                  {service.title}
+                </h3>
 
                 <p className="text-xs font-semibold text-rose-500 mb-3">
                   {service.tagline}
