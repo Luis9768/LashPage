@@ -42,13 +42,15 @@ export default function CatalogView({ onBack }) {
                 : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
             }`}
           >
-            <ArrowLeft className="w-3.5 h-3.5 text-rose-300" />
+            <ArrowLeft className={`w-3.5 h-3.5 ${isDark ? 'text-rose-400' : 'text-rose-600'}`} />
             <span>Voltar</span>
           </button>
 
           {/* Clean Studio Identity */}
           <div className="flex items-center gap-2 text-right">
-            <span className="text-[11px] uppercase tracking-widest font-semibold text-rose-300">
+            <span className={`text-[11px] uppercase tracking-widest font-bold ${
+              isDark ? 'text-rose-400' : 'text-rose-600'
+            }`}>
               Catálogo
             </span>
             <span className="text-white/40 text-xs">•</span>
