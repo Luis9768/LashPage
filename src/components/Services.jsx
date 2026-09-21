@@ -6,7 +6,6 @@ import { Clock, Calendar, ChevronLeft, ChevronRight, ArrowUpRight, ArrowRight, E
 export default function Services({ onOpenCatalog }) {
   const { isDark } = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const carouselRef = useRef(null);
 
   // Exibir os 4 serviços no carrossel de destaque
@@ -24,9 +23,10 @@ export default function Services({ onOpenCatalog }) {
   // Suporte a swipe por toque (touch gestures para mobile)
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
+  const [isSwiping, setIsSwiping] = useState(false);
 
   const handleTouchStart = (e) => {
-    setIsPaused(true);
+    setIsSwiping(true);
     setTouchEndX(null);
     setTouchStartX(e.targetTouches[0].clientX);
   };
@@ -36,25 +36,29 @@ export default function Services({ onOpenCatalog }) {
   };
 
   const handleTouchEnd = () => {
-    setIsPaused(false);
-    if (!touchStartX || !touchEndX) return;
-    const diff = touchStartX - touchEndX;
-    if (diff > 45) {
-      nextSlide();
-    } else if (diff < -45) {
-      prevSlide();
+    setIsSwiping(false);
+    if (touchStartX !== null && touchEndX !== null) {
+      const diff = touchStartX - touchEndX;
+      if (diff > 45) {
+        nextSlide();
+      } else if (diff < -45) {
+        prevSlide();
+      }
     }
+    setTouchStartX(null);
+    setTouchEndX(null);
   };
 
-  // Autoplay a cada 3 segundos com pausa ao interagir
+  // Autoplay contínuo a cada 3 segundos (reseta o ciclo de 3s a cada transição ou clique)
   useEffect(() => {
-    if (isPaused || totalSlides <= 1) return;
+    if (isSwiping || totalSlides <= 1) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [isPaused, totalSlides]);
+  }, [currentIndex, isSwiping, totalSlides]);
 
   return (
     <section id="tecnicas" className="py-20 sm:py-28 relative">
@@ -85,11 +89,7 @@ export default function Services({ onOpenCatalog }) {
         </div>
 
         {/* Carousel Container (Mobile & Desktop) */}
-        <div 
-          className="relative max-w-4xl mx-auto"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
+        <div className="relative max-w-4xl mx-auto">
           
           {/* Main Carousel Card Slider */}
           <div
