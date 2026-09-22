@@ -1,4 +1,10 @@
 // Configurações globais e dados da Landing Page
+import { decodeProtectedData } from '../utils/obfuscation';
+
+// Proteção LGPD / Scrapers: token criptografado para evitar exposição pública no GitHub
+const resolvedWhatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || decodeProtectedData("Y1xFRVZBUFViQ0NRXQ==");
+const resolvedWhatsappUrl = import.meta.env.VITE_WHATSAPP_URL || `https://wa.me/${resolvedWhatsappNumber}?text=Ol%C3%A1%2C+Vittoria%21+Vim+pelo+seu+site+e+gostaria+de+tirar+d%C3%BAvidas.`;
+
 export const siteConfig = {
   name: "Vittoria's Studio",
   artistName: "Vittoria Amorim",
@@ -11,10 +17,10 @@ export const siteConfig = {
   avatarImage: "/vittoria-profile.jpg",
   heroImage: "/vittoria-hero.jpg",
 
-  // Links de Ação (limpos de tokens de rastreamento e configuráveis por ambiente)
+  // Links de Ação (protegidos contra rastreadores e configuráveis por ambiente)
   bookingUrl: import.meta.env.VITE_BOOKING_URL || "https://online.maapp.com.br/ilopesstudio",
-  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || "5511999999999",
-  whatsappUrl: import.meta.env.VITE_WHATSAPP_URL || `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER || '5511999999999'}?text=Ol%C3%A1%2C+Vittoria%21+Vim+pelo+seu+site+e+gostaria+de+tirar+d%C3%BAvidas.`,
+  whatsappNumber: resolvedWhatsappNumber,
+  whatsappUrl: resolvedWhatsappUrl,
   instagramUrl: import.meta.env.VITE_INSTAGRAM_URL || "https://www.instagram.com/vittorias.studio/",
   instagramHandle: import.meta.env.VITE_INSTAGRAM_HANDLE || "@vittorias.studio",
 
