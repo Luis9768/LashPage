@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
+import { siteConfig } from '../../config/siteConfig';
 import { ArrowLeft, Navigation, Compass, Clock, Check, Copy, Train, CreditCard } from 'lucide-react';
 
 export default function LocationView({ onBack }) {

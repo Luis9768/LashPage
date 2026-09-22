@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
+import { siteConfig } from '../config/siteConfig';
 import { MapPin, ArrowUp } from 'lucide-react';
 
 function WhatsAppIcon({ className = "w-5 h-5" }) {
