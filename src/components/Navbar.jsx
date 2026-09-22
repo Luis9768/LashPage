@@ -121,9 +121,6 @@ export default function Navbar({ onNavigate }) {
     { name: 'Dúvidas', href: '#faq' },
   ];
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
 
   return (
     <>
@@ -370,30 +367,6 @@ export default function Navbar({ onNavigate }) {
               })}
             </div>
 
-          {/* Section: Navegação da Página */}
-          <div className="pt-4 border-t border-white/20 dark:border-neutral-800/70">
-            <p className={`text-[11px] font-bold uppercase tracking-wider mb-3 px-1 ${
-              isDark ? 'text-neutral-400' : 'text-white/80'
-            }`}>
-              Navegação da Página
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={handleLinkClick}
-                  className={`px-3 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-colors border ${
-                    isDark
-                      ? 'text-neutral-300 border-neutral-800/60 hover:border-rose-500/40 hover:text-rose-400 hover:bg-neutral-800/40'
-                      : 'text-white border-white/30 hover:border-white hover:bg-white hover:text-neutral-900'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Footer do Menu Lateral */}
