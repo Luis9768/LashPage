@@ -33,20 +33,20 @@ export default function Footer() {
     <footer className={`pt-16 pb-28 md:pb-16 border-t transition-colors duration-300 ${
       isDark
         ? 'bg-[#000000] border-[#1a1a22] text-neutral-400'
-        : 'bg-[#9E988D] border-white/20 text-neutral-100'
+        : 'bg-white border-neutral-200 text-neutral-600'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/15 dark:border-rose-500/10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-neutral-200/80 dark:border-rose-500/10">
           
           {/* Brand Col */}
           <div className="md:col-span-7 flex flex-col items-start">
             <a href="#inicio" className="group flex flex-col items-start mb-4">
               <span className="font-heading text-2xl font-bold tracking-tight">
-                <span className="text-white">Vittoria's</span>
-                <span className="text-rose-400 font-serif italic ml-1">Studio</span>
+                <span className={isDark ? "text-white" : "text-neutral-900"}>Vittoria's</span>
+                <span className="text-rose-600 font-serif italic ml-1">Studio</span>
               </span>
               <span className={`text-[10px] tracking-[0.25em] uppercase font-medium ${
-                isDark ? 'text-rose-500' : 'text-rose-200'
+                isDark ? 'text-rose-500' : 'text-rose-600'
               }`}>
                 Santo André • SP
               </span>
@@ -54,7 +54,7 @@ export default function Footer() {
 
 
             <p className={`text-xs sm:text-sm leading-relaxed max-w-md mb-6 ${
-              isDark ? 'text-neutral-400' : 'text-neutral-100'
+              isDark ? 'text-neutral-400' : 'text-neutral-600'
             }`}>
               Studio especializado em extensão de cílios, biossegurança e realce do olhar. Cuidado milimétrico e respeito à saúde dos seus fios naturais.
             </p>
@@ -68,7 +68,7 @@ export default function Footer() {
                 className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${
                   isDark
                     ? 'border-neutral-800 text-rose-300 hover:bg-neutral-800 hover:text-white'
-                    : 'border-white/30 text-white hover:bg-white/20 hover:text-white'
+                    : 'border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-rose-300 hover:bg-white hover:text-rose-600 shadow-sm'
                 }`}
               >
                 <InstagramIcon className="w-5 h-5" />
@@ -82,7 +82,7 @@ export default function Footer() {
                 className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${
                   isDark
                     ? 'border-neutral-800 text-emerald-400 hover:bg-neutral-800 hover:text-white'
-                    : 'border-white/30 text-emerald-300 hover:bg-white/20 hover:text-white'
+                    : 'border-neutral-200 bg-neutral-50 text-emerald-600 hover:border-emerald-300 hover:bg-white shadow-sm'
                 }`}
               >
                 <WhatsAppIcon className="w-5 h-5" />
@@ -92,12 +92,14 @@ export default function Footer() {
 
           {/* Location & Booking */}
           <div className="md:col-span-5 md:pl-4">
-            <h4 className="text-xs font-bold tracking-wider uppercase mb-4 text-white">
+            <h4 className={`text-xs font-bold tracking-wider uppercase mb-4 ${
+              isDark ? 'text-white' : 'text-neutral-900'
+            }`}>
               Endereço
             </h4>
-            <div className={`space-y-2 text-xs sm:text-sm mb-6 ${isDark ? 'text-neutral-300' : 'text-neutral-100'}`}>
+            <div className={`space-y-2 text-xs sm:text-sm mb-6 ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
               <p className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-rose-400 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5" />
                 <span>{siteConfig.location.address}, {siteConfig.location.complement}, {siteConfig.location.neighborhood} - {siteConfig.location.city}</span>
               </p>
               <p className="text-xs opacity-85 pl-6">{siteConfig.location.hours}</p>
@@ -117,13 +119,15 @@ export default function Footer() {
 
         {/* Bottom copyright */}
         <div className={`pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs ${
-          isDark ? 'text-neutral-500' : 'text-neutral-200'
+          isDark ? 'text-neutral-500' : 'text-neutral-500'
         }`}>
           <p>© {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.</p>
           
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 hover:text-rose-300 transition-colors text-white"
+            className={`flex items-center gap-1.5 transition-colors ${
+              isDark ? 'text-white hover:text-rose-300' : 'text-neutral-700 hover:text-rose-600'
+            }`}
           >
             <span>Voltar ao topo</span>
             <ArrowUp className="w-3.5 h-3.5" />

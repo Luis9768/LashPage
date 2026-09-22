@@ -21,11 +21,13 @@ export default function Differentials() {
         
         {/* Header */}
         <div className="text-left max-w-2xl mb-8 sm:mb-12">
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight text-white drop-shadow-sm">
+          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight ${
+            isDark ? 'text-white' : 'text-neutral-900'
+          }`}>
             Diferenciais do Nosso Atendimento
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
             Mais do que colocar cílios: uma experiência focada na saúde dos seus olhos, conforto supremo e durabilidade real.
           </p>
         </div>
@@ -40,12 +42,12 @@ export default function Differentials() {
                 className={`p-4 sm:p-6 lg:p-7 rounded-2xl sm:rounded-3xl border transition-all duration-300 relative group flex flex-col justify-start active:scale-[0.98] ${
                   isDark
                     ? 'bg-[#0d0d11]/90 border-[#22222a] hover:border-rose-500/40 hover:bg-[#131319] shadow-md shadow-black/40'
-                    : 'bg-white border border-black/[0.04] shadow-sm hover:shadow'
+                    : 'bg-white border-neutral-200/90 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.14),0_2px_8px_-2px_rgba(0,0,0,0.08)] hover:shadow-[0_14px_32px_-4px_rgba(0,0,0,0.22),0_4px_12px_-2px_rgba(0,0,0,0.10)] hover:border-rose-300 hover:-translate-y-1'
                 }`}
               >
                 {/* Subtle luxury glow indicator on hover */}
                 <div className={`absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent ${
-                  isDark ? 'via-rose-500/30' : 'via-[#B5B0A5]/45'
+                  isDark ? 'via-rose-500/30' : 'via-rose-400/40'
                 } to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
                 {/* Icon Circle */}

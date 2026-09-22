@@ -26,11 +26,11 @@ export default function CatalogView({ onBack }) {
 
   return (
     <div className={`min-h-screen pb-24 transition-colors duration-300 ${
-      isDark ? 'bg-[#000000] text-white' : 'bg-[#B5B0A5] text-white'
+      isDark ? 'bg-[#000000] text-white' : 'bg-[#FAFAFA] text-neutral-900'
     }`}>
       {/* Top Sticky Header */}
       <header className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors px-4 py-3 ${
-        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-[#B5B0A5]/95 border-white/20'
+        isDark ? 'bg-black/85 border-[#1c1c22]' : 'bg-white/95 border-neutral-200 shadow-sm'
       }`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           {/* Minimalist Back Button */}
@@ -39,7 +39,7 @@ export default function CatalogView({ onBack }) {
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-all active:scale-90 active:bg-rose-500/20 active:border-rose-500/50 ${
               isDark
                 ? 'bg-neutral-900/90 hover:bg-neutral-800 text-neutral-200 border border-neutral-800'
-                : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
+                : 'bg-white hover:bg-neutral-100 text-neutral-800 border border-neutral-200 shadow-sm'
             }`}
           >
             <ArrowLeft className={`w-3.5 h-3.5 ${isDark ? 'text-rose-400' : 'text-rose-600'}`} />
@@ -48,10 +48,12 @@ export default function CatalogView({ onBack }) {
 
           {/* Clean Studio Identity */}
           <div className="flex items-center gap-2 text-right">
-            <span className="text-[11px] uppercase tracking-widest font-bold text-white">
+            <span className={`text-[11px] uppercase tracking-widest font-bold ${
+              isDark ? 'text-white' : 'text-neutral-900'
+            }`}>
               Catálogo
             </span>
-            <span className="text-white/40 text-xs">•</span>
+            <span className="text-neutral-400 text-xs">•</span>
             <span className={`text-[11px] font-bold ${isDark ? 'text-rose-400' : 'text-rose-600'}`}>
               Vittoria's Studio
             </span>
@@ -61,12 +63,14 @@ export default function CatalogView({ onBack }) {
 
       {/* Hero Header of Catalog Page */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-6 text-left">
-        <h1 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-white">
+        <h1 className={`font-heading text-2xl sm:text-3xl font-bold tracking-tight mb-2 ${
+          isDark ? 'text-white' : 'text-neutral-900'
+        }`}>
           Catálogo de Procedimentos & Técnicas
         </h1>
 
         <p className={`text-xs sm:text-sm max-w-md leading-relaxed ${
-          isDark ? 'text-neutral-400' : 'text-white/85 font-medium'
+          isDark ? 'text-neutral-400' : 'text-neutral-600'
         }`}>
           Fios premium de alta retenção, biossegurança e lash mapping visagista personalizado.
         </p>
@@ -82,7 +86,7 @@ export default function CatalogView({ onBack }) {
                   ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white shadow-md'
                   : isDark
                   ? 'bg-[#121216] text-neutral-400 hover:text-white border border-[#22222a]'
-                  : 'bg-white/20 text-white hover:bg-white/30 border border-white/30'
+                  : 'bg-white text-neutral-700 hover:text-neutral-900 border border-neutral-200 shadow-sm'
               }`}
             >
               {cat.label}
@@ -99,7 +103,7 @@ export default function CatalogView({ onBack }) {
             className={`rounded-3xl border overflow-hidden transition-all duration-300 flex flex-col md:flex-row ${
                 isDark
                   ? 'bg-[#0d0d11] border-[#22222a] hover:border-rose-900/50 shadow-xl shadow-black/50'
-                  : 'bg-white border border-black/[0.04] shadow-sm'
+                  : 'bg-white border border-neutral-200/90 shadow-[0_14px_36px_-6px_rgba(0,0,0,0.18),0_4px_14px_-2px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_42px_-6px_rgba(0,0,0,0.22),0_6px_16px_-2px_rgba(0,0,0,0.10)] hover:border-rose-300'
               }`}
           >
             {/* Image banner on side */}

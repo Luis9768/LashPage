@@ -9,17 +9,19 @@ export default function LocationSection() {
 
   return (
     <section id="localizacao" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#B5B0A5]'
+      isDark ? 'bg-[#000000]' : 'bg-[#FAFAFA]'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Header */}
         <div className="text-left max-w-2xl mx-auto mb-8 sm:mb-12">
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight text-white drop-shadow-sm">
+          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight ${
+            isDark ? 'text-white' : 'text-neutral-900'
+          }`}>
             Localização do Studio em Santo André
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
             Espaço climatizado, confortável e com localização privilegiada no Centro de Santo André.
           </p>
         </div>
@@ -29,9 +31,9 @@ export default function LocationSection() {
           
           {/* Information Card */}
           <div className={`p-8 sm:p-10 rounded-3xl flex flex-col justify-between ${
-            isDark
-              ? 'bg-[#0d0d11] border border-[#22222a] shadow-xl shadow-black/60'
-              : 'bg-white border border-black/[0.04] shadow-sm'
+              isDark
+                ? 'bg-[#0d0d11] border border-[#22222a] shadow-xl shadow-black/60'
+                : 'bg-white border border-neutral-200/90 shadow-[0_14px_36px_-6px_rgba(0,0,0,0.20),0_4px_14px_-2px_rgba(0,0,0,0.10)]'
           }`}>
 
             <div>

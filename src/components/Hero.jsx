@@ -82,8 +82,8 @@ export default function Hero({ onNavigate }) {
         <div
           className={`rounded-3xl overflow-hidden transition-all duration-300 ${
             isDark
-              ? 'bg-[#0a0a0c] border border-[#1e1e24] shadow-black/60'
-              : 'bg-white border border-black/[0.04] shadow-sm'
+              ? 'bg-[#0a0a0c] border border-[#1e1e24] shadow-black/60 shadow-2xl'
+              : 'bg-white border border-neutral-200/90 shadow-[0_14px_36px_-6px_rgba(0,0,0,0.20),0_4px_14px_-2px_rgba(0,0,0,0.10)]'
           }`}
         >
           {/* Top Client Photo Banner (Editorial Minimalist Frame - 100% natural, sem neblina ou degradê forçado) */}
@@ -165,7 +165,7 @@ export default function Hero({ onNavigate }) {
                             ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white border-rose-400 hover:brightness-105 hover:shadow-md hover:shadow-rose-500/20'
                             : isDark
                             ? 'bg-[#121216] border-[#22222b] text-neutral-200 hover:border-rose-500/50 hover:bg-[#181820] hover:text-white'
-                            : 'bg-neutral-50 border-neutral-200/80 text-neutral-700 hover:border-[#B5B0A5] hover:bg-white hover:text-rose-600'
+                            : 'bg-neutral-50/80 border-neutral-200/80 text-neutral-700 shadow-sm hover:border-rose-300 hover:bg-white hover:text-rose-600 hover:shadow-md'
                         }`}
                         title={action.title}
                       >

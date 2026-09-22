@@ -17,11 +17,13 @@ export default function Faq() {
         
         {/* Header */}
         <div className="text-left max-w-2xl mb-8 sm:mb-12">
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight text-white drop-shadow-sm">
+          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight ${
+            isDark ? 'text-white' : 'text-neutral-900'
+          }`}>
             Dúvidas Frequentes
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
             Tudo o que você precisa saber antes de fazer sua extensão de cílios com total segurança.
           </p>
         </div>
@@ -37,12 +39,11 @@ export default function Faq() {
                   isOpen
                     ? isDark
                       ? 'bg-[#0e0e12] border-rose-500/40 shadow-lg shadow-black/50'
-                      : 'bg-white border border-black/[0.04] shadow-sm'
+                      : 'bg-white border-rose-300 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.18),0_4px_10px_-2px_rgba(0,0,0,0.08)]'
                     : isDark
                     ? 'bg-[#0a0a0c] border-[#1e1e24] hover:border-[#2a2a35]'
-                    : 'bg-white border border-black/[0.04] hover:border-black/[0.08]'
+                    : 'bg-white border-neutral-200/90 shadow-[0_4px_16px_-2px_rgba(0,0,0,0.10),0_2px_4px_-1px_rgba(0,0,0,0.06)] hover:border-neutral-300 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.16)]'
                 }`}
-
               >
                 <button
                   onClick={() => toggleAccordion(index)}
@@ -71,7 +72,7 @@ export default function Faq() {
 
                 {isOpen && (
                   <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-sm sm:text-base leading-relaxed animate-fadeIn">
-                    <p className={isDark ? 'text-neutral-300' : 'text-neutral-700'}>
+                    <p className={isDark ? 'text-neutral-300' : 'text-neutral-600'}>
                       {item.answer}
                     </p>
                   </div>

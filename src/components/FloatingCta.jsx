@@ -43,11 +43,11 @@ export default function FloatingCta() {
 
       {/* Mobile Fixed Bottom Bar (Sticky Bar for Mobile Phones) */}
       <aside aria-label="Barra de agendamento mobile" className={`md:hidden fixed bottom-0 left-0 right-0 z-40 p-3 backdrop-blur-xl border-t transition-colors shadow-2xl safe-area-bottom ${
-        isDark ? 'bg-black/90 border-[#1c1c22]' : 'bg-[#B5B0A5]/95 border-white/20'
+        isDark ? 'bg-black/90 border-[#1c1c22]' : 'bg-white/95 backdrop-blur-xl border-neutral-200/90 shadow-[0_-10px_35px_rgba(0,0,0,0.16)]'
       }`}>
         <div
           className={`flex items-center gap-2.5 p-1 rounded-2xl ${
-            isDark ? 'bg-black/80 border border-rose-950/60' : 'bg-white border border-white/50 shadow-md'
+            isDark ? 'bg-black/80 border border-rose-950/60' : 'bg-neutral-50/90 border border-neutral-200/80 shadow-sm'
           }`}
         >
           {/* WhatsApp Official Logo Button */}

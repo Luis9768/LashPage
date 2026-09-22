@@ -19,7 +19,7 @@ export default function About() {
               }`}></div>
               
               <div className={`relative rounded-3xl overflow-hidden transition-all ${
-                isDark ? 'bg-[#0d0d11] border border-[#22222a] shadow-2xl' : 'bg-white border border-black/[0.04] shadow-sm'
+                isDark ? 'bg-[#0d0d11] border border-[#22222a] shadow-2xl' : 'bg-white border border-neutral-200/90 shadow-[0_14px_36px_-6px_rgba(0,0,0,0.20),0_4px_14px_-2px_rgba(0,0,0,0.10)]'
               }`}>
 
                 <img
@@ -48,12 +48,14 @@ export default function About() {
 
           {/* Bio & Content Column */}
           <div className="lg:col-span-7 flex flex-col items-start">
-            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight text-white drop-shadow-sm">
+            <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight ${
+              isDark ? 'text-white' : 'text-neutral-900'
+            }`}>
               Sobre a Especialista Vittoria Amorim
             </h2>
 
             <div className={`space-y-4 text-sm sm:text-base leading-relaxed mb-8 ${
-              isDark ? 'text-neutral-300' : 'text-white/95 font-medium drop-shadow-sm'
+              isDark ? 'text-neutral-300' : 'text-neutral-600'
             }`}>
               <p>
                 Olá! Meu compromisso é entregar não apenas um procedimento estético, mas uma transformação que eleve sua autoestima e torne a sua rotina muito mais prática e leve.
@@ -72,8 +74,8 @@ export default function About() {
                 "Avaliação e mapping sem custo extra"
               ].map((text, idx) => (
                 <div key={idx} className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
-                  <span className={`text-xs sm:text-sm font-medium ${isDark ? 'text-neutral-200' : 'text-white drop-shadow-sm'}`}>
+                  <CheckCircle2 className={`w-4 h-4 flex-shrink-0 ${isDark ? 'text-rose-400' : 'text-rose-500'}`} />
+                  <span className={`text-xs sm:text-sm font-medium ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
                     {text}
                   </span>
                 </div>

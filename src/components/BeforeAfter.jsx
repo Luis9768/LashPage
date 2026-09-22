@@ -51,18 +51,20 @@ export default function BeforeAfter() {
 
   return (
     <section id="antes-depois" className={`py-20 sm:py-28 relative transition-colors ${
-      isDark ? 'bg-[#000000]' : 'bg-[#B5B0A5]'
+      isDark ? 'bg-[#000000]' : 'bg-[#FAFAFA]'
     }`}>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="text-left max-w-2xl mb-8 sm:mb-12">
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight text-white drop-shadow-sm">
+          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight ${
+            isDark ? 'text-white' : 'text-neutral-900'
+          }`}>
             Antes e Depois das Nossas Clientes
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
             Arraste o botão central para comparar o olhar natural com a extensão finalizada.
           </p>
         </div>
@@ -77,7 +79,7 @@ export default function BeforeAfter() {
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
             className={`relative h-[320px] sm:h-[440px] rounded-3xl overflow-hidden select-none cursor-ew-resize ${
-              isDark ? 'shadow-2xl border border-rose-500/20' : 'shadow-sm border border-black/[0.04]'
+              isDark ? 'shadow-2xl border border-rose-500/20' : 'shadow-[0_14px_36px_-6px_rgba(0,0,0,0.20),0_4px_14px_-2px_rgba(0,0,0,0.10)] border border-neutral-200/90'
             }`}
           >
             {/* After Image (Background) */}
@@ -122,7 +124,7 @@ export default function BeforeAfter() {
           </div>
 
           <div className={`flex items-center justify-center gap-2 mt-4 text-xs font-medium ${
-            isDark ? 'text-rose-500' : 'text-white drop-shadow-sm'
+            isDark ? 'text-rose-500' : 'text-neutral-500'
           }`}>
             <MoveHorizontal className="w-4 h-4 animate-pulse" />
             <span>Deslize para a esquerda ou direita para comparar</span>

@@ -66,11 +66,13 @@ export default function Services({ onOpenCatalog }) {
         
         {/* Section Header */}
         <div className="text-left max-w-2xl mb-8 sm:mb-12">
-          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight text-white drop-shadow-sm">
+          <h2 className={`font-heading text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5 tracking-tight ${
+            isDark ? 'text-white' : 'text-neutral-900'
+          }`}>
             Técnicas de Extensão de Cílios
           </h2>
 
-          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-white/95 font-medium drop-shadow-sm'}`}>
+          <p className={`text-sm sm:text-base ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
             Navegue pelos procedimentos mais procurados no estúdio com isolamento perfeito e durabilidade garantida.
           </p>
         </div>
@@ -101,7 +103,7 @@ export default function Services({ onOpenCatalog }) {
                       className={`rounded-3xl overflow-hidden transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                         isDark
                           ? 'bg-[#0d0d11] border border-[#22222a] shadow-2xl shadow-black'
-                          : 'bg-white border border-black/[0.04] shadow-sm'
+                          : 'bg-white border border-neutral-200/90 shadow-[0_14px_36px_-6px_rgba(0,0,0,0.20),0_4px_14px_-2px_rgba(0,0,0,0.10)]'
                       }`}
                     >
                       {/* Image Side */}
@@ -194,7 +196,7 @@ export default function Services({ onOpenCatalog }) {
                   className={`rounded-3xl overflow-hidden transition-all duration-300 flex flex-col md:grid md:grid-cols-12 h-[500px] sm:h-[480px] md:h-[400px] flex-1 ${
                     isDark
                       ? 'bg-[#0d0d11] border border-[#22222a] shadow-2xl shadow-black'
-                      : 'bg-white border border-black/[0.04] shadow-sm'
+                      : 'bg-white border border-neutral-200/90 shadow-[0_14px_36px_-6px_rgba(0,0,0,0.20),0_4px_14px_-2px_rgba(0,0,0,0.10)]'
                   }`}
                 >
                   {/* Image Side */}
@@ -249,34 +251,35 @@ export default function Services({ onOpenCatalog }) {
                       <p className={`text-xs sm:text-sm leading-relaxed line-clamp-3 md:line-clamp-none mb-3 ${
                         isDark ? 'text-neutral-300' : 'text-neutral-600'
                       }`}>
-                        Acesse nossa tela dedicada com a lista completa de procedimentos, tempos de atendimento, dicas de durabilidade e agendamento instantâneo.
+                        Acesse nossa tela dedicada com a lista completa de procedimentos, fotos reais, tempos de atendimento, dicas de durabilidade e valores.
                       </p>
 
-                      <div className="flex items-center gap-2">
-                        <span className={`px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium border flex items-center gap-1 ${
-                          isDark ? 'bg-neutral-900/80 border-neutral-800 text-neutral-300' : 'bg-white border-rose-200 text-neutral-700'
-                        }`}>
-                          <CheckCircle2 className="w-3 h-3 text-rose-500" />
-                          +6 Procedimentos
-                        </span>
-                        <span className={`px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium border flex items-center gap-1 ${
-                          isDark ? 'bg-neutral-900/80 border-neutral-800 text-neutral-300' : 'bg-white border-rose-200 text-neutral-700'
-                        }`}>
-                          <CheckCircle2 className="w-3 h-3 text-rose-500" />
-                          Guia de Cuidados
-                        </span>
+                      <div className="flex flex-wrap gap-2 pt-1">
+                        {['Clássico', 'Brasileiro', 'Egípcio', 'Fox Eyes', 'Design', 'Lash Lifting'].map((tag) => (
+                          <span
+                            key={tag}
+                            className={`text-[11px] font-medium px-2.5 py-1 rounded-lg border transition-colors ${
+                              isDark
+                                ? 'bg-neutral-900/80 border-neutral-800 text-neutral-400'
+                                : 'bg-neutral-100/80 border-neutral-200 text-neutral-600'
+                            }`}
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
 
-                    <div className="pt-2.5">
+                    <div className="pt-4">
                       <button
                         type="button"
                         onClick={onOpenCatalog}
+                        aria-label="Abrir catálogo completo com todos os serviços"
                         className="w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-wide text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:opacity-95 shadow-lg shadow-rose-600/30 transition-all flex items-center justify-center gap-2 active:scale-95 active:brightness-90 select-none"
                       >
-                        <Eye className="w-4 h-4" />
+                        <Eye className="w-4 h-4 flex-shrink-0" />
                         <span>Acessar Catálogo de Procedimentos</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4 flex-shrink-0" />
                       </button>
                     </div>
                   </div>
@@ -293,7 +296,7 @@ export default function Services({ onOpenCatalog }) {
             className={`absolute top-1/2 -left-3 sm:-left-6 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center transition-all z-10 ${
               isDark
                 ? 'bg-[#121216]/90 border border-[#2b2b36] text-white hover:bg-neutral-800'
-                : 'bg-white border border-black/[0.06] text-neutral-900 hover:bg-neutral-50 shadow-sm'
+                : 'bg-white border border-neutral-200 text-neutral-900 hover:bg-neutral-50 shadow-lg shadow-black/15'
             }`}
           >
             <ChevronLeft className="w-5 h-5" />
@@ -305,7 +308,7 @@ export default function Services({ onOpenCatalog }) {
             className={`absolute top-1/2 -right-3 sm:-right-6 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center transition-all z-10 ${
               isDark
                 ? 'bg-[#121216]/90 border border-[#2b2b36] text-white hover:bg-neutral-800'
-                : 'bg-white border border-black/[0.06] text-neutral-900 hover:bg-neutral-50 shadow-sm'
+                : 'bg-white border border-neutral-200 text-neutral-900 hover:bg-neutral-50 shadow-lg shadow-black/15'
             }`}
           >
             <ChevronRight className="w-5 h-5" />
@@ -323,7 +326,7 @@ export default function Services({ onOpenCatalog }) {
                     ? 'w-8 bg-rose-500'
                     : isDark
                     ? 'w-2 bg-neutral-700 hover:bg-neutral-600'
-                    : 'w-2 bg-white/40 hover:bg-white'
+                    : 'w-2 bg-neutral-300 hover:bg-neutral-400'
                 }`}
               />
             ))}
