@@ -37,7 +37,7 @@ export const siteConfig = {
     reference: "Próximo à estação Santo André e ao Shopping Grand Plaza",
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rua+General+Glicerio+926+Centro+Santo+Andre+SP",
     wazeUrl: "https://waze.com/ul?q=Rua%20General%20Glicerio%20926%20Santo%20Andre",
-    hours: "Terça a Sábado: 09h às 19h (Com agendamento prévio)",
+    hours: "Segunda a Sábado: 09h às 19h30 (Com agendamento prévio)",
   },
 
   // Frase da animação do Scroll
