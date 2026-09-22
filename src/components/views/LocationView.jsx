@@ -44,13 +44,11 @@ export default function LocationView({ onBack }) {
 
           {/* Clean Location Identity */}
           <div className="flex items-center gap-2 text-right">
-            <span className={`text-[11px] uppercase tracking-widest font-bold ${
-              isDark ? 'text-rose-400' : 'text-rose-600'
-            }`}>
+            <span className="text-[11px] uppercase tracking-widest font-bold text-white">
               Localização
             </span>
             <span className="text-white/40 text-xs">•</span>
-            <span className={`text-[11px] font-medium ${isDark ? 'text-neutral-400' : 'text-white/80'}`}>
+            <span className={`text-[11px] font-bold ${isDark ? 'text-rose-400' : 'text-rose-600'}`}>
               Santo André • SP
             </span>
           </div>
