@@ -174,17 +174,30 @@ export const siteConfig = {
       image: "/services/fio-a-fio.jpg"
     },
     {
-      id: "lash-lifting",
-      title: "Lash Lifting",
+      id: "volume-wispy",
+      title: "Volume Wispy",
       category: "cilios",
-      price: "R$ 120,00",
-      tagline: "Curvatura, hidratação profunda e tingimento dos seus fios",
-      description: "Tratamento para os cílios naturais que curva, alonga visualmente e tinge de preto intenso, com aplicação de queratina e vitaminas.",
-      duration: "1h 30min",
-      retention: "Duração de 6 a 8 semanas",
-      badge: "Zero Manutenção",
+      price: "R$ 165,00",
+      tagline: "Efeito desestruturado 'Kim K' com textura e movimento",
+      description: "Mapeamento texturizado que mescla fios volumosos com pontas despontadas (spikes) em camadas. Cria um visual moderno, leve e com efeito 'Kim Kardashian'.",
+      duration: "2h",
+      retention: "Manutenção em 18 a 22 dias",
+      badge: "Efeito Kim K",
+      popular: true,
+      image: "/services/volume-wispy.jpg"
+    },
+    {
+      id: "volume-shine",
+      title: "Volume Shine",
+      category: "cilios",
+      price: "R$ 160,00",
+      tagline: "Brilho acetinado, curvatura marcante e acabamento radiante",
+      description: "Técnica com fios de acabamento gloss/acetinado que refletem a luz sutilmente, proporcionando um olhar iluminado, sofisticado e marcante.",
+      duration: "2h",
+      retention: "Manutenção em 18 a 25 dias",
+      badge: "Brilho Radiante",
       popular: false,
-      image: "/services/lash-lifting.jpg"
+      image: "/services/volume-shine.jpg"
     },
     {
       id: "remocao",
@@ -211,6 +224,19 @@ export const siteConfig = {
       badge: "Destaque Sobrancelhas",
       popular: true,
       image: "/services/brow-lamination.jpg"
+    },
+    {
+      id: "design-henna",
+      title: "Design com Henna",
+      category: "sobrancelhas",
+      price: "R$ 50,00",
+      tagline: "Definição, preenchimento de falhas e cor personalizada",
+      description: "Mapeamento visagista com aplicação de henna premium de alta fixação. Ideal para quem deseja sobrancelhas mais marcadas, desenhadas e sem falhas.",
+      duration: "45min",
+      retention: "Durabilidade de 7 a 15 dias na pele",
+      badge: "Mais Pedido Sobrancelhas",
+      popular: true,
+      image: "/services/design-com-henna.jpg"
     },
     {
       id: "design-personalizado",
@@ -286,10 +312,10 @@ export const siteConfig = {
     },
     {
       name: "Juliana M.",
-      text: "O Lash Lifting superou todas as minhas expectativas! Meus cílios ficaram curvados e definidos com um efeito muito natural. A durabilidade e o cuidado da Vitória são impecáveis.",
+      text: "O Fox Eyes e o Design com Henna superaram todas as minhas expectativas! Meu olhar ficou marcante, elegante e com um acabamento perfeito. A durabilidade e o cuidado da Vitória são impecáveis.",
       tag: "Cliente assídua",
       stars: 5,
-      technique: "Lash Lifting"
+      technique: "Fox Eyes & Henna"
     }
   ],
 

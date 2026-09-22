@@ -243,7 +243,7 @@ export default function Services({ onOpenCatalog }) {
                       </h3>
 
                       <p className="text-xs font-semibold text-rose-400 mb-2">
-                        Volume Russo, Híbrido, Lifting, Cuidados e Manutenções
+                        Fox Eyes, Wispy, Shine, Sirena, Sobrancelhas e mais
                       </p>
 
                       <p className={`text-xs sm:text-sm leading-relaxed line-clamp-3 md:line-clamp-none mb-3 ${
