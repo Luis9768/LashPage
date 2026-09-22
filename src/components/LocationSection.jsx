@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { siteConfig } from '../config/siteConfig';
-import { MapPin, Navigation, Clock, ExternalLink, Compass, Train } from 'lucide-react';
+import { MapPin, Navigation, Clock, ExternalLink, Compass, Train, CreditCard } from 'lucide-react';
 
 export default function LocationSection() {
   const { isDark } = useTheme();
@@ -53,7 +53,7 @@ export default function LocationSection() {
                   isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-neutral-50/90 border-neutral-200/80'
                 }`}>
                   <p className={`text-base font-bold mb-1 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
-                    {location.address}
+                    {location.address} • {location.complement}
                   </p>
                   <p className={`text-sm ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
                     {location.neighborhood} • {location.city} • CEP: {location.cep}
@@ -77,13 +77,25 @@ export default function LocationSection() {
                   </div>
 
                   <div className="flex items-start gap-3">
+                    <CreditCard className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                        Formas de Pagamento
+                      </h4>
+                      <p className={`text-xs sm:text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                        {location.payments}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 sm:col-span-2">
                     <Train className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
                     <div>
                       <h4 className={`text-sm font-semibold ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                         Transporte Público
                       </h4>
                       <p className={`text-xs sm:text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
-                        7 min da Estação Santo André (CPTM)
+                        7 min da Estação Santo André (CPTM Linha 10-Turquesa)
                       </p>
                     </div>
                   </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { siteConfig } from '../config/siteConfig';
-import { MessageCircle, MapPin, ArrowUp, Heart } from 'lucide-react';
+import { MapPin, ArrowUp } from 'lucide-react';
 
 function WhatsAppIcon({ className = "w-5 h-5" }) {
   return (
@@ -98,7 +97,7 @@ export default function Footer() {
             <div className={`space-y-2 text-xs sm:text-sm mb-6 ${isDark ? 'text-neutral-300' : 'text-neutral-100'}`}>
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-rose-400 flex-shrink-0 mt-0.5" />
-                <span>{siteConfig.location.address}, {siteConfig.location.neighborhood} - {siteConfig.location.city}</span>
+                <span>{siteConfig.location.address}, {siteConfig.location.complement}, {siteConfig.location.neighborhood} - {siteConfig.location.city}</span>
               </p>
               <p className="text-xs opacity-85 pl-6">{siteConfig.location.hours}</p>
             </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
-import { siteConfig } from '../../config/siteConfig';
-import { ArrowLeft, MapPin, Navigation, Compass, Clock, Check, Copy, Car, Train, Calendar, Sparkles } from 'lucide-react';
+import { ArrowLeft, Navigation, Compass, Clock, Check, Copy, Train, CreditCard } from 'lucide-react';
 
 export default function LocationView({ onBack }) {
   const { isDark } = useTheme();
@@ -14,7 +13,7 @@ export default function LocationView({ onBack }) {
   }, []);
 
   const handleCopyAddress = () => {
-    const fullAddress = `${location.address}, ${location.neighborhood} - ${location.city}, CEP ${location.cep}`;
+    const fullAddress = `${location.address}, ${location.complement}, ${location.neighborhood} - ${location.city}, CEP ${location.cep}`;
     navigator.clipboard.writeText(fullAddress);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -79,7 +78,7 @@ export default function LocationView({ onBack }) {
                 Endereço Oficial
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold font-heading mt-0.5">
-                {location.address}
+                {location.address} <span className="text-rose-500 font-semibold text-base sm:text-lg">• {location.complement}</span>
               </h2>
               <p className={`text-xs sm:text-sm mt-0.5 ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
                 {location.neighborhood} • {location.city} • CEP {location.cep}
@@ -139,16 +138,16 @@ export default function LocationView({ onBack }) {
 
 
       {/* Facilities & Transports */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className={`p-5 rounded-2xl border ${
           isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-white/60 shadow-lg shadow-black/5'
         }`}>
           <div className="flex items-center gap-2 mb-2 text-rose-500 font-bold text-sm">
-            <Train className="w-4 h-4" />
-            <span>Transporte Público</span>
+            <CreditCard className="w-4 h-4" />
+            <span>Formas de Pagamento</span>
           </div>
           <p className={`text-xs leading-relaxed ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
-            Apenas 7 minutos a pé da Estação Celso Daniel - Santo André (Linha 10-Turquesa da CPTM e Terminal de Ônibus Central).
+            {location.payments} (débito e crédito). Facilidade e praticidade para você.
           </p>
         </div>
 
@@ -160,7 +159,19 @@ export default function LocationView({ onBack }) {
             <span>Horários & Atendimento</span>
           </div>
           <p className={`text-xs leading-relaxed ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
-            {location.hours}. Atendimento pontual com hora marcada para você relaxar sem esperas.
+            {location.hours}. Atendimento com hora marcada.
+          </p>
+        </div>
+
+        <div className={`p-5 rounded-2xl border ${
+          isDark ? 'bg-[#0d0d11] border-[#22222a]' : 'bg-white border-white/60 shadow-lg shadow-black/5'
+        }`}>
+          <div className="flex items-center gap-2 mb-2 text-rose-500 font-bold text-sm">
+            <Train className="w-4 h-4" />
+            <span>Transporte Público</span>
+          </div>
+          <p className={`text-xs leading-relaxed ${isDark ? 'text-neutral-300' : 'text-neutral-600'}`}>
+            Apenas 7 minutos a pé da Estação Celso Daniel - Santo André (CPTM Linha 10 e Terminal).
           </p>
         </div>
       </div>

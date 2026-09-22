@@ -31,6 +31,7 @@ export const siteConfig = {
   location: {
     title: "Vittoria's Studio • Santo André",
     address: "Rua General Glicério, 926",
+    complement: "7º Andar • Sala 71",
     neighborhood: "Centro",
     city: "Santo André - SP",
     cep: "09015-191",
@@ -38,6 +39,7 @@ export const siteConfig = {
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rua+General+Glicerio+926+Centro+Santo+Andre+SP",
     wazeUrl: "https://waze.com/ul?q=Rua%20General%20Glicerio%20926%20Santo%20Andre",
     hours: "Segunda a Sábado: 09h às 19h30 (Com agendamento prévio)",
+    payments: "Dinheiro, PIX e Cartão",
   },
 
   // Frase da animação do Scroll
@@ -350,6 +352,10 @@ export const siteConfig = {
     {
       question: "Como funciona o agendamento?",
       answer: "Basta clicar em qualquer botão de 'Agendar Horário' na página. Você será direcionada diretamente para o nosso sistema/link oficial de agendamentos, onde pode escolher o dia e horário que melhor se encaixam na sua rotina."
+    },
+    {
+      question: "Quais são as formas de pagamento aceitas?",
+      answer: "Aceitamos Dinheiro, PIX e Cartão (débito e crédito)."
     }
   ]
 };

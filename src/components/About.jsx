@@ -23,9 +23,11 @@ export default function About() {
               }`}>
 
                 <img
-                  src="/vittoria-profile.jpg"
+                  src="/vittoria-profile.jpg?v=2"
                   alt="Vittoria Amorim - Lash Designer Especialista"
                   className="w-full h-[450px] object-cover object-top"
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 
                 {/* Professional Overlay Badge */}
