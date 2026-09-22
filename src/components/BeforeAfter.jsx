@@ -86,7 +86,9 @@ export default function BeforeAfter() {
               alt="Depois: Extensão de Cílios com Volume"
               className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
             />
-            <div className="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider border border-white/20">
+            <div className={`absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider border border-white/20 whitespace-nowrap min-w-max transition-opacity duration-200 ${
+              sliderPosition > 80 ? 'opacity-0' : 'opacity-100'
+            }`}>
               Depois (Com Extensão)
             </div>
 
@@ -101,7 +103,9 @@ export default function BeforeAfter() {
                 className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
                 style={{ width: containerWidth ? `${containerWidth}px` : '100%' }}
               />
-              <div className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider border border-white/20">
+              <div className={`absolute bottom-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider border border-white/20 whitespace-nowrap min-w-max transition-opacity duration-200 ${
+                sliderPosition < 20 ? 'opacity-0' : 'opacity-100'
+              }`}>
                 Antes (Sem Extensão)
               </div>
             </div>
