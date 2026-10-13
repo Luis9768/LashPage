@@ -30,14 +30,14 @@ export const siteConfig = {
   // Localização
   location: {
     title: "Vittoria's Studio • Santo André",
-    address: "Rua General Glicério, 926",
+    address: "R. Gertrúdes de Lima, 53",
     complement: "7º Andar • Sala 71",
     neighborhood: "Centro",
     city: "Santo André - SP",
-    cep: "09015-191",
+    cep: "09020-000",
     reference: "Próximo à estação Santo André e ao Shopping Grand Plaza",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rua+General+Glicerio+926+Centro+Santo+Andre+SP",
-    wazeUrl: "https://waze.com/ul?q=Rua%20General%20Glicerio%20926%20Santo%20Andre",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=R.+Gertrudes+de+Lima%2C+53+-+Centro%2C+Santo+Andr%C3%A9+-+SP",
+    wazeUrl: "https://waze.com/ul?q=Rua%20Gertrudes%20de%20Lima%2053%20Santo%20Andre",
     hours: "Segunda a Sábado: 09h às 19h30 (Com agendamento prévio)",
     payments: "Dinheiro, PIX e Cartão",
   },

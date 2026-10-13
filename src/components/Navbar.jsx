@@ -89,7 +89,7 @@ export default function Navbar({ onNavigate }) {
     },
     {
       title: "Localização do Studio",
-      subtitle: "Rua General Glicério, 926 - Centro Santo André",
+      subtitle: "R. Gertrúdes de Lima, 53 - Centro Santo André",
       view: "location",
       icon: MapPin,
       isExternal: false,
